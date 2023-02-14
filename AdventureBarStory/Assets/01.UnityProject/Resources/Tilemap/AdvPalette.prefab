@@ -20885,7 +20885,7 @@ GameObject:
   - component: {fileID: 5772097133809428841}
   - component: {fileID: 7861434781296948726}
   m_Layer: 0
-  m_Name: Adv
+  m_Name: AdvPalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
