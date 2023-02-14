@@ -267,7 +267,6 @@ SpriteAtlas:
   - {fileID: -791805360, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1059816032, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -160939085, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: 227784316, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 750654217, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1216459844, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1791203882, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -357,6 +356,7 @@ SpriteAtlas:
   - {fileID: 1480708789, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1312508057, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 590589536, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: 227784316, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1746880622, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1225201086, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -853082289, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -637,7 +637,6 @@ SpriteAtlas:
   - system_182
   - system_71
   - system_65
-  - system_16
   - system_36
   - system_183
   - system_193
@@ -727,6 +726,7 @@ SpriteAtlas:
   - system_173
   - Max
   - battleTileFill
+  - ScriptUi
   - battlePtr3
   - battlePtr2
   - battlePtr1

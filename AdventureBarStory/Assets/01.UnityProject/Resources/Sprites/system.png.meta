@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -453,16 +453,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system_16
+      name: ScriptUi
       rect:
         serializedVersion: 2
-        x: 384
-        y: 425
-        width: 24
-        height: 24
+        x: 369
+        y: 401
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -7968,17 +7968,17 @@ TextureImporter:
       Guard: 1843330632
       system_359: -710745980
       system_267: 1415902997
-      system_9: -1267673650
-      system_187: -1460382691
-      system_229: 1339846886
       system_147: 1404798794
-      system_88: -298388241
+      system_187: -1460382691
       system_169: -756806232
-      system_143: -1290499890
+      system_9: -1267673650
       system_148: -1828992787
+      system_229: 1339846886
+      system_143: -1290499890
+      system_152: -287865580
       system_173: 1480708789
       system_192: 1993004626
-      system_152: -287865580
+      system_88: -298388241
       system_99: 1700560279
       system_368: 204193927
       system_341: 1575731472
@@ -8091,7 +8091,6 @@ TextureImporter:
       system_289: 865295445
       system_212: -1216814061
       dayMonthSmall: -838567740
-      system_16: 227784316
       system_195: 1176098410
       system_122: -91699008
       system_214: -1765615973
@@ -8162,6 +8161,7 @@ TextureImporter:
       system_342: -236327956
       system_123: -114511355
       system_357: -1735316086
+      ScriptUi: 227784316
       system_276: -1630058662
       system_108: -1444213217
       system_165: -1081301872

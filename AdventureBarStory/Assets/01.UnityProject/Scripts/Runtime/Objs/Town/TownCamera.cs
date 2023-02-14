@@ -44,5 +44,13 @@ public class TownCamera : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, player.transform.position.y, -10);
             }
         }
+
+        if (isInShop)
+        {
+            if (player.transform.position.y > -2f && player.transform.position.y < 0)
+            {
+                transform.position = new Vector3(30.5f, player.transform.position.y, -10);
+            }
+        }
     }
 }

@@ -31,17 +31,22 @@ public class Portal : MonoBehaviour
                     destination = new Vector2(-4.5f, -8f);
                     cameraPos = new Vector3(0, destination.y, -10);
                     break;
-                /*case "StreetToShopPortal":
+                case "StreetToShopPortal":
+                    Camera.main.GetComponent<TownCamera>().isInShop = true;
+                    Camera.main.GetComponent<TownCamera>().isInStreet = false;
+                    destination = new Vector2(30.5f, -4f);
+                    cameraPos = new Vector3(30.5f, -2f, -10);
                     break;
                 case "ShopToStreetPortal":
-                    break;*/
+                    Camera.main.GetComponent<TownCamera>().isInShop = false;
+                    Camera.main.GetComponent<TownCamera>().isInStreet = true;
+                    destination = new Vector2(-54.5f, 1f);
+                    cameraPos = new Vector3(-50.5f, 1f, -10);
+                    break;
             }
 
             player.transform.position = destination;
             Camera.main.transform.position = cameraPos;
-
-            Debug.Log("playerPos " + player.transform.position);
-            Debug.Log(Camera.main.transform.position);
         }
     }
 }
