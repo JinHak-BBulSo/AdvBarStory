@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OutputOpeningScript : MonoBehaviour
@@ -27,7 +28,6 @@ public class OutputOpeningScript : MonoBehaviour
 
     [SerializeField]
     Sprite[] charSprites = default;
-
     [SerializeField]
     TMP_Text nameTxt = default;
     [SerializeField]
@@ -39,6 +39,8 @@ public class OutputOpeningScript : MonoBehaviour
     [SerializeField]
     GameObject charImageObj = default;
 
+    private float skipCheckTime = 0;
+
     private void OnEnable()
     {
         scriptDialogues = ScriptDataManager.instance.GetDialogue(start, end);
@@ -49,6 +51,22 @@ public class OutputOpeningScript : MonoBehaviour
         StartCoroutine(SetScript());
 
         CheckNameNull();
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            skipCheckTime += Time.deltaTime;
+            if(skipCheckTime > 1f)
+            {
+                OnClickUpdateScript();
+            }
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            skipCheckTime = 0;
+        }
     }
 
     public void OnClickUpdateScript()
@@ -65,6 +83,7 @@ public class OutputOpeningScript : MonoBehaviour
                     nameObj.SetActive(false);
                     scriptObj.SetActive(false);
                     charImageObj.SetActive(false);
+                    StopAllCoroutines();
 
                     return;
                 }

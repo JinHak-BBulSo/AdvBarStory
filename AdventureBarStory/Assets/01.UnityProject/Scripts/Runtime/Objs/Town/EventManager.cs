@@ -5,11 +5,12 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     public static EventManager instance = default;
+    [SerializeField]
     private GameObject scriptObj = default;
 
     private bool openingSkip = false;
     private bool openingStart = false;
-
+    private bool openingMoveStart = false;
 
     private void Awake()
     {
@@ -22,9 +23,10 @@ public class EventManager : MonoBehaviour
 
     public void StartOpening()
     {
-        scriptObj = GameObject.Find("Script");
-        OutputOpeningScript script = scriptObj.GetComponent<OutputOpeningScript>();
+        scriptObj = GFunc.GetRootObj("UiObjs").FindChildObj("ScriptObjs");
+        OutputOpeningScript script = scriptObj.FindChildObj("Script").GetComponent<OutputOpeningScript>();
         script.SetDialog(1, 62);
+        scriptObj.SetActive(true);
     }
 
     public void SkipOpening()

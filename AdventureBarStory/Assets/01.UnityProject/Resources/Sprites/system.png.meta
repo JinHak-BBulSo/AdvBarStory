@@ -5388,7 +5388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIBg2
+      name: GameUIBg2
       rect:
         serializedVersion: 2
         x: 0
@@ -7488,7 +7488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIBg1
+      name: GameUIBg1
       rect:
         serializedVersion: 2
         x: 0
@@ -7887,11 +7887,9 @@ TextureImporter:
       system_102: 924639184
       BackBtn: -1672983298
       battleTileFill: 590589536
-      UIBg1: -197761806
       system_320: 626354915
       system_204: -1791800051
       battleTile: 2071625723
-      UIBg2: 1300477431
       system_227: 1767636237
       Min: -1258415511
       system_154: -1392056889
@@ -7953,11 +7951,13 @@ TextureImporter:
       system_286: 1244747612
       system_304: 1871005416
       system_338: 713206813
+      GameUIBg2: 1300477431
       system_34: 331556554
       system_335: 874405915
       system_356: -1182477402
       system_364: -969292367
       system_285: 1210628300
+      GameUIBg1: -197761806
       system_150: -561150681
       system_233: 1670105562
       system_337: -1513588374
@@ -7968,17 +7968,17 @@ TextureImporter:
       Guard: 1843330632
       system_359: -710745980
       system_267: 1415902997
-      system_147: 1404798794
-      system_187: -1460382691
-      system_169: -756806232
       system_9: -1267673650
+      system_147: 1404798794
+      system_88: -298388241
+      system_169: -756806232
+      system_187: -1460382691
       system_148: -1828992787
-      system_229: 1339846886
-      system_143: -1290499890
       system_152: -287865580
+      system_143: -1290499890
+      system_229: 1339846886
       system_173: 1480708789
       system_192: 1993004626
-      system_88: -298388241
       system_99: 1700560279
       system_368: 204193927
       system_341: 1575731472
