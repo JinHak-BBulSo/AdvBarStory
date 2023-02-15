@@ -34,7 +34,7 @@ public class Portal : MonoBehaviour
                 case "StreetToShopPortal":
                     Camera.main.GetComponent<TownCamera>().isInShop = true;
                     Camera.main.GetComponent<TownCamera>().isInStreet = false;
-                    destination = new Vector2(30.5f, -4f);
+                    destination = new Vector2(29.5f, -4f);
                     cameraPos = new Vector3(30.5f, -2f, -10);
                     break;
                 case "ShopToStreetPortal":

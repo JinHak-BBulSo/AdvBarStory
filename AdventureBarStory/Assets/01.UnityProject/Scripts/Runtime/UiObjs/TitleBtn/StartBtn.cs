@@ -6,6 +6,6 @@ public class StartBtn : MonoBehaviour
 {
     public void OnClickStartBtn()
     {
-        GFunc.LoadScene("01.TownScene");
+        GFunc.LoadScene("02.TownScene");
     }
 }

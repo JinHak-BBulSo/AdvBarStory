@@ -1,0 +1,83 @@
+ID,CharacterName,Script
+1,Kamerina,I need sugar salt and potatoes. Make sure to get them all. Say hi to Fred for me.
+,,Oh  and we need to get water. Don't forget!
+2,Siela,Okay.. I really don't want to go. Oh  well.
+,,"Hi, Fred! My sister told me to shop here. Yourplacehasn't changed at all!"
+3,Fred,Oh  hi  Siela! So you need to buy.. Sugar  salt and..
+,,.. Just this? You should be serving a lot more people!
+4,Siela,My sister isn't a great cook. Customers come for HER rather than the food.
+5,Fred,Really? Oh my.. Okay  here you are. Everything is in the bag.
+6,Siela,Ok  see you around  then. Thank you!
+,,Okay  next stop is water.
+7,null,Water * 10 Added to Inventory
+8,Siela,Now I can head home!
+,,I'm back! I got everything you wanted.
+9,Kamerina,Thanks. Wait you are..
+10,Strange Man,Your place looks awfully shabby. Thinking of selling it yet?
+11,Kamerina,Ummmm..
+12,Siela,What are you talking about? Have you lost your mind?
+13,Strange Man,Is this your little Sister? Go to the other room while we talk.
+14,Siela,What? This is MY house! We're never goint to sell it!
+15,Fred,Siela  you there? Hello? I brought you vegetables. What the.. What is going on in here..?
+16,Strange Man,Oh goodness. I'll try another day.
+17,Kamerina,Just think about it  Kamerina
+18,Siela,What is he talking about  selling this place? Who does he think he is?!
+19,Gustav,His name is Gustav. He wants us to sell the restaurant.
+20,Siela,This isn't the first time you met him? Why didn't you tell me about him!!
+21,Kamerina,Well.. That's because I didn't want you to worry.
+22,Siela,You've got to tell me! Why does he want us to sell the house?
+23,Kamerina,I don't know exactly. But I assume it has to do with the location of this house.
+,,He wants to buy this property and move his restaurant  Cassel Garden  here.
+24,Siela,What? Really? Is there anything we can do to stop him?
+25,Fred,Did you say Cassel Garden? This is going to be trickier  than I thought.
+26,Siela,Why
+27,Fred,Cassel Garden is the most well-known restaurant in the Kingdom of Cassel
+,,I've heard numerous rumors about this guy. And I'm talking about bad rumors.
+,,He will try anything to get his way. Even if that means screwing over other restaurants ...
+,,He has connections with the Royal Family. Soldiers will not be able to stop him either.
+28,Siela,No way..
+29,Fred,Even if you said you weren't going to sell the house  he'd try to take it from you.
+30,Siela,No! We're not going to let that happen.
+,,We lived here with our parents. There are too many great memories.
+31,Fred,You're right.
+32,Siela,What shall we do?
+33,Kamerina,Hhmmm..
+34,Fred,There is one thing you could do..
+35,Siela,Really? What  Fred?
+36,Fred,Cassel Garden has both the financial and political advantage.
+,,If you face Gustav head on  you will lose.
+37,Siela,..Yes.
+38,Fred,Siela  you just have to work hard and make your restaurant as successful as Cassel Garden.
+39,Siela,What? That's not going to happen..
+40,Fred,So you're fine with Gustav taking your place?
+41,Siela,No  not at all.
+42,Fred,Siela you have potential. You have more talent than Kamerina
+43,Siela,Why  thank you! But  how do I start?
+44,Fred,Let's see..
+,,Thant's right! How about the cooking contest?!
+45,Siela,Cooking contest?
+46,Fred,If I remember correctly  they have it several times a month at the castle.
+,,If you win the contest it will be great publicity!
+47,Siela,I've never really taken part in a contest before..
+48,Fred,You have to try! If you don't do this  there's no  future left for you.
+49,Siela,..
+,,Alright! I'm going to give it a try.
+50,Fred,That's the spirit!
+51,Siela,Starting today  I'm going to be in charge of this restaurant!
+52,Kamerina,That's fine. But  are you sure Siela? Can you handle it?
+53,Siela,Yes  of course! I still need your support though!
+,,You too Fred!
+54,Fred,Whaaat! Me too?
+55,Siela,You're the one who suggested this whole idea! You're going to take responsibility and help me!
+56,Fred,I can't cook though.. I'll make sure to give you advice on other areas!
+,,The common ingredients you can buy from my store. But others  you must go get them by foot.
+,,If you go to the meadow outside of town  you will be able to get many ingredients for free!
+,,If you're going. I'll join you.
+57,Siela,Thank you! Now  let's do this. Watch out  Cassel Garden!
+58,Fred,Ah! Before you go off into the world full of monsters  visit my shop to buy items and equipment!
+,,We need to prepare well.
+59,Siela,....
+60,Fred,Well  I'm just trying to make a living here!
+61,Kamerina,Ah  Fred  doing your job  huh?
+62,null,Fred joined the party!
+,,You can now go to Brusso meadows.

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     {
         playerAni = GetComponent<Animator>();
         playerRigid = GetComponent<Rigidbody2D>();
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
