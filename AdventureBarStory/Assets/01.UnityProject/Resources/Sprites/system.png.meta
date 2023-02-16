@@ -4044,13 +4044,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system_187
+      name: ScrollBar
       rect:
         serializedVersion: 2
-        x: 480
-        y: 233
-        width: 24
-        height: 24
+        x: 496
+        y: 193
+        width: 16
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7970,13 +7970,12 @@ TextureImporter:
       system_267: 1415902997
       system_9: -1267673650
       system_147: 1404798794
-      system_88: -298388241
-      system_169: -756806232
-      system_187: -1460382691
-      system_148: -1828992787
-      system_152: -287865580
-      system_143: -1290499890
       system_229: 1339846886
+      system_169: -756806232
+      system_88: -298388241
+      system_148: -1828992787
+      system_143: -1290499890
+      system_152: -287865580
       system_173: 1480708789
       system_192: 1993004626
       system_99: 1700560279
@@ -8212,6 +8211,7 @@ TextureImporter:
       battlePtr3: 1746880622
       system_268: 1016533271
       system_120: -126529261
+      ScrollBar: -1460382691
       system_329: -1415527840
       system_182: -791805360
       system_87: 477204722

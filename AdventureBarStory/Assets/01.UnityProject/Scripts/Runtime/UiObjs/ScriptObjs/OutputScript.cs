@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class OutputOpeningScript : MonoBehaviour
+public class OutputScript : MonoBehaviour
 {
     private float scriptDelay = 0.05f;
     private Dialogue[] scriptDialogues = default;
@@ -28,18 +28,23 @@ public class OutputOpeningScript : MonoBehaviour
 
     [SerializeField]
     Sprite[] charSprites = default;
-    [SerializeField]
+
     TMP_Text nameTxt = default;
-    [SerializeField]
     TMP_Text scriptTxt = default;
-    [SerializeField]
     GameObject nameObj = default;
-    [SerializeField]
     GameObject scriptObj = default;
-    [SerializeField]
     GameObject charImageObj = default;
 
     private float skipCheckTime = 0;
+
+    void Awake()
+    {
+        nameTxt = gameObject.FindChildObj("NameTxt").GetComponent<TMP_Text>();
+        scriptTxt = gameObject.FindChildObj("ScriptTxt").GetComponent<TMP_Text>();
+        nameObj = gameObject.FindChildObj("ScriptCharName");
+        scriptObj = gameObject.FindChildObj("Script");
+        charImageObj = gameObject.FindChildObj("ScriptCharImage");
+    }
 
     private void OnEnable()
     {
@@ -80,9 +85,7 @@ public class OutputOpeningScript : MonoBehaviour
                 index++;
                 if(index == end)
                 {
-                    nameObj.SetActive(false);
-                    scriptObj.SetActive(false);
-                    charImageObj.SetActive(false);
+                    gameObject.SetActive(false);
                     StopAllCoroutines();
 
                     return;
@@ -149,6 +152,9 @@ public class OutputOpeningScript : MonoBehaviour
                     break;
                 case "Strange Man":
                     charImageObj.GetComponent<Image>().sprite = charSprites[3];
+                    break;
+                case "Alfine":
+                    charImageObj.GetComponent<Image>().sprite = charSprites[4];
                     break;
             }
         }

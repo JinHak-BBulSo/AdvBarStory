@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 130
+  controlID: 20
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 65
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 134
+  controlID: 19
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 135
+  controlID: 145
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 479
     height: 458
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 85648
+  m_LastSelectedObjectID: -100294
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -508,9 +508,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d2640100
-      m_LastClickedID: 91346
-      m_ExpandedIDs: 82bdfeff80c0feffc8c0feff0ac1feffe2c4feff2ec6feff4cc7feff96ccfeff0ecffeff5cd1fefffaeafeff9aebfeff82edfeff8ceffeffb8f2feff60f3feff0af4feff6ef4feffc6f4feffb8f5feffb8fafeffe003ffff8806ffff020cffffd00dffff180fffff201effff5622ffffd833ffff2048ffff9e4dffffe04dffff264effff924fffff5852ffff9a53ffff0c58ffffd660ffff4862ffff8a62ffffe664ffffd468ffff5a6fffff4070ffff7471ffff7072ffff0e73ffff6474ffff3e75ffff8475ffffd276ffffc078ffff0879ffff4c79ffff8c79ffffe67cffff347dffff4e7effff927effffda7effff1e7fffff4080ffff26fbfffff4ffffff325e0000645e00008a5e0000a85e0000ac5e0000b45e0000f85e000054c90000fac90000dad7000012d8000038d800005ed8000064d80000b8d8000062e200008ee20000e2e2000096ec0000bcec00003ced0000f8f2000004f70000aaf70000fa0c0100200d01004c0d0100a00d0100b81801005e190100c01c0100e61c0100621d0100661d0100b227010058280100d22e0100f82e0100782f01007e350100a4350100ca35010024360100b83901005e3a0100663b01000c3c0100383e01007a3e0100e8410100084c0100b84c0100904e0100404f01006455010076550100265601006665010016660100
+      m_SelectedIDs: ca9ffeff
+      m_LastClickedID: -90166
+      m_ExpandedIDs: 5c87feffae9ffeffbe9ffeffca9ffeff32b0feff7eb0feffa8b7feffd4bafeffaebffeff68f7feffaef7feffd811ffffec15ffffd616ffff6c1cffffaa1cffffb620ffffa421ffff9623ffffda23ffff9026ffffd426ffff242cffff0c2dffffa42effff8a2fffff7430ffff7033ffffb233ffff3e34ffff2e35ffffa63fffffd040ffff1a45ffff5c45ffff7449ffff4488ffffda94ffff8295ffff30affffff4b0ffff68c0ffffecc0ffff5cceffff5edeffffacdeffff52ebffff0eedffff4eeeffff2ef0ffff46f2ffff2cf3ffffa6f7ffff26fbfffff4fffffff47a0000247b0000367b00005c7b0000827b0000887b0000e67b000038940000a2970000e49700000c9800003098000092980000649c00008c9c0000129d0000baaa00008cae0000ceae0000b0b00000fcb5000000b700002cb8000046bd000084c100008cc10000a6c1000060ca000068ca000096ca000008ef00003ef000007c02010018030100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -615,8 +615,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/01.UnityProject/Scenes
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -630,7 +629,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 585e0000
     m_LastClickedID: 24152
-    m_ExpandedIDs: 000000004a620000bc650000be650000c0650000c2650000c4650000c6650000c8650000ca650000cc650000ce650000d0650000d2650000d4650000
+    m_ExpandedIDs: 000000005a5e00005c5e00005e5e0000605e0000625e0000645e0000665e0000685e00006a5e00006c5e00006e5e0000705e0000725e0000745e0000765e0000785e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -655,24 +654,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 764}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000bc650000be650000c0650000c2650000c4650000c8650000ca650000cc650000ce650000d0650000d2650000d465000090a200002cb00000d8f700000e420100
+    m_ExpandedIDs: ffffffff000000005a5e00005c5e00005e5e0000605e0000625e0000645e0000665e00006c5e00006e5e0000705e0000725e0000765e0000785e0000127a00002ca8000048a8000038b90000c0c1000002160100061601000a16010046160100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: EquipBtn
+      m_OriginalName: EquipBtn
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 72664
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -994,9 +993,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.14877155, y: -0.0021431558, z: -0.03643723}
+    m_Target: {x: 465.78647, y: 238.83319, z: -3.1532025}
     speed: 2
-    m_Value: {x: -0.14877155, y: -0.0021431558, z: -0.03643723}
+    m_Value: {x: 465.78647, y: 238.83319, z: -3.1532025}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1047,9 +1046,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.919389
+    m_Target: 228.44489
     speed: 2
-    m_Value: 5.919389
+    m_Value: 228.44489
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1105,7 +1104,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - C:\KJH\AdvBar\Develop\AdventureBarStory\Library\PlayModeViewStates\7292d960411416f4498b9efc78f89067
+  - C:\KJH\AdvBar\Develop\AdventureBarStory\Library\PlayModeViewStates\56fc35f486289344ca32edbe07aaf4f9
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -1137,7 +1136,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1

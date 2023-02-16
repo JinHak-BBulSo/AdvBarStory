@@ -10,6 +10,8 @@ public class OpeningBtn : MonoBehaviour
     void Start()
     {
         selectBtn = GFunc.GetRootObj("UiObjs").FindChildObj("OpeningSelect");
+
+        if (EventManager.instance.gameEvents[0].isFinish) selectBtn.SetActive(false);
     }
     public void OnClickOpeningStart()
     {

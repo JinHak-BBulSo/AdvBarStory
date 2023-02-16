@@ -215,6 +215,7 @@ SpriteAtlas:
   - {fileID: 1699313852, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -751087263, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -627818232, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: -1460382691, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -835508947, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1415527840, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -730366445, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -290,7 +291,6 @@ SpriteAtlas:
   - {fileID: -995709350, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -2048973954, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1036663958, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: -1460382691, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -998971208, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1641351016, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1404798794, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -585,6 +585,7 @@ SpriteAtlas:
   - system_332
   - system_331
   - system_330
+  - ScrollBar
   - system_328
   - system_329
   - Receipe
@@ -660,7 +661,6 @@ SpriteAtlas:
   - system_61
   - system_0
   - system_32
-  - system_187
   - system_197
   - system_60
   - system_147
