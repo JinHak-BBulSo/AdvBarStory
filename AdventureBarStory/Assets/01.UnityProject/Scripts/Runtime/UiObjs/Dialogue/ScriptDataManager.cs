@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptDataManager : MonoBehaviour
+public class ScriptDataManager : Singleton<ScriptDataManager>
 {
-    public static ScriptDataManager instance;
     [SerializeField]
     string csvFileName;
 
@@ -12,21 +11,17 @@ public class ScriptDataManager : MonoBehaviour
 
     public static bool isFinish = false;
 
-    private void Awake()
+    public override void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DialogueParser theParser = GetComponent<DialogueParser>();
-            Dialogue[] dialogues = theParser.Parse(csvFileName);
+        base.Awake();
+        DialogueParser theParser = GetComponent<DialogueParser>();
+        Dialogue[] dialogues = theParser.Parse(csvFileName);
 
-            for(int i = 0; i < dialogues.Length; i++)
-            {
-                dialogueDic.Add(i + 1, dialogues[i]);
-            }
-            isFinish = true;
-            DontDestroyOnLoad(gameObject);
+        for (int i = 0; i < dialogues.Length; i++)
+        {
+            dialogueDic.Add(i + 1, dialogues[i]);
         }
+        isFinish = true;
     }
 
     public Dialogue[] GetDialogue(int StartNum, int EndNum)

@@ -1,20 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-public class Inventory : MonoBehaviour
+public class Inventory : Singleton<Inventory>
 {
-    public static Inventory instance = default;
-    public List<(Item, int)> itemList = new List<(Item, int)>();
+    public List<int> itemAmountList = new List<int>();
     public List<Item> haveItems = new List<Item>();
+
+    public List<Item> allItems = new List<Item>();
     
-    private void Awake()
+    public override void Awake()
     {
-        if (instance == null)
+        base.Awake();
+        //µð¹ö±×
+        foreach(Item item in allItems)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            GetItem(item);
         }
     }
 
@@ -23,14 +26,12 @@ public class Inventory : MonoBehaviour
         if (haveItems.Contains(_item))
         {
             int idx = haveItems.IndexOf(_item);
-            itemList[idx] = (_item, itemList[idx].Item2 + 1);
-            Debug.Log(itemList[idx].Item2);
+            itemAmountList[idx]++;
         }
         else
         {          
             haveItems.Add(_item);
-            itemList.Add((_item, 1));
-            Debug.Log(itemList[haveItems.IndexOf(_item)].Item2);
+            itemAmountList.Add(1);
         }
     }
 
