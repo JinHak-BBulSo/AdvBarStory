@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    GameObject itemUI = default;
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickMenuBtn()
     {
-        
+        itemUI.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

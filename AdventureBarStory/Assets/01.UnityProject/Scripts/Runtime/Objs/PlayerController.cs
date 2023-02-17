@@ -9,11 +9,15 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 5f;
 
-    void Start()
+    void Awake()
     {
         playerAni = GetComponent<Animator>();
         playerRigid = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        
     }
 
     void Update()

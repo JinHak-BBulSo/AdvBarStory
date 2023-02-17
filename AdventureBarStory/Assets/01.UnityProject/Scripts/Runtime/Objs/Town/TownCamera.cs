@@ -11,9 +11,10 @@ public class TownCamera : MonoBehaviour
 
     private GameObject player = default;
 
-    private void Awake()
+    private void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerManager").FindChildObj("Player");
+        player.SetActive(true);
         Camera.main.transform.position = new Vector3(0, player.transform.position.y, -10);
     }
 
