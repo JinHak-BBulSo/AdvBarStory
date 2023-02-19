@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour
+public class TownPortal : MonoBehaviour
 {
     GameObject player = default;
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerManager").FindChildObj("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

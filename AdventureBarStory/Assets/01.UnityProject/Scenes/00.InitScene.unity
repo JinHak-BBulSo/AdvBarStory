@@ -1862,8 +1862,9 @@ GameObject:
   - component: {fileID: 1185007132}
   - component: {fileID: 1185007131}
   - component: {fileID: 1185007135}
+  - component: {fileID: 1185007136}
   m_Layer: 5
-  m_Name: PopupObjs
+  m_Name: InitObjs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1964,6 +1965,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1380afb4600f149a192bde5492be3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1185007136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185007130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4cb5b177f74d3408bcda3892e17f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldMapPrefab: {fileID: 8676812431935277021, guid: 55e15f11482c464488789463570b340e, type: 3}
 --- !u!1001 &1220572532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3183,7 +3197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2073405717
 Transform:
   m_ObjectHideFlags: 0

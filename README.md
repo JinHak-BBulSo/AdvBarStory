@@ -19,3 +19,7 @@ issue : 스크립터블 오브젝트를 생성 후 이를 리스트로 관리하
 solution : item에서 amount를 제거, 아이템의 amount를 List<int> itemAmount를 새롭게 생성해 관리.
 
 haveItems의 index와 itemAmount의 index를 동일하게 1 : 1 매칭시켜서 관리하며, 이는 item Slot에도 정보를 저장해 둠
+
+- 2023-02-17 Stage1 Portal 세팅, 아이템 tag에 따른 인벤토리 목록별 출력 구현
+
+- 2023-02-19 Stage1 및 Battle Field Set

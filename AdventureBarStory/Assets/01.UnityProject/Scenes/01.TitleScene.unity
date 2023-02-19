@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 238377505}
   - component: {fileID: 238377507}
   - component: {fileID: 238377508}
+  - component: {fileID: 238377509}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -610,6 +611,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdd2152b52e02343b5334d9f1af8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &238377509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238377503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62eadea52bda594f91ee635c49c17b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 2
 --- !u!1 &508015937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1283,7 @@ GameObject:
   - component: {fileID: 1008376915}
   - component: {fileID: 1008376914}
   - component: {fileID: 1008376916}
+  - component: {fileID: 1008376917}
   m_Layer: 5
   m_Name: OptionBtn
   m_TagString: Untagged
@@ -1378,6 +1393,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1008376917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008376912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62eadea52bda594f91ee635c49c17b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 2
 --- !u!1 &1021420385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1779,7 @@ GameObject:
   - component: {fileID: 1476054785}
   - component: {fileID: 1476054787}
   - component: {fileID: 1476054788}
+  - component: {fileID: 1476054789}
   m_Layer: 5
   m_Name: ClosedBtn
   m_TagString: Untagged
@@ -1884,6 +1913,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d54b0719dccae4a9fb1ee49cb85c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1476054789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476054783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62eadea52bda594f91ee635c49c17b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 2
 --- !u!1 &1501905452
 GameObject:
   m_ObjectHideFlags: 0

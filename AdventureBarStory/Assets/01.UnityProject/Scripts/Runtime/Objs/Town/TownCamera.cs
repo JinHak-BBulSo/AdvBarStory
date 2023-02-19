@@ -3,27 +3,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TownCamera : MonoBehaviour
+public class TownCamera : MoveCamera
 {
     public bool isInBar = true;
     public bool isInStreet = false;
     public bool isInShop = false;
 
-    private GameObject player = default;
-
-    private void Start()
-    {
-        player = GameObject.Find("PlayerManager").FindChildObj("Player");
-        player.SetActive(true);
-        Camera.main.transform.position = new Vector3(0, player.transform.position.y, -10);
-    }
-
     void Update()
     {
-        CameraMove();
+        OnCameraMove();
     }
 
-    void CameraMove()
+    public override void OnCameraMove()
     {
         if (isInBar)
         {

@@ -1251,7 +1251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battlePtr1
+      name: Cursor1
       rect:
         serializedVersion: 2
         x: 296
@@ -1272,7 +1272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battlePtr2
+      name: Cursor2
       rect:
         serializedVersion: 2
         x: 311
@@ -1293,7 +1293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battlePtr3
+      name: Cursor3
       rect:
         serializedVersion: 2
         x: 326
@@ -1713,7 +1713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battlePtr4
+      name: Cursor4
       rect:
         serializedVersion: 2
         x: 341
@@ -7880,6 +7880,7 @@ TextureImporter:
       system_85: -296617829
       system_179: 1462318664
       system_86: 1169888195
+      Cursor4: -621608185
       system_269: 871795954
       system_158: -1499642340
       Attack: 391633086
@@ -7902,6 +7903,7 @@ TextureImporter:
       system_333: -1075149198
       system_41: -824352964
       system_74: -734875097
+      Cursor2: 1225201086
       system_346: 572116647
       system_77: -1277369612
       system_287: -790042991
@@ -7941,17 +7943,15 @@ TextureImporter:
       system_50: -738191717
       system_310: 981509174
       system_283: -1037468303
-      battlePtr4: -621608185
       system_8: -834255176
       system_191: -556935417
       system_250: 1399373231
-      battlePtr2: 1225201086
+      GameUIBg2: 1300477431
       HP: 1658070815
       system_168: 1424334967
       system_286: 1244747612
       system_304: 1871005416
       system_338: 713206813
-      GameUIBg2: 1300477431
       system_34: 331556554
       system_335: 874405915
       system_356: -1182477402
@@ -8064,6 +8064,7 @@ TextureImporter:
       system_135: -483732889
       system_360: -934460208
       system_265: 433939277
+      Cursor3: 1746880622
       system_66: -1829030415
       system_280: 613395877
       system_14: -989914689
@@ -8145,6 +8146,7 @@ TextureImporter:
       system_194: 1907633251
       system_110: 1262759022
       system_166: 135935969
+      Cursor1: -853082289
       system_279: 1847099633
       system_151: 280455382
       system_82: 1007829531
@@ -8189,7 +8191,6 @@ TextureImporter:
       system_296: -312893167
       system_107: 350321708
       system_238: -605426060
-      battlePtr1: -853082289
       system_367: -158457661
       system_36: 750654217
       system_80: 303613721
@@ -8208,7 +8209,6 @@ TextureImporter:
       system_0: -2048973954
       system_319: -746368677
       system_145: -1090868078
-      battlePtr3: 1746880622
       system_268: 1016533271
       system_120: -126529261
       ScrollBar: -1460382691

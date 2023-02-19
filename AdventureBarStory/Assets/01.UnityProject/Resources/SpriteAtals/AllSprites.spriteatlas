@@ -137,6 +137,10 @@ SpriteAtlas:
   - {fileID: -91699008, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -114511355, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -126529261, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: -621608185, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: 1746880622, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: 1225201086, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: -853082289, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 964405903, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1672983298, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1189887073, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -355,10 +359,6 @@ SpriteAtlas:
   - {fileID: 1312508057, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 590589536, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 227784316, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: 1746880622, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: 1225201086, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: -853082289, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: -621608185, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1863747133, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1300477431, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -197761806, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -507,6 +507,10 @@ SpriteAtlas:
   - system_122
   - system_123
   - system_120
+  - Cursor4
+  - Cursor3
+  - Cursor2
+  - Cursor1
   - playerFred
   - BackBtn
   - dayMonth
@@ -725,10 +729,6 @@ SpriteAtlas:
   - Max
   - battleTileFill
   - ScriptUi
-  - battlePtr3
-  - battlePtr2
-  - battlePtr1
-  - battlePtr4
   - OKBtn
   - GameUIBg2
   - GameUIBg1

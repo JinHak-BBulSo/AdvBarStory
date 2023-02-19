@@ -7,10 +7,13 @@ public class TitleEffect : MonoBehaviour
 {
     public float delayTime = 0f;
     float rgb = 0;
+    Image objImage = default;
     
     void Start()
     {
-        gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        objImage = GetComponent<Image>();
+        objImage.raycastTarget = false;
+        objImage.color = new Color(1, 1, 1, 0);
         Invoke("Delay", delayTime);
     }
 
@@ -20,11 +23,12 @@ public class TitleEffect : MonoBehaviour
     }
     IEnumerator ColorChange()
     {
-        while (rgb != 1)
+        while (rgb < 1)
         {
             yield return new WaitForSeconds(0.05f);
-            gameObject.GetComponent<Image>().color = new Color(1, 1, 1, rgb);
+            objImage.color = new Color(1, 1, 1, rgb);
             rgb += 0.1f;
         }
+        objImage.raycastTarget = true;
     }
 }

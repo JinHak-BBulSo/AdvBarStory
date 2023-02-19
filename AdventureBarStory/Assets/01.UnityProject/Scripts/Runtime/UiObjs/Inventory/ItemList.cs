@@ -31,7 +31,7 @@ public class ItemList : MonoBehaviour
             slotList[i].SetActive(false);
         }
 
-        menu = GameObject.Find("PopupObjs").FindChildObj("Menu");
+        menu = GameObject.Find("InitObjs").FindChildObj("Menu");
     }
 
     public void OnClickEquipBtn()
