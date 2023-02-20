@@ -23,3 +23,18 @@ haveItems의 index와 itemAmount의 index를 동일하게 1 : 1 매칭시켜서 
 - 2023-02-17 Stage1 Portal 세팅, 아이템 tag에 따른 인벤토리 목록별 출력 구현
 
 - 2023-02-19 Stage1 및 Battle Field Set
+- 2023-02-20 Battle Create 중
+  
+  issue : OK 및 Back, Cancel 버튼의 구현에 대해 설계를 어떻게 할 것인가
+  
+  플레이어의 턴마다의 동작, 상정의 아이템 구입 등 OK 및 Back, Cancel 버튼이 주로 사용된다.
+  
+  그러나 이것은 각각의 상황에 따라 동작이 다르다.
+  
+  이에 대한 구현을 어떤 방식으로 설계해야 하는가?
+  
+  solution : delegate를 통한 해결을 생각중에 있음
+  
+  클릭시 메서드를 연결시키며, cancel 혹은 back 버튼을 클릭 시 동작 후 연결을 해제하는 방법을 구상 중.
+  
+  다음날 구현을 해볼 
