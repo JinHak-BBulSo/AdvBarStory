@@ -1990,8 +1990,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 120
-        y: 308
-        width: 72
+        y: 310
+        width: 71
         height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2868,13 +2868,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system_131
+      name: battleTileFIll
       rect:
         serializedVersion: 2
         x: 144
-        y: 281
-        width: 24
-        height: 24
+        y: 272
+        width: 71
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3465,7 +3465,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 45, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3582,13 +3582,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system_165
+      name: battleCharImgSlot
       rect:
         serializedVersion: 2
-        x: 456
-        y: 257
-        width: 24
-        height: 24
+        x: 449
+        y: 245
+        width: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4044,7 +4044,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ScrollBar
+      name: ScrollBg
       rect:
         serializedVersion: 2
         x: 496
@@ -5229,7 +5229,7 @@ TextureImporter:
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 3, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -6354,13 +6354,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battleTileFill
+      name: battleTileFill2
       rect:
         serializedVersion: 2
         x: 112
-        y: 69
-        width: 72
-        height: 36
+        y: 70
+        width: 70
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7887,7 +7887,6 @@ TextureImporter:
       system_18: 674086696
       system_102: 924639184
       BackBtn: -1672983298
-      battleTileFill: 590589536
       system_320: 626354915
       system_204: -1791800051
       battleTile: 2071625723
@@ -7905,6 +7904,7 @@ TextureImporter:
       system_74: -734875097
       Cursor2: 1225201086
       system_346: 572116647
+      battleTileFIll: 1323283228
       system_77: -1277369612
       system_287: -790042991
       system_307: -325245787
@@ -8003,9 +8003,9 @@ TextureImporter:
       system_264: 1918552215
       MoveBtn: 1623360183
       system_104: -400705081
+      system_324: -646957926
       system_100: 1711302169
       system_252: -482252973
-      system_324: -646957926
       system_47: 1374249263
       system_270: -1042932148
       system_3: 2064725425
@@ -8031,7 +8031,6 @@ TextureImporter:
       system_190: 733364430
       system_33: 770443528
       system_134: -135449126
-      system_131: 1323283228
       system_130: 356626075
       system_71: 1059816032
       system_290: -1264383560
@@ -8051,6 +8050,7 @@ TextureImporter:
       system_358: 1792339570
       system_40: 1734140383
       system_230: -384391638
+      ScrollBg: -1460382691
       system_282: -616293264
       system_181: 773878583
       system_274: 1762516394
@@ -8115,6 +8115,7 @@ TextureImporter:
       SliderBt: -968125490
       system_349: 69933992
       system_302: 1012250208
+      battleCharImgSlot: -1081301872
       system_1: 1003617348
       system_113: 2035984301
       system_298: -1832899020
@@ -8165,10 +8166,9 @@ TextureImporter:
       ScriptUi: 227784316
       system_276: -1630058662
       system_108: -1444213217
-      system_165: -1081301872
+      system_355: 1351656443
       system_51: 972060569
       system_205: -1241241156
-      system_355: 1351656443
       system_291: -1695145432
       system_65: -160939085
       system_30: 1452506142
@@ -8211,7 +8211,6 @@ TextureImporter:
       system_145: -1090868078
       system_268: 1016533271
       system_120: -126529261
-      ScrollBar: -1460382691
       system_329: -1415527840
       system_182: -791805360
       system_87: 477204722
@@ -8232,6 +8231,7 @@ TextureImporter:
       system_366: 450932793
       system_325: -88070949
       system_246: -390364994
+      battleTileFill2: 590589536
       system_350: 1853855530
       system_272: -1259047835
       system_281: 1513174306

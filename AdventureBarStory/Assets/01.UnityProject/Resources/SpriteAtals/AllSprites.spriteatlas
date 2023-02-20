@@ -217,9 +217,9 @@ SpriteAtlas:
   - {fileID: -806325120, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1075149198, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1699313852, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: 590589536, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -751087263, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -627818232, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: -1460382691, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -835508947, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1415527840, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -730366445, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -353,12 +353,11 @@ SpriteAtlas:
   - {fileID: 1818313773, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -688906415, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1554733457, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: -1081301872, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1248417709, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1480708789, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1312508057, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
-  - {fileID: 590589536, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 227784316, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: -1081301872, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -1863747133, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1300477431, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -197761806, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -366,6 +365,7 @@ SpriteAtlas:
   - {fileID: -542538384, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 696412676, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: 1339846886, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
+  - {fileID: -1460382691, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -968125490, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -831630997, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
   - {fileID: -802766894, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
@@ -479,7 +479,7 @@ SpriteAtlas:
   - system_40
   - system_58
   - system_59
-  - system_131
+  - battleTileFIll
   - system_49
   - system_130
   - system_48
@@ -587,9 +587,9 @@ SpriteAtlas:
   - system_323
   - system_333
   - system_332
+  - battleTileFill2
   - system_331
   - system_330
-  - ScrollBar
   - system_328
   - system_329
   - Receipe
@@ -723,12 +723,11 @@ SpriteAtlas:
   - system_177
   - system_164
   - system_176
-  - system_165
   - system_171
   - system_173
   - Max
-  - battleTileFill
   - ScriptUi
+  - battleCharImgSlot
   - OKBtn
   - GameUIBg2
   - GameUIBg1
@@ -736,6 +735,7 @@ SpriteAtlas:
   - system_234
   - system_235
   - system_229
+  - ScrollBg
   - SliderBt
   - Skill
   - system_232

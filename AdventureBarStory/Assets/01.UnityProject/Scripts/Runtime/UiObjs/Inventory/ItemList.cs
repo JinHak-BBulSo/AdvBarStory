@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ItemList : MonoBehaviour
 {
-    List<GameObject> itemList = default;
     [SerializeField]
     public List<GameObject> slotList = default;
     public List<TMP_Text> slotTextList = default;

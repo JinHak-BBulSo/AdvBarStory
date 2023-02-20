@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour
 
     void Start()
     {
-        tooltipTxt = GameObject.Find("PopupObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
+        tooltipTxt = GameObject.Find("InitObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
     }
 
     public void OnClickSlot()
