@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3d52cc7a4e0e8418a225c6edb0569a, type: 3}
+  m_Name: Rat
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 9100000, guid: d0d1b36e44a443d4daeb8e736ddf3f77, type: 2}
+  monsterSprite: {fileID: 198875578, guid: 29307cee31ee0fb4d85d4ca756309174, type: 3}
+  _str: 25
+  _vit: 15
+  _int: 10
+  _men: 10
+  _agi: 28
+  _hit: 60
+  _avd: 30
+  _luk: 10
+  hp: 90
+  mp: 20

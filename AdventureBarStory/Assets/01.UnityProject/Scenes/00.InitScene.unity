@@ -2420,7 +2420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354102028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 394.9343, y: 233.43347, z: -0.92461205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2439,10 +2439,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659bcb7eab61a1c44ac308ff32df45f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleObjsPrefab: {fileID: 8330057155819705142, guid: 7b0f9f6addfd44741819410b3846b040, type: 3}
+  battleObjs: {fileID: 0}
   battleBgSprite:
   - {fileID: 21300000, guid: f0701b80becd9d845b2fe444886e6f85, type: 3}
   - {fileID: 21300000, guid: 85bdd52af09800a4c8bd520ce74195ae, type: 3}
   - {fileID: 21300000, guid: 2011f73f9a8bf2741b7a4462b06ca303, type: 3}
+  monsters: []
+  players: []
+  isTurnStart: 0
+  monsterIndex: 0
+  nowTurnCharacter: {fileID: 0}
+  nowTurnPlayer: {fileID: 0}
+  nowTurnMonster: {fileID: 0}
+  monsterSlot: []
+  monsterStatuses:
+  - {fileID: 11400000, guid: ab924939423425f41bf8328f1039f88d, type: 2}
+  - {fileID: 11400000, guid: accf1b18a3718bc4992fa8c7eddb0fd4, type: 2}
+  - {fileID: 11400000, guid: e6995fc2d6a8a35488d48e184f891268, type: 2}
+  monsterPos:
+  - {x: -200, y: 106}
+  - {x: -300, y: 56}
+  - {x: -400, y: 6}
+  - {x: -100, y: 56}
+  - {x: -200, y: 6}
+  - {x: -300, y: -44}
 --- !u!1001 &1456090373
 PrefabInstance:
   m_ObjectHideFlags: 0

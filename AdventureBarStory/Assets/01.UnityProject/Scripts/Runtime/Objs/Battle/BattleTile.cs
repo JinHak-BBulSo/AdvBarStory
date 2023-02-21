@@ -25,7 +25,13 @@ public class BattleTile : MonoBehaviour, ISelectHandler , IDeselectHandler
     public void OnSelect(BaseEventData eventData)
     {
         battleCursor.GetRect().anchoredPosition = gameObject.GetRect().anchoredPosition + cursorOffset;
-        battleCursor.GetComponent<BattleCursor>().battleTile = GetComponent<BattleTile>();
+        BattleCursor.battleTile = GetComponent<BattleTile>();
+        fillTile.SetActive(true);
+    }
+    public void OnSelect()
+    {
+        battleCursor.GetRect().anchoredPosition = gameObject.GetRect().anchoredPosition + cursorOffset;
+        BattleCursor.battleTile = GetComponent<BattleTile>();
         fillTile.SetActive(true);
     }
 
@@ -33,9 +39,17 @@ public class BattleTile : MonoBehaviour, ISelectHandler , IDeselectHandler
     {
         fillTile.SetActive(false);
     }
+    public void OnDeselect()
+    {
+        fillTile.SetActive(false);
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         onTileObject = collision.gameObject;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        onTileObject = default;
     }
 }

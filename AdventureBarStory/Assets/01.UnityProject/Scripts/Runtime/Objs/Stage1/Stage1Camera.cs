@@ -12,6 +12,7 @@ public class Stage1Camera : MoveCamera
     {
         base.Start();
         player.transform.position = new Vector3(-5f, -3.5f, 0);
+        BattleManager.instance.BattleStart();
     }
 
     void Update()

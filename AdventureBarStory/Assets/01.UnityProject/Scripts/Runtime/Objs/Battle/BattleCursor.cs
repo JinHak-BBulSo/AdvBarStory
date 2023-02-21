@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class BattleCursor : MonoBehaviour
 {
-    public BattleTile battleTile = default;
-
+    public static BattleTile battleTile = default;
 }

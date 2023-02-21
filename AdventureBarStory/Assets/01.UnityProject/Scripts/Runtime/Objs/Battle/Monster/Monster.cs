@@ -7,6 +7,11 @@ public class Monster : Character
     private List<GameObject> playerParty = new List<GameObject>();
     private GameObject playerObjs = default;
 
+    void OnEnable()
+    {
+        
+    }
+
     void Start()
     {
         playerObjs = GameObject.Find("BattleObjs").FindChildObj("PlayerObjs");
@@ -16,22 +21,18 @@ public class Monster : Character
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public override void StatusSet()
+    public override void Attack()
     {
-        base.StatusSet();
-        status.mp = 0;
-        status.hp = 50;
-        status._str = 15;
-        status._vit = 15;
-        status._int = 0;
-        status._men = 15;
-        status._agi = 15;
-        status._luk = 15;
+        int ran = Random.Range(0, 2 + 1);
+        Player targetPlayer = playerParty[ran].GetComponent<Player>();
+        targetPlayer.Hit(status._hit);
+        BattleCursor.battleTile = targetPlayer.onTileData;
+        BattleCursor.battleTile.OnSelect();
+        StartCoroutine(TurnFinish());
     }
 }
