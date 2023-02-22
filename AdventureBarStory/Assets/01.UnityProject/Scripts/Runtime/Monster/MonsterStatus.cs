@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class MonsterStatus : ScriptableObject
 {
-    public AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
     public Sprite monsterSprite;
 
     public int _str;

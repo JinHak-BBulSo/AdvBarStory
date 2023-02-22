@@ -72,6 +72,7 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     {
         isDie = true;
         StopAllCoroutines();
+        gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         gameObject.SetActive(false);
     }
 

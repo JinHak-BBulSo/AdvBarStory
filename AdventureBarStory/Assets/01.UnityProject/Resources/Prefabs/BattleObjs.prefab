@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4343118105310178157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
     _luk: 0
     hp: 0
     mp: 0
+  nowHp: 0
 --- !u!61 &3356484606232548774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5774883682616123022
 RectTransform:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
     _luk: 0
     hp: 0
     mp: 0
+  nowHp: 0
 --- !u!61 &7749721532368200153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -675,6 +677,7 @@ MonoBehaviour:
     _luk: 0
     hp: 0
     mp: 0
+  nowHp: 0
 --- !u!61 &6727687510636068427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -895,6 +898,7 @@ MonoBehaviour:
     _luk: 0
     hp: 0
     mp: 0
+  nowHp: 0
 --- !u!61 &7723655285693043688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1002,7 +1006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7454654665449282789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1055,7 +1059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6440005415096593692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1783,7 +1787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8330057155385413715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2448,7 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3751c8e94cf6e4da3968f91e0a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleBtnObjs: {fileID: 0}
+  battleActionObjs: {fileID: 0}
   okBtn: {fileID: 0}
   cancelBtn: {fileID: 0}
 --- !u!1 &8330057155869130582
@@ -2933,6 +2937,7 @@ MonoBehaviour:
     _luk: 25
     hp: 45
     mp: 31
+  nowHp: 0
   exp: 0
   level: 1
 --- !u!1 &8330057156107580772
@@ -3303,6 +3308,7 @@ MonoBehaviour:
     _luk: 28
     hp: 66
     mp: 22
+  nowHp: 0
   exp: 0
   level: 1
 --- !u!1 &8330057156724128849
@@ -3519,6 +3525,7 @@ MonoBehaviour:
     _luk: 25
     hp: 55
     mp: 74
+  nowHp: 0
   exp: 0
   level: 1
 --- !u!1 &8330057156820140554

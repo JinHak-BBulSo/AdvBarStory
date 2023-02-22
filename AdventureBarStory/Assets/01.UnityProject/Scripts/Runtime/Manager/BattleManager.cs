@@ -30,6 +30,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public bool isTurnStart = false;
 
     public int monsterIndex = 0;
+    public int playerIndex = 0;
 
     public Character nowTurnCharacter = default;
     public Player nowTurnPlayer = default;
@@ -61,6 +62,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         for(int i = 0; i < monsterObjs.transform.childCount; i++)
         {
             monsterSlot.Add(monsterObjs.transform.GetChild(i).gameObject);
+            monsterSlot[i].transform.GetChild(0).gameObject.SetActive(false);
             monsters.Add(monsterSlot[i].transform.GetChild(0).GetComponent<Monster>());
         }
 
@@ -90,6 +92,11 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         if(isBattleStart && monsterIndex == 0)
         {
             Win();
+        }
+
+        if(isBattleStart && playerIndex == 0)
+        {
+            Defeat();
         }
     }
 
@@ -125,10 +132,15 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     void TurnStart()
     {
         BattleCursor.battleTile = nowTurnCharacter.onTileData;
-        BattleCursor.battleTile.OnSelect();
+        BattleCursor.battleTile.OnSelect();  
 
         if (nowTurnCharacter.gameObject.tag == "Player")
         {
+            for (int i = 0; i < battleTileObjs.transform.childCount; i++)
+            {
+                battleTile[i].GetComponent<Button>().enabled = false;
+            }
+
             gameObject.FindChildObj("BattleActionBtns").SetActive(true);
             nowTurnPlayer = turnReadyPlayer.Dequeue();
         }
@@ -149,13 +161,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public void BattleStart()
     {
         MonsterSet();
-        battleObjs.SetActive(true);
-        for(int i = 0; i < monsterIndex; i++)
-        {
-            monsterSlot[i].SetActive(true);
-        }
+        PlayerSet();
 
         isBattleStart = true;
+        battleObjs.SetActive(true);
     }
 
     public void MonsterSet()
@@ -168,19 +177,50 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             {
                 int monsterId = Random.Range(0, 2 + 1);
                 monsterSlot[i].GetComponent<MonsterSlot>().SetMonster(monsterStatuses[monsterId]);
+                monsterSlot[i].transform.GetChild(0).gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void PlayerSet()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].isDie) players[i].gameObject.SetActive(false);
+            else
+            {
+                playerIndex++;
+                players[i].turnGuage = 0;
+                players[i].gameObject.SetActive(true);
             }
         }
     }
 
     public void Win()
     {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].turnGuage = 0;
+        }
+
+        turnReadyCharacter.Clear();
+        turnReadyMonster.Clear();
+        turnReadyPlayer.Clear();
+
+        nowTurnCharacter = default;
+        nowTurnPlayer = default;
+        nowTurnMonster = default;
+
+        playerIndex = 0;
         battleObjs.SetActive(false);
+        isTurnStart = false;
         isBattleStart = false;
     }
 
     public void Defeat()
     {
-
+        isBattleStart = false;
+        isTurnStart = false;
     }
 
     public void GetRanIndex(int num)

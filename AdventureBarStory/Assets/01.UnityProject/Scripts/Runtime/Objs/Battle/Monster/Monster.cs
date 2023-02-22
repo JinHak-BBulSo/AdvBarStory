@@ -28,8 +28,8 @@ public class Monster : Character
 
     public override void Attack()
     {
-        int ran = Random.Range(0, 2 + 1);
-        Player targetPlayer = playerParty[ran].GetComponent<Player>();
+        int playerId = TargetSelect();
+        Player targetPlayer = playerParty[playerId].GetComponent<Player>();
         targetPlayer.Hit(status._hit);
         BattleCursor.battleTile = targetPlayer.onTileData;
         BattleCursor.battleTile.OnSelect();
@@ -40,5 +40,16 @@ public class Monster : Character
     {
         BattleManager.instance.monsterIndex--;
         base.Die();
+    }
+
+    public int TargetSelect()
+    {
+        while (true)
+        {
+            int ran = Random.Range(0, 2 + 1);
+            Player targetPlayer = playerParty[ran].GetComponent<Player>();
+
+            if (!targetPlayer.isDie) return ran;
+        }
     }
 }

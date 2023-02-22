@@ -39,3 +39,11 @@ issue : 스크립터블 오브젝트를 생성 후 이를 리스트로 관리하
 - 2023-02-21 Simple Battle Create. 매우 간단한 로직의 전투 구현
 
   3종류의 몬스터를 2~4의 랜덤한 숫자로 생성. 및 턴 회복속도에 따른 순차적 동작을 확인
+
+- 2023-02-22 Build 과정에서 오류 발생
+
+issue : Script updater for Library\Bee\artifacts\1900b0aP.dag\Assembly-CSharp.dll failed to produce updates.txt file 라는 에러 발생
+
+summary : editor 에러로 추정. 확인 결과 Animations라는 이름의 namespace를 찾지 못해 발생하는 에러
+
+AnimatorController 클래스를 사용하기 위해 using Animations를 하였으나, 이를 찾이 못해 발생한 에러.

@@ -2439,6 +2439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659bcb7eab61a1c44ac308ff32df45f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBattleStart: 0
   battleObjsPrefab: {fileID: 8330057155819705142, guid: 7b0f9f6addfd44741819410b3846b040, type: 3}
   battleObjs: {fileID: 0}
   battleBgSprite:

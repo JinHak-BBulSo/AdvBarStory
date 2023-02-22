@@ -14,7 +14,6 @@ public class BattleEncounter : MonoBehaviour
             isCollisionAble = false;
             StartCoroutine(ResetCollisionDelay());
 
-            Debug.Log("호출되나 확인");
             int ran = Random.Range(0, 100 + 1);
 
             if (ran <= 15 && !BattleManager.instance.isBattleStart)

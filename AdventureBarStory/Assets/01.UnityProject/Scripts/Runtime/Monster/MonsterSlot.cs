@@ -10,11 +10,11 @@ public class MonsterSlot : MonoBehaviour
     [SerializeField]
     Monster monster = default;
     public MonsterStatus slotMonsterStatus = default;
-/*    void OnEnable()
+
+    private void Awake()
     {
-        slotMonster = transform.GetChild(0).gameObject;
-        monster = slotMonster.GetComponent<Monster>();
-    }*/
+        
+    }
 
     public void SetMonster(MonsterStatus _monster)
     {
@@ -36,5 +36,8 @@ public class MonsterSlot : MonoBehaviour
 
         monster.gameObject.GetComponent<Image>().sprite = _monster.monsterSprite;
         monster.GetComponent<Animator>().runtimeAnimatorController = _monster.animatorController;
+
+        monster.isDie = false;
+        monster.turnGuage = 0;
     }
 }
