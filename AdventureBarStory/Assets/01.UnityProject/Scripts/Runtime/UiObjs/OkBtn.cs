@@ -9,8 +9,8 @@ public class OkBtn : MonoBehaviour, IOKBtnHandler
 
     public void OnOkBtnClick()
     {
+        if (clickOkBtn == default) return;
         clickOkBtn();
-        Debug.Log("??");
         clickOkBtn = default;
     }
 }

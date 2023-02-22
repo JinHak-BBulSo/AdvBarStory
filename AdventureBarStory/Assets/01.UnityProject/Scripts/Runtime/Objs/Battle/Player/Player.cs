@@ -6,6 +6,7 @@ public class Player : Character
 {
     public int exp = 0;
     public int level = 1;
+
     void Start()
     {
         
@@ -19,7 +20,7 @@ public class Player : Character
 
     public override void Attack()
     {
-        if (BattleCursor.battleTile != default)
+        if (BattleCursor.battleTile.onTileObject != default)
         {
             BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(status._hit);
             StartCoroutine(TurnFinish());

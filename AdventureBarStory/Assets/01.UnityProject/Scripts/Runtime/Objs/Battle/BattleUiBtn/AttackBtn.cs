@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackBtn : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
 {
     [SerializeField]
-    private GameObject battleBtnObjs = default;
+    private GameObject battleActionObjs = default;
     private Player nowPlayer = default;
     [SerializeField]
     private GameObject okBtn = default;
@@ -14,7 +15,7 @@ public class AttackBtn : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
 
     void Start()
     {
-        battleBtnObjs = transform.parent.parent.gameObject;
+        battleActionObjs = transform.parent.gameObject;
         okBtn = GameObject.Find("BattleObjs").FindChildObj("OkBtn");
         cancelBtn = GameObject.Find("BattleObjs").FindChildObj("CancelBtn");
     }
@@ -29,9 +30,14 @@ public class AttackBtn : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
     public void OnClickAttackBtn()
     {
         OkBtn.clickOkBtn += OnOkBtnClick;
-        battleBtnObjs.SetActive(false);
+        battleActionObjs.SetActive(false);
         okBtn.SetActive(true);
         cancelBtn.SetActive(true);
+
+        for(int i = 0; i < BattleManager.instance.battleTile.Count; i++)
+        {
+            BattleManager.instance.battleTile[i].GetComponent<Button>().enabled = true;
+        }
     }
 
     public void OnBackBtnClick()

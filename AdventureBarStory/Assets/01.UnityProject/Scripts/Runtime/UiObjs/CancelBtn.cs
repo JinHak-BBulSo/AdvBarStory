@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CancelBtn : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class CancelBtn : MonoBehaviour
 
     public void OnCancelBtnClick()
     {
+        for (int i = 0; i < BattleManager.instance.battleTile.Count; i++)
+        {
+            BattleManager.instance.battleTile[i].GetComponent<Button>().enabled = false;
+        }
+
+        BattleCursor.battleTile = BattleManager.instance.nowTurnCharacter.onTileData;
+        BattleCursor.battleTile.OnSelect();
+
         OkBtn.clickOkBtn = default;
         actionBtns.SetActive(true);
     }

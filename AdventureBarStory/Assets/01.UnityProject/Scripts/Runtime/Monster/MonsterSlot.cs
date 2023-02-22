@@ -29,7 +29,9 @@ public class MonsterSlot : MonoBehaviour
         monster.status._hit = _monster._hit;
         monster.status._avd = _monster._avd;
         monster.status._luk = _monster._luk;
+
         monster.status.hp = _monster.hp;
+        monster.nowHp = _monster.hp;
         monster.status.mp = _monster.mp;
 
         monster.gameObject.GetComponent<Image>().sprite = _monster.monsterSprite;

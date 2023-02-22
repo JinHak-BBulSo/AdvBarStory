@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class OutputScript : MonoBehaviour
 {
+    private GameObject player = default;
+
     private float scriptDelay = 0.05f;
     private Dialogue[] scriptDialogues = default;
 
@@ -39,6 +41,7 @@ public class OutputScript : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.Find("PlayerManager").FindChildObj("Player");
         nameTxt = gameObject.FindChildObj("NameTxt").GetComponent<TMP_Text>();
         scriptTxt = gameObject.FindChildObj("ScriptTxt").GetComponent<TMP_Text>();
         nameObj = gameObject.FindChildObj("ScriptCharName");
@@ -87,6 +90,7 @@ public class OutputScript : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                     StopAllCoroutines();
+                    player.GetComponent<PlayerController>().enabled = true;
 
                     return;
                 }

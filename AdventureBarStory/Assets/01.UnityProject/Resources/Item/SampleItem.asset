@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: SampleItem
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Sample
   tag: sample
-  toolTip: 
+  toolTip: "\uC0D8\uD50C\uC544\uC774\uD15C"
   itemImage: {fileID: -786549159, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}

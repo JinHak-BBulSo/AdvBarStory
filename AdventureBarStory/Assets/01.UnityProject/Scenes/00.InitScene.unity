@@ -2447,6 +2447,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2011f73f9a8bf2741b7a4462b06ca303, type: 3}
   monsters: []
   players: []
+  battleTile: []
   isTurnStart: 0
   monsterIndex: 0
   nowTurnCharacter: {fileID: 0}

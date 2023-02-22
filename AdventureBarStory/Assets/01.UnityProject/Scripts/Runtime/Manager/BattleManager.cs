@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BattleManager : Singleton<BattleManager>
+public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 {
+    public bool isBattleStart = false;
+
     [SerializeField]
     GameObject battleObjsPrefab = default;
     public GameObject battleObjs = default;
+
     GameObject monsterObjs = default;
     GameObject playerObjs = default;
+    GameObject battleTileObjs = default;
 
     [SerializeField]
     Sprite[] battleBgSprite = default;
 
     public List<Monster> monsters = new List<Monster>();
     public List<Player> players = new List<Player>();
+    public List<GameObject> battleTile = new List<GameObject>();
+
     public Queue<Character> turnReadyCharacter = new Queue<Character>();
     public Queue<Player> turnReadyPlayer = new Queue<Player>();
     public Queue<Monster> turnReadyMonster = new Queue<Monster>();
@@ -44,6 +51,7 @@ public class BattleManager : Singleton<BattleManager>
 
         playerObjs = battleObjs.FindChildObj("PlayerObjs");
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
+        battleTileObjs = battleObjs.FindChildObj("BattleTile");
 
         for (int i = 0; i < playerObjs.transform.childCount; i++)
         {
@@ -54,6 +62,12 @@ public class BattleManager : Singleton<BattleManager>
         {
             monsterSlot.Add(monsterObjs.transform.GetChild(i).gameObject);
             monsters.Add(monsterSlot[i].transform.GetChild(0).GetComponent<Monster>());
+        }
+
+        for(int i = 0; i < battleTileObjs.transform.childCount; i++)
+        {
+            battleTile.Add(battleTileObjs.transform.GetChild(i).gameObject);
+            battleTile[i].GetComponent<Button>().enabled = false;
         }
     }
 
@@ -71,6 +85,11 @@ public class BattleManager : Singleton<BattleManager>
                 nowTurnCharacter = turnReadyCharacter.Dequeue();
                 TurnStart();
             }
+        }
+
+        if(isBattleStart && monsterIndex == 0)
+        {
+            Win();
         }
     }
 
@@ -108,10 +127,9 @@ public class BattleManager : Singleton<BattleManager>
         BattleCursor.battleTile = nowTurnCharacter.onTileData;
         BattleCursor.battleTile.OnSelect();
 
-
         if (nowTurnCharacter.gameObject.tag == "Player")
         {
-            gameObject.FindChildObj("BattleBtnObjs").SetActive(true);
+            gameObject.FindChildObj("BattleActionBtns").SetActive(true);
             nowTurnPlayer = turnReadyPlayer.Dequeue();
         }
         else
@@ -122,7 +140,7 @@ public class BattleManager : Singleton<BattleManager>
         }
     }
 
-    IEnumerator TurnFinish()
+    public IEnumerator TurnFinish()
     {
         yield return new WaitForSeconds(1.5f);
         isTurnStart = false;
@@ -136,20 +154,19 @@ public class BattleManager : Singleton<BattleManager>
         {
             monsterSlot[i].SetActive(true);
         }
+
+        isBattleStart = true;
     }
 
     public void MonsterSet()
     {
         if(GFunc.GetActiveScene().name == "03.Stage1Scene")
         {
-            //monsterIndex = Random.Range(1, 4 + 1);
-            monsterIndex = 4;
+            monsterIndex = Random.Range(1, 4 + 1);
 
             for(int i = 0; i <= monsterIndex - 1; i++)
             {
                 int monsterId = Random.Range(0, 2 + 1);
-                Debug.Log(monsterId);
-                Debug.Log(i);
                 monsterSlot[i].GetComponent<MonsterSlot>().SetMonster(monsterStatuses[monsterId]);
             }
         }
@@ -157,7 +174,8 @@ public class BattleManager : Singleton<BattleManager>
 
     public void Win()
     {
-
+        battleObjs.SetActive(false);
+        isBattleStart = false;
     }
 
     public void Defeat()

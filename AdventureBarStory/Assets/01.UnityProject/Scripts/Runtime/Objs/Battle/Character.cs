@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ITurnFinishHandler
 {
     public float turnRecoverySpeed = 0;
     public float turnGuage = 0;
@@ -14,9 +14,11 @@ public class Character : MonoBehaviour
 
     public Status status = default;
 
-    void Start()
+    public int nowHp;    
+
+    void Awake()
     {
-        
+        nowHp = status.hp;
     }
 
     [System.Serializable]
@@ -43,27 +45,20 @@ public class Character : MonoBehaviour
 
     public virtual void Attack()
     {
-        if(gameObject.tag == "Player")
-        {
-            BattleCursor.battleTile.onTileObject.GetComponent<Player>().Hit(status._str);
-        }
-        else if(gameObject.tag == "Monster")
-        {
-            BattleCursor.battleTile.onTileObject.GetComponent<Monster>().Hit(status._str);
-        }
+        /* override using */
     }
 
     public void Hit(int damage)
     {
         if (damage - status._vit <= 0)
         {
-            status.hp -= 1;
+            nowHp -= 1;
         }
         else
         {
-            status.hp -= (damage - status._vit);
+            nowHp -= (damage - status._vit);
         }
-        if (status.hp <= 0)
+        if (nowHp <= 0)
         {
             Die();
         }
@@ -73,9 +68,10 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDie = true;
+        StopAllCoroutines();
         gameObject.SetActive(false);
     }
 

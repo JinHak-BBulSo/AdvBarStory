@@ -14,11 +14,6 @@ public class Inventory : Singleton<Inventory>
     public override void Awake()
     {
         base.Awake();
-        //µð¹ö±×
-        foreach(Item item in allItems)
-        {
-            GetItem(item);
-        }
     }
 
     public void GetItem(Item _item)

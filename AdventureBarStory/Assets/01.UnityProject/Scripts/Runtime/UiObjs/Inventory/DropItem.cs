@@ -7,7 +7,7 @@ public class DropItem : MonoBehaviour
     public Item item = default;
     SpriteRenderer spriteRenderer = default;
 
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = item.itemImage;

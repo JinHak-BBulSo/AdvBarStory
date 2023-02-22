@@ -35,4 +35,10 @@ public class Monster : Character
         BattleCursor.battleTile.OnSelect();
         StartCoroutine(TurnFinish());
     }
+
+    public override void Die()
+    {
+        BattleManager.instance.monsterIndex--;
+        base.Die();
+    }
 }
