@@ -15,7 +15,11 @@ public class OpeningBtn : MonoBehaviour
 
         player.GetComponent<PlayerController>().enabled = false;
 
-        if (EventManager.instance.gameEvents[0].isFinish) selectBtn.SetActive(false);
+        if (EventManager.instance.gameEvents[0].isFinish)
+        {
+            player.GetComponent<PlayerController>().enabled = true;
+            selectBtn.SetActive(false);
+        }
     }
     public void OnClickOpeningStart()
     {

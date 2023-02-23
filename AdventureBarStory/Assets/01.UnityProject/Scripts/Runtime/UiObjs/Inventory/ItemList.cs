@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemList : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class ItemList : MonoBehaviour
 
     void Awake()
     {
-        content = gameObject.FindChildObj("Content");
+        content = gameObject.FindChildObj("ItemSlots");
         for(int i = 0; i < content.transform.childCount; i++)
         {
             slotList.Add(content.transform.GetChild(i).gameObject);
@@ -53,24 +55,71 @@ public class ItemList : MonoBehaviour
         idx = 0;
         slotIdx = 0;
 
-        foreach (Item item in Inventory.instance.haveItems)
+        switch (_tag)
         {
-            if (item.tag != _tag)
-            {
-                idx++;
-                continue;
-            }
+            case "material":
+                foreach (var item in Inventory.instance.materials)
+                {
+                    if (item.tag != _tag)
+                    {
+                        idx++;
+                        continue;
+                    }
 
-            Slot slot = slotList[slotIdx].GetComponent<Slot>();
-            slot.slotItem = item;
-            slot.itemIdx = idx;
-            slot.itemAmount = Inventory.instance.itemAmountList[idx];
-            slotTextList[slotIdx].text = item.itemName;
-            slotImageList[slotIdx].sprite = item.itemImage;
-            slotList[slotIdx].SetActive(true);
+                    Slot slot = slotList[slotIdx].GetComponent<Slot>();
+                    slot.slotItem = item;
+                    slot.itemIdx = idx;
+                    slot.itemAmount = Inventory.instance.materialAmount[idx];
+                    slotTextList[slotIdx].text = item.itemName;
+                    slotImageList[slotIdx].sprite = item.itemImage;
+                    slotList[slotIdx].SetActive(true);
 
-            idx++;
-            slotIdx++;
+                    idx++;
+                    slotIdx++;
+                }
+                break;
+            case "equip":
+                foreach (var item in Inventory.instance.equips)
+                {
+                    if (item.tag != _tag)
+                    {
+                        idx++;
+                        continue;
+                    }
+
+                    Slot slot = slotList[slotIdx].GetComponent<Slot>();
+                    slot.slotItem = item;
+                    slot.itemIdx = idx;
+                    slot.itemAmount = Inventory.instance.equipAmount[idx];
+                    slotTextList[slotIdx].text = item.itemName;
+                    slotImageList[slotIdx].sprite = item.itemImage;
+                    slotList[slotIdx].SetActive(true);
+
+                    idx++;
+                    slotIdx++;
+                }
+                break;
+            case "potion":
+                foreach (var item in Inventory.instance.potions)
+                {
+                    if (item.tag != _tag)
+                    {
+                        idx++;
+                        continue;
+                    }
+
+                    Slot slot = slotList[slotIdx].GetComponent<Slot>();
+                    slot.slotItem = item;
+                    slot.itemIdx = idx;
+                    slot.itemAmount = Inventory.instance.potionAmount[idx];
+                    slotTextList[slotIdx].text = item.itemName;
+                    slotImageList[slotIdx].sprite = item.itemImage;
+                    slotList[slotIdx].SetActive(true);
+
+                    idx++;
+                    slotIdx++;
+                }
+                break;
         }
     }
 

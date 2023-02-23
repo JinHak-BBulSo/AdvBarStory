@@ -8,9 +8,9 @@ public class EventManager : Singleton<EventManager>
 
     private GameObject scriptObj = default;
 
-    GameEvent opening = new GameEvent("¿ÀÇÁ´×", 1, false);
-    GameEvent openStage2 = new GameEvent("½£¸Ê °³¹æ", 2, false);
-    GameEvent alfineEvent = new GameEvent("¾ËÇÇ³× ÇÕ·ù", 3, false);
+    GameEvent opening = new GameEvent("ì˜¤í”„ë‹", 1, false);
+    GameEvent openStage2 = new GameEvent("ìˆ²ë§µ ê°œë°©", 2, false);
+    GameEvent alfineEvent = new GameEvent("ì•Œí”¼ë„¤ í•©ë¥˜", 3, false);
 
     public override void Awake()
     {
@@ -32,6 +32,6 @@ public class EventManager : Singleton<EventManager>
 
     public void SkipOpening()
     {
-        
+        gameEvents[0].isFinish = true;
     }
 }

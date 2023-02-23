@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 {
     public bool isBattleStart = false;
+    public bool isBattleAble = true;
 
     [SerializeField]
     GameObject battleObjsPrefab = default;
@@ -215,6 +216,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         battleObjs.SetActive(false);
         isTurnStart = false;
         isBattleStart = false;
+
+
     }
 
     public void Defeat()
@@ -226,5 +229,12 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public void GetRanIndex(int num)
     {
 
+    }
+
+    IEnumerator BattleDelay()
+    {
+        isBattleAble = false;
+        yield return new WaitForSeconds(5f);
+        isBattleAble = true;
     }
 }

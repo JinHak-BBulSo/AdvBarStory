@@ -3,12 +3,9 @@
 - 2023-02-13 Init Set, Town, Stage1 제작
 - 2023-02-14 PlayerMove 제작, Portal 제작, 카메라 무브
 - 2023-02-15 TitleScene 제작, Game Opening 제작
-
 issue : 대화 스크립트 관리를 어떻게 관리 할 것인가?
 
-
 solution : CSV를 통해 관리
-
 
 - 2023-02-16 UI 및 인벤토리 제작
 
@@ -47,3 +44,11 @@ issue : Script updater for Library\Bee\artifacts\1900b0aP.dag\Assembly-CSharp.dl
 summary : editor 에러로 추정. 확인 결과 Animations라는 이름의 namespace를 찾지 못해 발생하는 에러
 
 AnimatorController 클래스를 사용하기 위해 using Animations를 하였으나, 이를 찾이 못해 발생한 에러.
+
+solution : Library 폴더를 삭제 후 editor 재실행, 경로에 특수문자가 존재시 이를 제거.
+
+이것이 전부 동작하지 않아, AnimationController 대신 RuntimeAnimationController로 수정. 성공
+
+- 2023-02-23 Inventory 구조 수정 작업.
+
+아이템을 카테고리 별로 분류 -> 카테고리별 리스트를 만들어 Inventory가 관리하도록 변경

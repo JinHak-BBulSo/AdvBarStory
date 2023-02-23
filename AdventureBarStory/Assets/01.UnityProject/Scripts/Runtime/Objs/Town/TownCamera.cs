@@ -9,6 +9,19 @@ public class TownCamera : MoveCamera
     public bool isInStreet = false;
     public bool isInShop = false;
 
+    public override void Start()
+    {
+        base.Start();
+
+        if (PlayerManager.instance.recallCameraPos != default)
+        {
+            isInBar = false;
+            isInStreet = true;
+            transform.position = PlayerManager.instance.recallCameraPos;
+            GameObject.Find("InitObjs").FindChildObj("WorldMapObjs").SetActive(false);
+        }
+    }
+
     void Update()
     {
         OnCameraMove();

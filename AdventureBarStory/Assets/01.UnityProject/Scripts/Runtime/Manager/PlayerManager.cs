@@ -8,6 +8,9 @@ public class PlayerManager : Singleton<PlayerManager>
     GameObject playerPrefab = default;
     GameObject player = default;
 
+    public Vector3 recallPlayerTownPos = default;
+    public Vector3 recallCameraPos = default;
+
     public override void Awake()
     {
         if(instance == null)

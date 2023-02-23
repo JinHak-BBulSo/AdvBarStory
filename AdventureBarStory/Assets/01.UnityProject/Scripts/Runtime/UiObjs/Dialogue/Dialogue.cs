@@ -5,18 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
-    [Tooltip("¸»ÇÏ´Â Ä³¸¯ÅÍ ÀÌ¸§")]
+    [Tooltip("ë§í•˜ëŠ” ìºë¦­í„° ì´ë¦„")]
     public string chaName;
 
-    [Tooltip("´ë»ç ³»¿ë")]
+    [Tooltip("ëŒ€ì‚¬ ë‚´ìš©")]
     public string[] contexts;
-}
-
-[System.Serializable]
-public class DialogueEvent
-{
-    public string eventName;
-
-    public Vector2 line; // ½ÃÀÛ³Ñ¹ö, ¿£µå³Ñ¹ö
-    public Dialogue[] dialogues;
 }

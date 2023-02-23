@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickMaterialBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ItemList, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 75679500620744335, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3468415903096781731, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -99,5 +123,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Material
       objectReference: {fileID: 0}
+    - target: {fileID: 8698268577595133839, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1300477431, guid: 20401defed27c8a4681e70d3c067330c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b0b2b35d0046d44896ebe9c86e1d630, type: 3}

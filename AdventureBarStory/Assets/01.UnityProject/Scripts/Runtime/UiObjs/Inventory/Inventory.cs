@@ -5,31 +5,87 @@ using UnityEngine;
 
 public class Inventory : Singleton<Inventory>
 {
-    public List<int> itemAmountList = new List<int>();
-    public List<Item> haveItems = new List<Item>();
-
     public List<Item> allItems = new List<Item>();
+
+    public List<Item> materials = new List<Item>();
+    public List<int> materialAmount = new List<int>();
+
+    public List<Equip> equips = new List<Equip>();
+    public List<int> equipAmount = new List<int>();
+
+    public List<Food> foods = new List<Food>();
+    public List<int> foodAmount = new List<int>();
+
+    public List<Potion> potions = new List<Potion>();
+    public List<int> potionAmount = new List<int>();
     
     public override void Awake()
     {
         base.Awake();
+
+        foreach(Item item in allItems)
+        {
+            GetItem(item);
+        }
     }
 
-    public void GetItem(Item _item)
+    public void GetItem<T>(T _item) where T : Item
     {
-        if (haveItems.Contains(_item))
+        switch (_item.tag)
         {
-            int idx = haveItems.IndexOf(_item);
-            itemAmountList[idx]++;
-        }
-        else
-        {          
-            haveItems.Add(_item);
-            itemAmountList.Add(1);
+            case "material":
+                if (!materials.Contains(_item))
+                {
+                    materials.Add(_item);
+                    materialAmount.Add(1);
+                }
+                else
+                {
+                    materialAmount[materials.IndexOf(_item)]++;
+                }
+                break;
+            case "equip":
+                if (!equips.Contains(_item as Equip))
+                {
+                    equips.Add(_item as Equip);
+                    equipAmount.Add(1);
+                }
+                else
+                {
+                    equipAmount[equips.IndexOf(_item as Equip)]++;
+                }
+                break;
+            case "food":
+                if (!foods.Contains(_item as Food))
+                {
+                    foods.Add(_item as Food);
+                    foodAmount.Add(1);
+                }
+                else
+                {
+                    foodAmount[foods.IndexOf(_item as Food)]++;
+                }
+                break;
+            case "potion":
+                if (!potions.Contains(_item as Potion))
+                {
+                    potions.Add(_item as Potion);
+                    potionAmount.Add(1);
+                }
+                else
+                {
+                    potionAmount[potions.IndexOf(_item as Potion)]++;
+                }
+                break;
         }
     }
 
     public void UseItem(Item _item)
+    {
+
+    }
+
+    public void ItemClassify()
     {
 
     }
