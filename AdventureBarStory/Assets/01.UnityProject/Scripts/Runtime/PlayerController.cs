@@ -15,11 +15,6 @@ public class PlayerController : MonoBehaviour
         playerRigid = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         UpdateState();

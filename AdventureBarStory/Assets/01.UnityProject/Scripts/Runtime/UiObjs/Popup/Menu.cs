@@ -6,14 +6,13 @@ public class Menu : MonoBehaviour
 {
     [SerializeField]
     GameObject popupUI = default;
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
+    [SerializeField]
+    GameObject back = default;
 
     public void OnClickMenuBtn()
     {
         popupUI.SetActive(true);
+        back.SetActive(true);
         gameObject.SetActive(false);
     }
 }

@@ -21,4 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a857a573b24f71e41acee455565a4262, type: 2}
   - {fileID: 11400000, guid: a7387b66d0077d045840c5bab146065a, type: 2}
   - {fileID: 11400000, guid: 64de17c153dc8724ba1c71742620ce7c, type: 2}
-  requireMaterialAmount: 000000000000000000000000
+  requireMaterialAmount: 010000000100000001000000

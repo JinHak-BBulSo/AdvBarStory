@@ -7,18 +7,14 @@ using UnityEngine.UI;
 public class SlotList : MonoBehaviour
 {
     [SerializeField]
-    protected List<GameObject> slotList = default;
-    [SerializeField]
-    protected List<TMP_Text> slotNameTextList = default;
-    [SerializeField]
-    protected List<Image> slotImageList = default;
-    [SerializeField]
-    protected List<TMP_Text> slotStockText = default;
+    protected List<GameObject> slotList = new List<GameObject>();
+    protected List<TMP_Text> slotNameTextList = new List<TMP_Text>();
+    protected List<Image> slotImageList = new List<Image>();
+    protected List<TMP_Text> slotStockText = new List<TMP_Text>();
 
     protected int idx = 0;
     protected int slotIdx = 0;
 
-    [SerializeField]
     GameObject itemSlots = default;
 
     void Awake()
@@ -73,7 +69,10 @@ public class SlotList : MonoBehaviour
 
             slotNameTextList[slotIdx].text = item.itemName;
             slotImageList[slotIdx].sprite = item.itemImage;
-            slotStockText[slotIdx].text = slot.itemAmount.ToString();
+
+            if(slot.transform.childCount > 2)
+                slotStockText[slotIdx].text = slot.itemAmount.ToString();
+
             slotList[slotIdx].SetActive(true);
 
             idx++;

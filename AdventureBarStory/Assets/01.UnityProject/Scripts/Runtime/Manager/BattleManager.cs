@@ -49,11 +49,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             battleObjs.name = "BattleObjs";
             battleObjs.SetActive(false);
         }
-        /*else
-        {
-            
-            DontDestroyOnLoad(gameObject);
-        }*/
+
         base.Awake();
 
         playerObjs = battleObjs.FindChildObj("PlayerObjs");
