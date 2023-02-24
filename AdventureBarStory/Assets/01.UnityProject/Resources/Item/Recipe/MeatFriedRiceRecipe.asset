@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
+  m_Name: MeatFriedRiceRecipe
+  m_EditorClassIdentifier: 
+  itemName: MeatFriedRiceRecipe
+  tag: recipe
+  toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25 : Beef x1, Chicken x1, Rice x1"
+  itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  materials:
+  - {fileID: 11400000, guid: 60fd0f8bdee84eb49bed25f2bdf02116, type: 2}
+  - {fileID: 11400000, guid: 93adb6a538e3d68489837db17ee8b4af, type: 2}
+  - {fileID: 11400000, guid: df627be7d9a9a5d4eb34779d078f9465, type: 2}
+  requireMaterialAmount: 010000000100000001000000

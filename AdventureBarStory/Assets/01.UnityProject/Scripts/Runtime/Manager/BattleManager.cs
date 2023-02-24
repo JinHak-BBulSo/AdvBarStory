@@ -21,7 +21,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     Sprite[] battleBgSprite = default;
 
     public List<Monster> monsters = new List<Monster>();
-    public List<Player> players = new List<Player>();
+    public List<Player> playerParty = new List<Player>();
     public List<GameObject> battleTile = new List<GameObject>();
 
     public Queue<Character> turnReadyCharacter = new Queue<Character>();
@@ -49,6 +49,11 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             battleObjs.name = "BattleObjs";
             battleObjs.SetActive(false);
         }
+        /*else
+        {
+            
+            DontDestroyOnLoad(gameObject);
+        }*/
         base.Awake();
 
         playerObjs = battleObjs.FindChildObj("PlayerObjs");
@@ -57,7 +62,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
         for (int i = 0; i < playerObjs.transform.childCount; i++)
         {
-            players.Add(playerObjs.transform.GetChild(i).GetComponent<Player>());
+            playerParty.Add(playerObjs.transform.GetChild(i).GetComponent<Player>());
         }
 
         for(int i = 0; i < monsterObjs.transform.childCount; i++)
@@ -103,7 +108,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void turnCalculate()
     {
-        foreach(Player player in players)
+        foreach(Player player in playerParty)
         {
             if (player.isDie) continue;
 
@@ -162,7 +167,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public void BattleStart()
     {
         MonsterSet();
-        PlayerSet();
+        playerPartyet();
 
         isBattleStart = true;
         battleObjs.SetActive(true);
@@ -183,25 +188,25 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         }
     }
 
-    public void PlayerSet()
+    public void playerPartyet()
     {
-        for (int i = 0; i < players.Count; i++)
+        for (int i = 0; i < playerParty.Count; i++)
         {
-            if (players[i].isDie) players[i].gameObject.SetActive(false);
+            if (playerParty[i].isDie) playerParty[i].gameObject.SetActive(false);
             else
             {
                 playerIndex++;
-                players[i].turnGuage = 0;
-                players[i].gameObject.SetActive(true);
+                playerParty[i].turnGuage = 0;
+                playerParty[i].gameObject.SetActive(true);
             }
         }
     }
 
     public void Win()
     {
-        for (int i = 0; i < players.Count; i++)
+        for (int i = 0; i < playerParty.Count; i++)
         {
-            players[i].turnGuage = 0;
+            playerParty[i].turnGuage = 0;
         }
 
         turnReadyCharacter.Clear();

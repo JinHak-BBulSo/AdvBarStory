@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80535397bd81e5445949607c90726ed5, type: 3}
-  m_Name: Gelatin
+  m_Script: {fileID: 11500000, guid: 11979ae6575f61749bf87df38576a9f9, type: 3}
+  m_Name: CremeSauce
   m_EditorClassIdentifier: 
-  itemName: 
-  tag: 
-  toolTip: 
-  itemImage: {fileID: 0}
-  atk: 0
-  def: 0
-  _int: 0
+  itemName: CremeSauce
+  tag: food
+  toolTip: "\uD06C\uB9BC\uC18C\uC2A4"
+  itemImage: {fileID: -1333159534, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  getExpAmount: 0
+  getSatiety: 0

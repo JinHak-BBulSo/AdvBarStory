@@ -14,11 +14,13 @@ public class Character : MonoBehaviour, ITurnFinishHandler
 
     public Status status = default;
 
-    public int nowHp;    
+    public int nowHp;
+    public int nowMp;
 
     void Awake()
     {
         nowHp = status.hp;
+        nowMp = status.mp;
     }
 
     [System.Serializable]
@@ -66,6 +68,11 @@ public class Character : MonoBehaviour, ITurnFinishHandler
         {
             StartCoroutine(HitEffect());
         }
+    }
+
+    public void UseSkill(int consumeMp)
+    {
+        nowMp -= consumeMp;
     }
 
     public virtual void Die()

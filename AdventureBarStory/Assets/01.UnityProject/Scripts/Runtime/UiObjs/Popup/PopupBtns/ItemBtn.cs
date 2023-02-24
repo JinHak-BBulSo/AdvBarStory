@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ItemBtn : PopupBtn, IBackBtnHandler
 {
-    
-
     public void OnClickItemBtn()
     {
         itemBtnObjs.SetActive(true);

@@ -12,7 +12,6 @@ public class Player : Character
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -25,5 +24,14 @@ public class Player : Character
             BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(status._hit);
             StartCoroutine(TurnFinish());
         }
+    }
+
+    public void RecallRecovery()
+    {
+        nowHp = status.hp;
+        nowMp = status.mp;
+        turnGuage = 0;
+        isDie = false;
+        isTurnFinish = false;
     }
 }

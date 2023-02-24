@@ -19,6 +19,7 @@ public class Inventory : Singleton<Inventory>
     public List<Potion> potions = new List<Potion>();
     public List<int> potionAmount = new List<int>();
     
+    public List<Recipe> recipes = new List<Recipe>();
     public override void Awake()
     {
         base.Awake();
@@ -77,15 +78,22 @@ public class Inventory : Singleton<Inventory>
                     potionAmount[potions.IndexOf(_item as Potion)]++;
                 }
                 break;
+            case "recipe":
+                if(!recipes.Contains(_item as Recipe))
+                {
+                    recipes.Add(_item as Recipe);
+                }
+                else
+                {
+                    /* Do nothing
+                     * recipe get -> only 1
+                     */
+                }
+                break;
         }
     }
 
     public void UseItem(Item _item)
-    {
-
-    }
-
-    public void ItemClassify()
     {
 
     }

@@ -28,6 +28,7 @@ public class WorldMapBtn : MonoBehaviour, IDeselectHandler
             {
                 case "Town":
                     GameObject.Find("PlayerManager").FindChildObj("Player").transform.position = PlayerManager.instance.recallPlayerTownPos;
+                    GameManager.instance.TownRecall();
                     GFunc.LoadScene("02.TownScene");
                     break;
                 case "Stage1":
