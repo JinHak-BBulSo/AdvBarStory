@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemBtn : PopupBtn, IBackBtnHandler
 {
+    public TMP_Text tooltipTxt = default;
+
+    public override void Awake()
+    {
+        base.Awake();
+        tooltipTxt = GameObject.Find("InitObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
+    }
     public void OnClickItemBtn()
     {
         itemBtnObjs.SetActive(true);
@@ -12,6 +20,7 @@ public class ItemBtn : PopupBtn, IBackBtnHandler
         popupBtnList.SetActive(false);
         popupInitObjs.SetActive(false);
 
+        tooltipTxt.text = string.Empty;
         Back.clickBackBtn += OnBackBtnClick;
     }
 

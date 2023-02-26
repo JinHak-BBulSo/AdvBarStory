@@ -23,6 +23,8 @@ public class CancelBtn : MonoBehaviour
         BattleCursor.battleTile = BattleManager.instance.nowTurnCharacter.onTileData;
         BattleCursor.battleTile.OnSelect();
 
+        PlayerManager.instance.ActionReset();
+
         OkBtn.clickOkBtn = default;
         actionBtns.SetActive(true);
     }

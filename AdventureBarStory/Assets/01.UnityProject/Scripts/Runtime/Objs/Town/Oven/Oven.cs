@@ -1,25 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oven : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
+public class Oven : MonoBehaviour
 {
-    void Start()
+    public GameObject createQuestionObjs = default;
+    public static Recipe recipe = default;
+
+    private void OnDisable()
     {
-        
+        recipe = default;
     }
 
-    void Update()
+    public static void CreateFood()
     {
-        
-    }
-    public void OnOkBtnClick()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnBackBtnClick()
-    {
-        throw new System.NotImplementedException();
+        Inventory.instance.GetItem<Food>(recipe.madeFood);
     }
 }

@@ -10,7 +10,7 @@ public class PopupBtn : MonoBehaviour
     public GameObject popupBtnList = default;
     public GameObject popupInitObjs = default;
     
-    public void Awake()
+    public virtual void Awake()
     {
         initObjs = GameObject.Find("InitObjs");
         itemBtnObjs = initObjs.FindChildObj("ItemBtnObjs");

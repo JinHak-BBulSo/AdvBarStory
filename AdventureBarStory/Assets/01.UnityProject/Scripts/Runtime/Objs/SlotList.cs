@@ -17,7 +17,7 @@ public class SlotList : MonoBehaviour
 
     GameObject itemSlots = default;
 
-    void Awake()
+    public virtual void Awake()
     {
         itemSlots = gameObject.FindChildObj("ItemSlots");
         for (int i = 0; i < itemSlots.transform.childCount; i++)
@@ -26,11 +26,13 @@ public class SlotList : MonoBehaviour
             slotNameTextList.Add(slotList[i].transform.GetChild(0).GetComponent<TMP_Text>());
             slotImageList.Add(slotList[i].transform.GetChild(1).GetComponent<Image>());
 
-            if(slotList[i].transform.childCount > 2)
+            if (slotList[i].transform.childCount > 2)
                 slotStockText.Add(slotList[i].transform.GetChild(2).GetComponent<TMP_Text>());
 
             slotList[i].SetActive(false);
         }
+
+        GameObject.Find("OvenCookObjs").FindChildObj("CookObjs").SetActive(false);
     }
 
     public void SlotReset()
@@ -42,6 +44,9 @@ public class SlotList : MonoBehaviour
             slot.slotItem = default;
             _slot.SetActive(false);
         }
+
+        idx = 0;
+        slotIdx = 0;
     }
 
     public void SlotSet<T>(List<T> inventoryList, string _tag) where T : Item
@@ -70,7 +75,7 @@ public class SlotList : MonoBehaviour
             slotNameTextList[slotIdx].text = item.itemName;
             slotImageList[slotIdx].sprite = item.itemImage;
 
-            if(slot.transform.childCount > 2)
+            if (slot.transform.childCount > 2)
                 slotStockText[slotIdx].text = slot.itemAmount.ToString();
 
             slotList[slotIdx].SetActive(true);

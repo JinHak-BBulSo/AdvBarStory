@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1536
+    x: 0
     y: 43
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 95
+  controlID: 157
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 96
+  controlID: 75
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 55
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 61
+  controlID: 158
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1536
+    x: 0
     y: 73
     width: 905
     height: 463
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 64.89649, y: 16.685936, z: 2.5031567}
+    m_Target: {x: 552.6131, y: 235.8414, z: -0.2503817}
     speed: 2
-    m_Value: {x: 64.89649, y: 16.685936, z: 2.5031567}
+    m_Value: {x: 552.6131, y: 235.8414, z: -0.2503817}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -687,9 +687,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.890028
+    m_Target: 264.06274
     speed: 2
-    m_Value: 18.890028
+    m_Value: 264.06274
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -893,7 +893,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 24864
+  m_LastSelectedObjectID: -127808
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -914,7 +914,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2442
+    x: 906
     y: 73
     width: 533
     height: 449
@@ -927,7 +927,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d0d3ffff48f2ffff7cf9ffff26fbfffff4ffffff5a5f0000b45f0000ce5f000072600000bcb80000
+      m_ExpandedIDs: aed5fdffb0ecfdff0af3fdff38fcfdff0e05feffc20cfeffda15feffb61cfeff6023feffc028feffe230feff4237feff5a45feffe247feffac50fefff470feffc880feff3881feff5889feffdc8afeffa48cfeff6297feffa69cfeff289efeffee9ffeff2aa3feff70b1feff64fbfeffdc0ffffff61effffd425ffff3a29ffffbc2affff9a2dffffa035ffffc03cffffb643ffffec45ffffc048ffff2e4fffff0c56ffffa25bffffe65bffffaa60ffff2467ffff206efffff66fffff5a74ffffd089ffff6a8dffffca8fffff629effffccacffffd6c8ffff86d9ffff2cddfffff6deffff3adfffff7ee3ffff6ef4ffff26fbfffff4ffffff5e8c00007a94000024a100006ca1000096eb0000b0eb00005ced0000b8ed0000d2ed0000e2f5000002f60000de000100a6020100d0080100d4120100b4290100ee290100fe2a0100b62b0100122c01003e2c0100de2e010074410100e0410100be420100c2420100d2430100fe4301001c440100be450100864701007a510100c4520100d8530100045401007e5a0100c85b0100dc5c0100085d0100a65f0100f261010038690100826a0100966b0100c26b01009c740100be7d01007e7f0100d07f010046810100fe8d0100488f01005c900100889001000aa0010054a1010068a2010094a20100e6b4010052b5010030b6010034b6010070b701008eb7010070ed0100dced010014ee010046ee01006aee0100beee0100d2ef010082ff0100eeff010058000200d0000200e40102003c090200a8090200ac090200360a02008a0a02008e0a02009e0b0200ca0b0200e80b02003e1c0200ce1c0200521d02000a1e0200661e0200801e020018250200c625020046260200902602000a27020066270200d23802001c390200f4390200bc4f0200305002002c510200305102004e5202007a52020098520200f458020068590200645a0200685a0200865b0200b25b0200d05b02002e620200a26202009e630200a2630200c0640200ec6402000a6502002c650200a06502009c660200a0660200be670200ea67020008680200ac750200207602001c770200207702003e7802006a78020088780200ea7e02005e7f02005a8002005e8002007c810200a8810200c681020024880200988802009489020098890200b68a0200e28a0200008b02005c910200d0910200cc920200d0920200ee9302001a94020038940200989a0200089c02002a9d0200569d0200d0a3020044a4020040a5020044a5020062a602008ea60200aca6020080bf0200f4bf0200f0c00200f4c0020012c202003ec202005cc20200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -971,7 +971,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2442
+    x: 906
     y: 543
     width: 533
     height: 456
@@ -999,14 +999,14 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\KJH\AdvBar\Develop\AdventureBarStory
+  m_LastProjectPath: C:\Users\Kim\OneDrive\Desktop\AdvBarStory\Develop\AdventureBarStory
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 585e0000
     m_LastClickedID: 24152
-    m_ExpandedIDs: 000000007e86000080860000828600008486000086860000888600008a8600008c8600008e86000090860000928600009486000096860000988600009a8600009c8600009e860000a0860000a2860000a4860000a6860000a8860000aa860000ac860000ae860000b0860000b2860000b4860000
+    m_ExpandedIDs: 000000007e86000080860000828600008486000086860000888600008a8600008c8600008e86000090860000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1031,24 +1031,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 1060}
+    scrollPos: {x: 0, y: 600}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000007e86000080860000828600008486000086860000888600008a8600008c8600008e86000090860000928600009486000096860000988600009a8600009c8600009e860000a0860000a2860000a4860000a6860000a8860000aa860000ac860000ae860000b0860000b2860000b4860000
+    m_ExpandedIDs: ffffffff000000007e86000080860000828600008486000086860000888600008a8600008c8600008e86000090860000c8860000d8860000e2860000e4860000ec860000108d0000148d0000ca8e0000ce8e0000d48e0000da8e0000de8e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CookCreateQuestionBtn
+      m_OriginalName: CookCreateQuestionBtn
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 141284
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -1110,7 +1110,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2977
+    x: 1441
     y: 73
     width: 478
     height: 449
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2977
+    x: 1441
     y: 543
     width: 478
     height: 456
@@ -1179,7 +1179,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1536
+    x: 0
     y: 557
     width: 905
     height: 442

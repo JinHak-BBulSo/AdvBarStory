@@ -13,4 +13,9 @@ public class OkBtn : MonoBehaviour, IOKBtnHandler
         clickOkBtn();
         clickOkBtn = default;
     }
+
+    void OnDisable()
+    {
+        clickOkBtn = default;
+    }
 }

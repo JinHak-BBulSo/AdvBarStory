@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a7387b66d0077d045840c5bab146065a, type: 2}
   - {fileID: 11400000, guid: 98691fd42cfb775448f3058d9d8066fb, type: 2}
   requireMaterialAmount: 0100000002000000
+  madeFood: {fileID: 11400000, guid: c3fce0df174de2145ae309b021986565, type: 2}

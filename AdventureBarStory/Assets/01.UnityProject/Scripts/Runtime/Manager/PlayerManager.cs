@@ -11,6 +11,9 @@ public class PlayerManager : Singleton<PlayerManager>
     public Vector3 recallPlayerTownPos = default;
     public Vector3 recallCameraPos = default;
 
+    public delegate void PlayerActionHandler();
+    public event PlayerActionHandler PlayerAction;
+
     public override void Awake()
     {
         if (instance == null)
@@ -22,5 +25,15 @@ public class PlayerManager : Singleton<PlayerManager>
             player.SetActive(false);
         }
         base.Awake();
+    }
+
+    public void ActionStart()
+    {
+        PlayerAction();
+    }
+
+    public void ActionReset()
+    {
+        PlayerAction = default;
     }
 }

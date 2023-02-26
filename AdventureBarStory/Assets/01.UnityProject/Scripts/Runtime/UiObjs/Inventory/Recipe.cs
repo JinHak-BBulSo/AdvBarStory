@@ -8,4 +8,5 @@ public class Recipe : Item
 {
     public List<Item> materials = new List<Item>();
     public List<int> requireMaterialAmount = new List<int>();
+    public Food madeFood;
 }

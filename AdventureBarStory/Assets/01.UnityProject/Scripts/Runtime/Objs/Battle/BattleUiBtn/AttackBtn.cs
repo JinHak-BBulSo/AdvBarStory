@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AttackBtn : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
+public class AttackBtn : MonoBehaviour, IOKBtnHandler
 {
     [SerializeField]
     private GameObject battleActionObjs = default;
@@ -16,37 +16,38 @@ public class AttackBtn : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
     void Start()
     {
         battleActionObjs = transform.parent.gameObject;
-        okBtn = GameObject.Find("BattleObjs").FindChildObj("OkBtn");
+        okBtn = GameObject.Find("InitObjs").FindChildObj("OkBtn");
         cancelBtn = GameObject.Find("BattleObjs").FindChildObj("CancelBtn");
     }
 
-    void OnEable()
+    void OnEnable()
     {
         nowPlayer = BattleManager.instance.nowTurnPlayer;
         BattleCursor.battleTile = BattleManager.instance.nowTurnCharacter.onTileData;
         BattleCursor.battleTile.OnSelect();
     }
+    public void PlayerAttack()
+    {
+        BattleManager.instance.nowTurnPlayer.GetComponent<Player>().Attack(); 
+    }
 
     public void OnClickAttackBtn()
     {
+        PlayerManager.instance.PlayerAction += PlayerAttack;
         OkBtn.clickOkBtn += OnOkBtnClick;
-        battleActionObjs.SetActive(false);
-        okBtn.SetActive(true);
-        cancelBtn.SetActive(true);
 
-        for(int i = 0; i < BattleManager.instance.battleTile.Count; i++)
+        for (int i = 0; i < BattleManager.instance.battleTile.Count; i++)
         {
             BattleManager.instance.battleTile[i].GetComponent<Button>().enabled = true;
         }
-    }
 
-    public void OnBackBtnClick()
-    {
-        throw new System.NotImplementedException();
+        battleActionObjs.SetActive(false);
+        okBtn.SetActive(true);
+        cancelBtn.SetActive(true);
     }
 
     public void OnOkBtnClick()
     {
-        BattleManager.instance.nowTurnPlayer.GetComponent<Player>().Attack();
+        PlayerManager.instance.ActionStart();
     }
 }

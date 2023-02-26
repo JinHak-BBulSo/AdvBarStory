@@ -163,7 +163,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public void BattleStart()
     {
         MonsterSet();
-        playerPartyet();
+        playerPartySet();
 
         isBattleStart = true;
         battleObjs.SetActive(true);
@@ -184,7 +184,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         }
     }
 
-    public void playerPartyet()
+    public void playerPartySet()
     {
         for (int i = 0; i < playerParty.Count; i++)
         {
@@ -225,17 +225,5 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     {
         isBattleStart = false;
         isTurnStart = false;
-    }
-
-    public void GetRanIndex(int num)
-    {
-
-    }
-
-    IEnumerator BattleDelay()
-    {
-        isBattleAble = false;
-        yield return new WaitForSeconds(5f);
-        isBattleAble = true;
     }
 }

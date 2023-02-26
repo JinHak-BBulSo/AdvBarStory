@@ -10,7 +10,7 @@ public class Slot : MonoBehaviour
     public Item slotItem = default;
     public TMP_Text tooltipTxt = default;
 
-    public virtual void Start()
+    public virtual void Awake()
     {
         tooltipTxt = GameObject.Find("InitObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
     }
