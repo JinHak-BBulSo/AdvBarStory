@@ -17,6 +17,7 @@ MonoBehaviour:
   toolTip: "\uC57C\uCC44\uBCF6\uC74C \uB808\uC2DC\uD53C : Carrot x1, Onion x1, Salt
     x1"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 700
   materials:
   - {fileID: 11400000, guid: d4c87b7bcb0b30f4ab459be46448b497, type: 2}
   - {fileID: 11400000, guid: fae008ca2c2bf8f42a86467f7371575d, type: 2}

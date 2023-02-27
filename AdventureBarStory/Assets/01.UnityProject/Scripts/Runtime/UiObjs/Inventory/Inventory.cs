@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Inventory : Singleton<Inventory>
 {
-    const int START_GOLD = 5000;
+    const int START_GOLD = 2000;
     public int nowGold = default;
     public TMP_Text moneyTxt = default;
 
@@ -104,67 +104,34 @@ public class Inventory : Singleton<Inventory>
 
     public void UseItem<T>(T _item, int amount) where T : Item
     {
+        int itemIndex = -1;
         switch (_item.tag)
         {
             case "material":
-                if (!materials.Contains(_item))
+                itemIndex = materials.IndexOf(_item);
+                materialAmount[itemIndex] -= amount;
+                if (materialAmount[itemIndex] == 0)
                 {
-                    int itemIndex = materials.IndexOf(_item);
-                    materialAmount[itemIndex] -= amount;
-                    if(materialAmount[itemIndex] == 0)
-                    {
-                        materials.RemoveAt(itemIndex);
-                        materialAmount.RemoveAt(itemIndex);
-                    }
-                }
-                else
-                {
-                    materialAmount[materials.IndexOf(_item)]++;
-                }
-                break;
-            case "equip":
-                if (!equips.Contains(_item as Equip))
-                {
-                    equips.Add(_item as Equip);
-                    equipAmount.Add(1);
-                }
-                else
-                {
-                    equipAmount[equips.IndexOf(_item as Equip)]++;
+                    materials.RemoveAt(itemIndex);
+                    materialAmount.RemoveAt(itemIndex);
                 }
                 break;
             case "food":
-                if (!foods.Contains(_item as Food))
+                itemIndex = foods.IndexOf(_item as Food);
+                foodAmount[itemIndex] -= amount;
+                if (foodAmount[itemIndex] == 0)
                 {
-                    foods.Add(_item as Food);
-                    foodAmount.Add(1);
-                }
-                else
-                {
-                    foodAmount[foods.IndexOf(_item as Food)]++;
+                    foods.RemoveAt(itemIndex);
+                    foodAmount.RemoveAt(itemIndex);
                 }
                 break;
             case "potion":
-                if (!potions.Contains(_item as Potion))
+                itemIndex = potions.IndexOf(_item as Potion);
+                potionAmount[itemIndex] -= amount;
+                if (potionAmount[itemIndex] == 0)
                 {
-                    potions.Add(_item as Potion);
-                    potionAmount.Add(1);
-                }
-                else
-                {
-                    potionAmount[potions.IndexOf(_item as Potion)]++;
-                }
-                break;
-            case "recipe":
-                if (!recipes.Contains(_item as Recipe))
-                {
-                    recipes.Add(_item as Recipe);
-                }
-                else
-                {
-                    /* Do nothing
-                     * recipe get -> only 1
-                     */
+                    potions.RemoveAt(itemIndex);
+                    potionAmount.RemoveAt(itemIndex);
                 }
                 break;
         }

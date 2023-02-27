@@ -16,6 +16,7 @@ MonoBehaviour:
   tag: recipe
   toolTip: "\uD5C8\uB2C8 \uBC00\uD06C \uB808\uC2DC\uD53C : Milk x1, Honey x1"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 700
   materials:
   - {fileID: 11400000, guid: a7387b66d0077d045840c5bab146065a, type: 2}
   - {fileID: 11400000, guid: 64de17c153dc8724ba1c71742620ce7c, type: 2}

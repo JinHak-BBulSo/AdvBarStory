@@ -31,8 +31,6 @@ public class SlotList : MonoBehaviour
 
             slotList[i].SetActive(false);
         }
-
-        GameObject.Find("OvenCookObjs").FindChildObj("CookObjs").SetActive(false);
     }
 
     public void SlotReset()
@@ -49,12 +47,14 @@ public class SlotList : MonoBehaviour
         slotIdx = 0;
     }
 
-    public void SlotSet<T>(List<T> inventoryList, string _tag) where T : Item
+    public virtual void SlotSet<T>(List<T> inventoryList, string _tag) where T : Item
     {
-        foreach (var item in inventoryList)
+        foreach (T item in inventoryList)
         {
             Slot slot = slotList[slotIdx].GetComponent<Slot>();
             slot.slotItem = item;
+
+            if (idx == inventoryList.Count) break;
 
             switch (_tag)
             {

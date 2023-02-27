@@ -17,6 +17,7 @@ MonoBehaviour:
   toolTip: "\uD6C4\uB77C\uC774\uB4DC\uCE58\uD0A8 \uB808\uC2DC\uD53C : Chicken x2,
     Potato x1"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 700
   materials:
   - {fileID: 11400000, guid: 93adb6a538e3d68489837db17ee8b4af, type: 2}
   - {fileID: 11400000, guid: 86afb380c7345fc43b04c6abeab79404, type: 2}

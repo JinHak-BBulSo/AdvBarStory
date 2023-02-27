@@ -12,4 +12,5 @@ public class Item : ScriptableObject
     public string tag;
     public string toolTip;
     public Sprite itemImage;
+    public int price;
 }

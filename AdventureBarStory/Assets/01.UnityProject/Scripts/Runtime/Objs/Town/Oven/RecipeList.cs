@@ -29,6 +29,9 @@ public class RecipeList : SlotList
 
         SlotReset();
         SlotSet<Recipe>(Inventory.instance.recipes, "recipe");
+        Oven.recipeList = this;
+
+        GameObject.Find("OvenCookObjs").FindChildObj("CookObjs").SetActive(false);
     }
     void OnEnable()
     {
@@ -45,6 +48,8 @@ public class RecipeList : SlotList
             slotList[i].GetComponent<RecipeSlot>().RecipeCreateCheck();
         }
 
+        SlotRecipeCreateCheck();
+
         for (int i = 0; i < infoSlots.Count; i++)
         {
             infoSlots[i].gameObject.SetActive(false);
@@ -56,5 +61,14 @@ public class RecipeList : SlotList
         menu.SetActive(true);
         okBtn.SetActive(true);
         backBtn.SetActive(false);
+    }
+
+    public void SlotRecipeCreateCheck()
+    {
+        for (int i = 0; i < slotList.Count; i++)
+        {
+            if (!slotList[i].activeSelf) return;
+            slotList[i].GetComponent<RecipeSlot>().RecipeCreateCheck();
+        }
     }
 }

@@ -16,6 +16,7 @@ MonoBehaviour:
   tag: equip
   toolTip: "\uBE0C\uB85C\uB4DC\uC18C\uB4DC"
   itemImage: {fileID: 1470688270, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 1000
   atk: 0
   def: 0
   _int: 0

@@ -16,6 +16,7 @@ MonoBehaviour:
   tag: recipe
   toolTip: "\uC694\uAC70\uD2B8 \uB808\uC2DC\uD53C : Milk x1, Sugar x2"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 700
   materials:
   - {fileID: 11400000, guid: a7387b66d0077d045840c5bab146065a, type: 2}
   - {fileID: 11400000, guid: 98691fd42cfb775448f3058d9d8066fb, type: 2}

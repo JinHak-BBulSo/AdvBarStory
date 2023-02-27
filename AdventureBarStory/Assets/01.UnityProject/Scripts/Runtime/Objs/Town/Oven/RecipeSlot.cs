@@ -9,7 +9,6 @@ public class RecipeSlot : Slot, IDeselectHandler
 {
     GameObject recipeInfoList = default;
     List<GameObject> recipeInfoObjs = new List<GameObject>();
-    Button button = default;
 
     List<TMP_Text> recipeInfoNameTxts = new List<TMP_Text>();
     List<Image> recipeInfoImages = new List<Image>();
@@ -20,6 +19,7 @@ public class RecipeSlot : Slot, IDeselectHandler
     public Recipe selectRecipe = default;
     private bool isSelected = false;
 
+    [SerializeField]
     private bool createAble = true;
 
     public override void Awake()
@@ -27,7 +27,6 @@ public class RecipeSlot : Slot, IDeselectHandler
         tooltipTxt = GameObject.Find("OvenCookObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
         recipeInfoList = GameObject.Find("OvenCookObjs").FindChildObj("RecipeInfoList");
         createQuestionObjs = GameObject.Find("OvenCookObjs").FindChildObj("CookCreateQustionObjs");
-        button = GetComponent<Button>();
 
         for (int i = 0; i < recipeInfoList.FindChildObj("ItemSlots").transform.childCount; i++)
         {
@@ -48,6 +47,16 @@ public class RecipeSlot : Slot, IDeselectHandler
         if (!isSelected)
         {
             base.OnClickSlot();
+
+            if (createAble)
+            {
+                tooltipTxt.text += selectRecipe.toolTip + " 제작가능";
+            }
+            else
+            {
+                tooltipTxt.text += selectRecipe.toolTip + " 제작불가";
+            }
+
             isSelected = true;
 
             for (int i = 0; i < infoSlots.Count; i++)
@@ -62,22 +71,14 @@ public class RecipeSlot : Slot, IDeselectHandler
                 recipeInfoImages[i].sprite = selectRecipe.materials[i].itemImage;
                 recipeInfoStockTxts[i].text = selectRecipe.requireMaterialAmount[i].ToString();
                 infoSlots[i].gameObject.SetActive(true);
-            }
-
-            if (createAble)
-            {
-                tooltipTxt.text += selectRecipe.toolTip + " 제작가능";
-            }
-            else
-            {
-                tooltipTxt.text += selectRecipe.toolTip + " 제작불가";
-            }
+            }  
         }
         else if (isSelected)
         {
             if (createAble)
             {
                 Oven.recipe = selectRecipe;
+                Oven.recipeSlot = this;
                 createQuestionObjs.SetActive(true);
             }
         }
@@ -91,6 +92,7 @@ public class RecipeSlot : Slot, IDeselectHandler
     public void RecipeCreateCheck()
     {
         selectRecipe = slotItem as Recipe;
+        createAble = true;
 
         for(int i = 0; i < selectRecipe.materials.Count; i++)
         {
@@ -100,7 +102,7 @@ public class RecipeSlot : Slot, IDeselectHandler
             {
                 if(Inventory.instance.materialAmount[materialIndex] >= selectRecipe.requireMaterialAmount[i])
                 {
-                    continue;
+                    transform.GetChild(0).GetComponent<TMP_Text>().color = Color.black;
                 }
                 else
                 {
@@ -115,6 +117,6 @@ public class RecipeSlot : Slot, IDeselectHandler
                 transform.GetChild(0).GetComponent<TMP_Text>().color = Color.red;
                 break;
             }
-        }
+        }  
     }
 }

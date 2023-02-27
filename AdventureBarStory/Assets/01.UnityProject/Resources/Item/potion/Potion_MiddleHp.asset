@@ -16,5 +16,6 @@ MonoBehaviour:
   tag: potion
   toolTip: "\uC911\uAE09 \uD3EC\uC158"
   itemImage: {fileID: 1899426926, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 300
   recoveryHp: 0
   recoveryMp: 0

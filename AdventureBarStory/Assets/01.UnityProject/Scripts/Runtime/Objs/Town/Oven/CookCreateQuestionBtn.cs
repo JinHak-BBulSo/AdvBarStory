@@ -8,11 +8,12 @@ public class CookCreateQuestionBtn : MonoBehaviour
 
     void Awake()
     {
-        cookCreateQuestionObjs = transform.parent.gameObject;    
+        cookCreateQuestionObjs = gameObject;    
     }
     public void OnClickYes()
     {
         Oven.CreateFood();
+        cookCreateQuestionObjs.SetActive(false);
     }
     public void OnClickNo()
     {

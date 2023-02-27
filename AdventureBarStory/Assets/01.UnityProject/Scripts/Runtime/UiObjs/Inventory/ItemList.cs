@@ -25,7 +25,7 @@ public class ItemList : SlotList
         OnClickBtn("recipe");
     }
 
-    void OnClickBtn(string _tag)
+    public virtual void OnClickBtn(string _tag)
     {
         SlotReset();
 
