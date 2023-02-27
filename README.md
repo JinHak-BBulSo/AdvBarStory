@@ -3,9 +3,10 @@
 - 2023-02-13 Init Set, Town, Stage1 제작
 - 2023-02-14 PlayerMove 제작, Portal 제작, 카메라 무브
 - 2023-02-15 TitleScene 제작, Game Opening 제작
+- 
 issue : 대화 스크립트 관리를 어떻게 관리 할 것인가?
 
-solution : CSV를 통해 관리
+solution : CSV or JSON을 활용할 수 있을것으로 보임. 우선은 CSV를 통해 관리를 하도록 함
 
 - 2023-02-16 UI 및 인벤토리 제작
 
