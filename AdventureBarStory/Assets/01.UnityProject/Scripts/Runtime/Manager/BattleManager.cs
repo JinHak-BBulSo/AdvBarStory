@@ -22,6 +22,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public List<Monster> monsters = new List<Monster>();
     public List<Player> playerParty = new List<Player>();
+    public List<GameObject> playerWeapons = new List<GameObject>();
     public List<GameObject> battleTile = new List<GameObject>();
 
     public Queue<Character> turnReadyCharacter = new Queue<Character>();
@@ -56,9 +57,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
         battleTileObjs = battleObjs.FindChildObj("BattleTile");
 
-        for (int i = 0; i < playerObjs.transform.childCount; i++)
+        for (int i = 0; i < playerObjs.transform.childCount - 3; i++)
         {
-            playerParty.Add(playerObjs.transform.GetChild(i).GetComponent<Player>());
+            playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
+            playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
         }
 
         for(int i = 0; i < monsterObjs.transform.childCount; i++)
@@ -218,7 +220,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         isTurnStart = false;
         isBattleStart = false;
 
-
+        foreach(GameObject weapon in playerWeapons)
+        {
+            weapon.SetActive(false);
+        }
     }
 
     public void Defeat()

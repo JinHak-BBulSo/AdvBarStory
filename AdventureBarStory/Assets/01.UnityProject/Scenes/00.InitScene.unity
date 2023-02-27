@@ -5359,7 +5359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBattleStart: 0
   isBattleAble: 1
-  battleObjsPrefab: {fileID: 8330057155819705142, guid: 7b0f9f6addfd44741819410b3846b040, type: 3}
+  battleObjsPrefab: {fileID: 3680927562707250962, guid: aa5b989788651b24e80559a4ba6d4541, type: 3}
   battleObjs: {fileID: 0}
   battleBgSprite:
   - {fileID: 21300000, guid: f0701b80becd9d845b2fe444886e6f85, type: 3}

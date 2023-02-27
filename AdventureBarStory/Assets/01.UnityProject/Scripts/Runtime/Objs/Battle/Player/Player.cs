@@ -6,23 +6,22 @@ public class Player : Character
 {
     public int exp = 0;
     public int level = 1;
+    AudioSource audioSource = default;
 
-    void Start()
+    public GameObject weapon = default;
+
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
-
-    void Update()
-    {
-        
-    }
-
     public override void Attack()
     {
         if (BattleCursor.battleTile.onTileObject != default)
         {
             BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(status._hit);
-            StartCoroutine(TurnFinish());
+            animator.SetBool("isAttack", true);
+            weapon.SetActive(true);
+            StartCoroutine(TurnFinish(1.2f));
         }
     }
 
@@ -33,5 +32,17 @@ public class Player : Character
         turnGuage = 0;
         isDie = false;
         isTurnFinish = false;
+    }
+
+    public IEnumerator TurnFinish(float _delay)
+    {
+        yield return new WaitForSeconds(_delay);
+        turnGuage = 0;
+        weapon.SetActive(false);
+        BattleCursor.battleTile.OnDeselect();
+        onTileData.OnDeselect();
+        BattleManager.instance.isTurnStart = false;
+
+        animator.SetBool("isAttack", false);
     }
 }

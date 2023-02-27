@@ -39,7 +39,7 @@ public class TownCamera : MoveCamera
 
         if (isInStreet)
         {
-            if (player.transform.position.x > -50.5f && player.transform.position.x < -36.5f)
+            if (player.transform.position.x > -52.5f && player.transform.position.x < -34.5f)
             {
                 transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
             }

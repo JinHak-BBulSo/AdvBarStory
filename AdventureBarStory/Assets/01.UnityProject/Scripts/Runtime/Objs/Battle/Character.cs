@@ -10,6 +10,8 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     public bool isDie = false;
     public bool isTurnFinish = false;
 
+    public Animator animator;
+
     public BattleTile onTileData = default;
 
     public Status status = default;
@@ -21,6 +23,7 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     {
         nowHp = status.hp;
         nowMp = status.mp;
+        animator = GetComponent<Animator>();
     }
 
     [System.Serializable]

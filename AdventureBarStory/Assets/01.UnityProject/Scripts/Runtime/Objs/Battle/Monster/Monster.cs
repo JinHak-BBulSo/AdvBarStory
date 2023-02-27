@@ -15,9 +15,9 @@ public class Monster : Character
     void Start()
     {
         playerObjs = GameObject.Find("BattleObjs").FindChildObj("PlayerObjs");
-        for(int i = 0; i < playerObjs.transform.childCount; i++)
+        for(int i = 0; i < playerObjs.transform.childCount - 3; i++)
         {
-            playerParty.Add(playerObjs.transform.GetChild(i).gameObject);
+            playerParty.Add(playerObjs.transform.GetChild(i + 3).gameObject);
         }
     }
 
