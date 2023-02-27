@@ -53,15 +53,17 @@ public class Character : MonoBehaviour, ITurnFinishHandler
         /* override using */
     }
 
-    public void Hit(int damage)
+    public virtual void Hit(int damage)
     {
-        if (damage - status._vit <= 0)
+        int _hitDamage = damage - status._vit;
+
+        if (_hitDamage <= 0)
         {
             nowHp -= 1;
         }
         else
         {
-            nowHp -= (damage - status._vit);
+            nowHp -= (_hitDamage);
         }
         if (nowHp <= 0)
         {

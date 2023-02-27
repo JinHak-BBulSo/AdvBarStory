@@ -30,6 +30,7 @@ public class PlayerManager : Singleton<PlayerManager>
     public void ActionStart()
     {
         PlayerAction();
+        ActionReset();
     }
 
     public void ActionReset()

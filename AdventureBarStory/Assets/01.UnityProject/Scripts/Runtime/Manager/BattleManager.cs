@@ -81,11 +81,11 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     {
         if (battleObjs.activeSelf)
         {
-            if (turnReadyCharacter.Count == 0 && !isTurnStart)
+            if (turnReadyCharacter.Count == 0 && !isTurnStart && monsterIndex != 0)
             {
                 turnCalculate();
             }
-            else if (turnReadyCharacter.Count != 0 && !isTurnStart)
+            else if (turnReadyCharacter.Count != 0 && !isTurnStart && monsterIndex != 0)
             {
                 isTurnStart = true;
                 nowTurnCharacter = turnReadyCharacter.Dequeue();
@@ -93,12 +93,12 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             }
         }
 
-        if(isBattleStart && monsterIndex == 0)
+        if(isBattleStart && monsterIndex == 0 && !isTurnStart)
         {
             Win();
         }
 
-        if(isBattleStart && playerIndex == 0)
+        if(isBattleStart && playerIndex == 0 && !isTurnStart)
         {
             Defeat();
         }
@@ -241,7 +241,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         for (int i = 0; i < playerParty.Count; i++)
         {
             playerParty[i].animator.SetBool("isWin", false);
