@@ -3,9 +3,10 @@
 - 2023-02-13 Init Set, Town, Stage1 제작
 - 2023-02-14 PlayerMove 제작, Portal 제작, 카메라 무브
 - 2023-02-15 TitleScene 제작, Game Opening 제작
+
 issue : 대화 스크립트 관리를 어떻게 관리 할 것인가?
 
-solution : CSV를 통해 관리
+solution : CSV or JSON을 활용할 수 있을것으로 보임. 우선은 CSV를 통해 관리를 하도록 함
 
 - 2023-02-16 UI 및 인벤토리 제작
 
@@ -52,3 +53,16 @@ solution : Library 폴더를 삭제 후 editor 재실행, 경로에 특수문자
 - 2023-02-23 Inventory 구조 수정 작업.
 
 아이템을 카테고리 별로 분류 -> 카테고리별 리스트를 만들어 Inventory가 관리하도록 변경
+  
+- 2023-02-24 Recipe UI & Recipe 조합 설계
+- 2023-02-26 Recipe를 활용한 Food 생성 기능 구현
+- 2023-02-27 Battle System UI 개선, 시스템 일부 개선
+  issue : Player의 Attack이 중복 적용되던 문제
+  
+  summary : PlayerManager에 존재하는 PlayerAction event의 reset을 해주지 않았던 것으로 추정.
+  
+  그 결과 Attack을 실행할 때 마다 PlayerAction event에 중복적으로 Attack이 연결되었을 것임
+  
+  PlayerManager.ActionReset()이 필요할 것으로 보임
+  
+  Solution : PlayerManager.ActionReset() -> PlayerAction = default로 변경을 적용하니 정상적으로 동작함을 확인.
