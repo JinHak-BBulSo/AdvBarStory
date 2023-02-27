@@ -168,6 +168,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         playerPartySet();
 
         isBattleStart = true;
+        Camera.main.GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().Play();
         battleObjs.SetActive(true);
     }
 
@@ -205,6 +207,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         for (int i = 0; i < playerParty.Count; i++)
         {
             playerParty[i].turnGuage = 0;
+            playerParty[i].animator.SetBool("isAttack", false);
+            playerParty[i].animator.SetBool("isWin", true);
         }
 
         turnReadyCharacter.Clear();
@@ -214,9 +218,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         nowTurnCharacter = default;
         nowTurnPlayer = default;
         nowTurnMonster = default;
-
         playerIndex = 0;
-        battleObjs.SetActive(false);
+        
         isTurnStart = false;
         isBattleStart = false;
 
@@ -224,11 +227,25 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             weapon.SetActive(false);
         }
+
+        GetComponent<AudioSource>().Stop();
+        Camera.main.GetComponent<AudioSource>().Play();
+        StartCoroutine(Delay());
     }
 
     public void Defeat()
     {
         isBattleStart = false;
         isTurnStart = false;
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < playerParty.Count; i++)
+        {
+            playerParty[i].animator.SetBool("isWin", false);
+        }
+        battleObjs.SetActive(false);
     }
 }
