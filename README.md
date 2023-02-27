@@ -57,7 +57,10 @@ solution : Library 폴더를 삭제 후 editor 재실행, 경로에 특수문자
 - 2023-02-26 Recipe를 활용한 Food 생성 기능 구현
 - 2023-02-27 Battle System UI 개선, 시스템 일부 개선
   issue : Player의 Attack이 중복 적용되던 문제
-  summary : PlayerManager에 존재하는 PlayerAction event의 reset을 해주지 않았던 것으로 추정. PlayerManager.ActionReset()
+  summary : PlayerManager에 존재하는 PlayerAction event의 reset을 해주지 않았던 것으로 추정.
+  
   그 결과 Attack을 실행할 때 마다 PlayerAction event에 중복적으로 Attack이 연결되었을 것임
   
-  Solution : PlayerManager.ActionReset()을 적용하니 정상적으로 동작함을 확인.
+  PlayerManager.ActionReset()이 필요할 것으로 보임
+  
+  Solution : PlayerManager.ActionReset() -> PlayerAction = default로 변경을 적용하니 정상적으로 동작함을 확인.
