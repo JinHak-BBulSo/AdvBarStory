@@ -17,5 +17,5 @@ MonoBehaviour:
   toolTip: "\uACE0\uAE09 \uD3EC\uC158"
   itemImage: {fileID: 1922506081, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 500
-  recoveryHp: 0
+  recoveryHp: 150
   recoveryMp: 0

@@ -6,13 +6,16 @@ public class Player : Character
 {
     public int exp = 0;
     public int level = 1;
-    AudioSource audioSource = default;
+    public AudioSource audioSource = default;
 
     public GameObject weapon = default;
     public Animator weaponAni = default;
 
     [SerializeField]
-    BattleSimpleCharSlot charSlot = default;
+    protected BattleSimpleCharSlot charSlot = default;
+
+    public List<(string, int)> skillInfo = new List<(string, int)>();
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -27,7 +30,8 @@ public class Player : Character
             weapon.SetActive(true);
             weaponAni.SetBool("isAttack", true);
             
-            StartCoroutine(TurnFinish(1.2f));
+            audioSource.Play();
+            StartCoroutine(TurnFinish(0.8f));
         }
     }
 
@@ -43,10 +47,13 @@ public class Player : Character
     public IEnumerator TurnFinish(float _delay)
     {
         yield return new WaitForSeconds(_delay);
+        charImgSlot.SetActive(true);
+
         turnGuage = 0;
         BattleCursor.battleTile.OnDeselect();
         onTileData.OnDeselect();
         BattleManager.instance.isTurnStart = false;
+        charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
 
         weaponAni.SetBool("isAttack", false);
         animator.SetBool("isAttack", false);
@@ -54,7 +61,37 @@ public class Player : Character
     }
     public override void Hit(int damage)
     {
-        base.Hit(damage);
+        int _hitDamage = damage - status._vit;
+
+        if (_hitDamage <= 0)
+        {
+            nowHp -= 1;
+        }
+        else
+        {
+            nowHp -= (_hitDamage);
+        }
+        if (nowHp <= 0)
+        {
+            Die();
+        }
+
+        animator.SetBool("isHit", true);
+        charSlot.UpdateText();
+        StartCoroutine(HitMotion());
+    }
+
+    public void Recovery(int _hp, int _mp)
+    {
+        nowHp += _hp;
+        if (nowHp > status.hp)
+            nowHp = status.hp;
+
+
+        nowMp += _mp;
+        if (nowMp > status.mp)
+            nowMp = status.mp;
+
         charSlot.UpdateText();
     }
     public override void Die()
@@ -62,5 +99,17 @@ public class Player : Character
         base.Die();
         charSlot.gameObject.SetActive(false);
         weapon.SetActive(false);
+        charImgSlot.SetActive(false);
+        charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
+    }
+
+    public IEnumerator HitMotion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("isHit", false);
+    }
+    public virtual void SkillSelect(int slotIndex)
+    {
+        /* Player Character each override */
     }
 }

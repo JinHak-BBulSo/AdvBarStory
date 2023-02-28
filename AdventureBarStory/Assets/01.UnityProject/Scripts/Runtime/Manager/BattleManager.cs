@@ -8,6 +8,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 {
     public bool isBattleStart = false;
     public bool isBattleAble = true;
+    public GameObject currentCharIcon = default;
 
     [SerializeField]
     GameObject battleObjsPrefab = default;
@@ -56,8 +57,9 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         playerObjs = battleObjs.FindChildObj("PlayerObjs");
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
         battleTileObjs = battleObjs.FindChildObj("BattleTile");
+        currentCharIcon = battleObjs.FindChildObj("CurrentCharIcon");
 
-        for (int i = 0; i < playerObjs.transform.childCount - 3; i++)
+        for (int i = 0; i < playerObjs.transform.childCount - 4; i++)
         {
             playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
             playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
@@ -83,7 +85,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             if (turnReadyCharacter.Count == 0 && !isTurnStart && monsterIndex != 0)
             {
-                turnCalculate();
+                TurnCalculate();
             }
             else if (turnReadyCharacter.Count != 0 && !isTurnStart && monsterIndex != 0)
             {
@@ -101,19 +103,20 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         if(isBattleStart && playerIndex == 0 && !isTurnStart)
         {
             Defeat();
+            return;
         }
     }
 
-    public void turnCalculate()
+    public void TurnCalculate()
     {
         foreach(Player player in playerParty)
         {
             if (player.isDie) continue;
 
             player.TurnRecovery();
-            if(player.turnGuage >= 100)
+            if(player.turnGuage >= 10)
             {
-                player.turnGuage = 100;
+                player.turnGuage = 10;
                 turnReadyCharacter.Enqueue(player);
                 turnReadyPlayer.Enqueue(player);
             }
@@ -124,9 +127,9 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             if (monster.isDie) continue;
 
             monster.TurnRecovery();
-            if (monster.turnGuage >= 100)
+            if (monster.turnGuage >= 10)
             {
-                monster.turnGuage = 100;
+                monster.turnGuage = 10;
                 turnReadyCharacter.Enqueue(monster);
                 turnReadyMonster.Enqueue(monster);
             }
@@ -135,8 +138,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     void TurnStart()
     {
+        currentCharIcon.GetComponent<Image>().sprite = nowTurnCharacter.charImgSlot.GetComponent<Image>().sprite;
+        nowTurnCharacter.GetComponent<Character>().charImgSlot.SetActive(false);
         BattleCursor.battleTile = nowTurnCharacter.onTileData;
-        BattleCursor.battleTile.OnSelect();  
+        BattleCursor.battleTile.OnSelect();
 
         if (nowTurnCharacter.gameObject.tag == "Player")
         {
@@ -164,6 +169,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void BattleStart()
     {
+        currentCharIcon.GetComponent<Image>().sprite = null;
         MonsterSet();
         playerPartySet();
 
@@ -177,7 +183,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     {
         if(GFunc.GetActiveScene().name == "03.Stage1Scene")
         {
-            monsterIndex = Random.Range(1, 4 + 1);
+            monsterIndex = Random.Range(2, 4 + 1);
 
             for(int i = 0; i <= monsterIndex - 1; i++)
             {
@@ -209,6 +215,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             playerParty[i].turnGuage = 0;
             playerParty[i].animator.SetBool("isAttack", false);
             playerParty[i].animator.SetBool("isWin", true);
+            playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
         }
 
         turnReadyCharacter.Clear();
@@ -235,8 +242,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void Defeat()
     {
-        isBattleStart = false;
-        isTurnStart = false;
+        GameManager.instance.GameOver();
     }
 
     IEnumerator Delay()

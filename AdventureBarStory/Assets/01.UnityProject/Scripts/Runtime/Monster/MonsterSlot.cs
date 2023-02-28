@@ -11,6 +11,9 @@ public class MonsterSlot : MonoBehaviour
     Monster monster = default;
     public MonsterStatus slotMonsterStatus = default;
 
+    [SerializeField]
+    GameObject monserImgSlot = default;
+
     private void Awake()
     {
         
@@ -39,5 +42,7 @@ public class MonsterSlot : MonoBehaviour
 
         monster.isDie = false;
         monster.turnGuage = 0;
+
+        monserImgSlot.GetComponent<Image>().sprite = _monster.monsterIcon;
     }
 }

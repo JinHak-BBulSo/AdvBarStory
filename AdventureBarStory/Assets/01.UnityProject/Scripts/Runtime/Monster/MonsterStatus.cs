@@ -8,6 +8,7 @@ public class MonsterStatus : ScriptableObject
 {
     public RuntimeAnimatorController animatorController;
     public Sprite monsterSprite;
+    public Sprite monsterIcon;
 
     public int _str;
     public int _vit;

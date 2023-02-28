@@ -18,4 +18,4 @@ MonoBehaviour:
   itemImage: {fileID: 2000111757, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 500
   recoveryHp: 0
-  recoveryMp: 0
+  recoveryMp: 60

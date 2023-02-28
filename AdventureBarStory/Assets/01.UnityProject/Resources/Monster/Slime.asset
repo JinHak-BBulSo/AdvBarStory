@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorController: {fileID: 9100000, guid: c70f1094720022e4a831e439c6ab3dc5, type: 2}
   monsterSprite: {fileID: -1012404206, guid: ceea3ddcd0004694aaeaf5d9d123fae8, type: 3}
+  monsterIcon: {fileID: -988610738, guid: 0367c86a8c38cf04e8a0903b094575c5, type: 3}
   _str: 20
   _vit: 20
   _int: 20

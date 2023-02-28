@@ -29,6 +29,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public void ActionStart()
     {
+        if (PlayerAction == default) return;
         PlayerAction();
         ActionReset();
     }

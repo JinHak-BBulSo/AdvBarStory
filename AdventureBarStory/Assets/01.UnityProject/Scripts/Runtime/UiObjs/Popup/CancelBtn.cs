@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CancelBtn : MonoBehaviour
 {
     GameObject actionBtns = default;
+    public static Action clickCancelBtn = default;
 
     void Start()
     {
@@ -27,5 +28,9 @@ public class CancelBtn : MonoBehaviour
 
         OkBtn.clickOkBtn = default;
         actionBtns.SetActive(true);
+
+        if (clickCancelBtn == default) return;
+        clickCancelBtn();
+        clickCancelBtn = default;
     }
 }

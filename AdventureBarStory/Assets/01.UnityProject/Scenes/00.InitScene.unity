@@ -2325,6 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotList: []
+  itemTooltip: {fileID: 51947783}
 --- !u!1 &917720674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,6 +4032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBattleStart: 0
   isBattleAble: 1
+  currentCharIcon: {fileID: 0}
   battleObjsPrefab: {fileID: 3680927562707250962, guid: aa5b989788651b24e80559a4ba6d4541, type: 3}
   battleObjs: {fileID: 0}
   battleBgSprite:
@@ -5644,7 +5646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ecfe9eb9539bf4fbe9688d762f5df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameOver: 0
 --- !u!4 &1906140465
 Transform:
   m_ObjectHideFlags: 0
