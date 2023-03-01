@@ -15,6 +15,8 @@ public class PlayerEquipSlot : Slot, IDeselectHandler
     public TMP_Text equipNameTxt = default;
     public Image equipImage = default;
 
+    public Sprite nullImg = default;
+
     public override void Awake()
     {
         tooltipTxt = GameObject.Find("InitObjs").FindChildObj("EquipTooltipObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
@@ -43,5 +45,11 @@ public class PlayerEquipSlot : Slot, IDeselectHandler
     public void OnDeselect(BaseEventData eventData)
     {
         isSelected = false;
+    }
+
+    public void SlotReSet()
+    {
+        equipNameTxt.text = "Empty";
+        equipImage.sprite = nullImg;
     }
 }

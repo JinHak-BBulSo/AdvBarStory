@@ -18,6 +18,7 @@ public class DismountBtn : MonoBehaviour
         PlayerWeaponSlot slot = EquipSlot.nowSelectedEquipSlot as PlayerWeaponSlot;
         slot.UpdateSlot();
         equipList.UpdateSlots();
+        EquipSlot.nowSelectedEquipSlot.SlotReSet();
         equipListObj.SetActive(false);
     }
 }
