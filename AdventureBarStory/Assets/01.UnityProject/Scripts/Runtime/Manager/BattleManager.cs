@@ -31,6 +31,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public bool isTurnStart = false;
 
     public int monsterIndex = 0;
+    public int startMonsterIndex = 0;
     public int playerIndex = 0;
 
     public Character nowTurnCharacter = default;
@@ -187,8 +188,9 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         if(GFunc.GetActiveScene().name == "03.Stage1Scene")
         {
             monsterIndex = Random.Range(2, 4 + 1);
+            startMonsterIndex = monsterIndex;
 
-            for(int i = 0; i <= monsterIndex - 1; i++)
+            for (int i = 0; i <= monsterIndex - 1; i++)
             {
                 int monsterId = Random.Range(0, 2 + 1);
                 monsterSlot[i].GetComponent<MonsterSlot>().SetMonster(monsterStatuses[monsterId]);
@@ -220,6 +222,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             PlayerManager.instance.playerParty[i].animator.SetBool("isWin", true);
             PlayerManager.instance.playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
         }
+
+        PlayerManager.instance.PlayerGetExp(startMonsterIndex * 5);
 
         turnReadyCharacter.Clear();
         turnReadyMonster.Clear();

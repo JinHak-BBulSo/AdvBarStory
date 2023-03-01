@@ -8,11 +8,13 @@ public class EquipSlot : Slot, IDeselectHandler
 {
     public static PlayerEquipSlot nowSelectedEquipSlot = default;
     bool isSelected = false;
-    GameObject equipList = default;
+    GameObject equipListObj = default;
+    EquipList equipList = default;
     public override void Awake()
     {
         tooltipTxt = GameObject.Find("InitObjs").FindChildObj("PopupEquipObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
-        equipList = GameObject.Find("InitObjs").FindChildObj("PopupEquipObjs").FindChildObj("EquipList");
+        equipListObj = GameObject.Find("InitObjs").FindChildObj("PopupEquipObjs").FindChildObj("EquipList");
+        equipList = equipListObj.GetComponent<EquipList>();
     }
 
     public override void OnClickSlot()
@@ -29,9 +31,6 @@ public class EquipSlot : Slot, IDeselectHandler
             {
                 if(equipment.equipTag == "weapon")
                 {
-                    nowSelectedEquipSlot.player.equipWeapon = equipment;
-                    Inventory.instance.UseItem<Equip>(equipment, 1);
-
                     if(nowSelectedEquipSlot.player.equipWeapon == default)
                     {
                         PlayerManager.instance.EquipEquipment(equipment, nowSelectedEquipSlot.player);
@@ -43,11 +42,12 @@ public class EquipSlot : Slot, IDeselectHandler
                     }
                     PlayerWeaponSlot slot = nowSelectedEquipSlot as PlayerWeaponSlot;
                     slot.UpdateSlot();
-                    equipList.SetActive(false);
+                    equipList.UpdateSlots();
+                    equipListObj.SetActive(false);
                 }
                 else
                 {
-                    equipList.SetActive(false);
+                    equipListObj.SetActive(false);
                     tooltipTxt.text = "This is not Weapon";
                 }
             }
@@ -55,9 +55,6 @@ public class EquipSlot : Slot, IDeselectHandler
             {
                 if (equipment.equipTag == "armor")
                 {
-                    nowSelectedEquipSlot.player.equipArmor = equipment;
-                    Inventory.instance.UseItem<Equip>(equipment, 1);
-
                     if (nowSelectedEquipSlot.player.equipArmor == default)
                     {
                         PlayerManager.instance.EquipEquipment(equipment, nowSelectedEquipSlot.player);
@@ -69,11 +66,12 @@ public class EquipSlot : Slot, IDeselectHandler
                     }
                     PlayerArmorSlot slot = nowSelectedEquipSlot as PlayerArmorSlot;
                     slot.UpdateSlot();
-                    equipList.SetActive(false);
+                    equipList.UpdateSlots();
+                    equipListObj.SetActive(false);
                 }
                 else
                 {
-                    equipList.SetActive(false);
+                    equipListObj.SetActive(false);
                     tooltipTxt.text = "This is not Armor";
                 }
             }

@@ -15,7 +15,7 @@ public class SlotList : MonoBehaviour
     protected int idx = 0;
     protected int slotIdx = 0;
 
-    GameObject itemSlots = default;
+    protected GameObject itemSlots = default;
 
     public virtual void Awake()
     {

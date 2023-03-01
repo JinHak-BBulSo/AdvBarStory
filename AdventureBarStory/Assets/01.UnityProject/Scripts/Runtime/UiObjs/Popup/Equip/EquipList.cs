@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquipList : SlotList
 {
     public override void Awake()
     {
-        base.Awake();
+        itemSlots = gameObject.FindChildObj("ItemSlots");
+        for (int i = 0; i < itemSlots.transform.childCount - 1; i++)
+        {
+            slotList.Add(itemSlots.transform.GetChild(i).gameObject);
+            slotNameTextList.Add(slotList[i].transform.GetChild(0).GetComponent<TMP_Text>());
+            slotImageList.Add(slotList[i].transform.GetChild(1).GetComponent<Image>());
 
+            if (slotList[i].transform.childCount > 2)
+                slotStockText.Add(slotList[i].transform.GetChild(2).GetComponent<TMP_Text>());
+
+            slotList[i].SetActive(false);
+        }
     }
     void OnEnable()
     {
@@ -42,5 +53,9 @@ public class EquipList : SlotList
             slotIdx++;
         }
     }
-
+    public void UpdateSlots()
+    {
+        SlotReset();
+        SlotSet<Equip>(Inventory.instance.equips, "equip");
+    }
 }

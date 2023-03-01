@@ -6,6 +6,7 @@ public class Player : Character
 {
     public int exp = 0;
     public int level = 1;
+
     public AudioSource audioSource = default;
 
     public GameObject weapon = default;
@@ -119,6 +120,10 @@ public class Player : Character
         /* Player Character each override */
     }
     public virtual void InitskillSet()
+    {
+        /* Player Character each override */
+    }
+    public virtual void LevelUp()
     {
         /* Player Character each override */
     }

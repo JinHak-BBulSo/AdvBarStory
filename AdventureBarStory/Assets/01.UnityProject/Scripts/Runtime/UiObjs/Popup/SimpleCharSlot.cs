@@ -8,7 +8,7 @@ public class SimpleCharSlot : MonoBehaviour
     [SerializeField]
     private Player player = default;
     public string charName = default;
-    bool firstEnable = false;
+    public bool firstEnable = false;
 
     [SerializeField]
     TMP_Text[] texts = new TMP_Text[3]; 

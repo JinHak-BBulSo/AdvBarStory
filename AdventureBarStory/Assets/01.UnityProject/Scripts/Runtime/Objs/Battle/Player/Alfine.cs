@@ -83,4 +83,18 @@ public class Alfine : Player
         skillInfo.Add(("Flash Light", 6));
         skillInfo.Add(("Heal", 6));
     }
+    public override void LevelUp()
+    {
+        status._str += 1;
+        status._vit += 1;
+        status._int += 5;
+        status._men += 4;
+        status._hit += 3;
+        status._agi += 2;
+        status._avd += 1;
+        status._luk += 1;
+
+        status.hp += 9;
+        status.mp += 9;
+    }
 }

@@ -8,6 +8,8 @@ public class PlayerManager : Singleton<PlayerManager>
     GameObject playerPrefab = default;
     public GameObject player = default;
 
+    public int[] requireLevelUpExp = new int[10] { 20, 50, 100, 150, 250, 400, 600, 900, 1300, 2000 };
+
     public List<Player> playerParty = new List<Player>();
 
     public Vector3 recallPlayerTownPos = default;
@@ -61,5 +63,29 @@ public class PlayerManager : Singleton<PlayerManager>
         _player.equipWeapon = default;
 
         Inventory.instance.GetItem<Equip>(_equip);
+    }
+
+    public void PlayerGetExp(int _exp)
+    {
+        foreach(Player player in playerParty)
+        {
+            if (!player.isDie)
+            {
+                player.exp += _exp;
+                if(player.exp >= requireLevelUpExp[player.level - 1])
+                {
+                    PlayerLevelUp(player);
+                }
+            }
+            else continue;
+        }
+    }
+
+    public void PlayerLevelUp(Player _player)
+    {
+        _player.LevelUp();
+        _player.level++;
+        _player.nowHp = _player.status.hp;
+        _player.nowMp = _player.status.mp;
     }
 }

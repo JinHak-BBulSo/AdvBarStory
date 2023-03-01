@@ -20,7 +20,7 @@ public class Siela : Player
             burstEffect.SetActive(true);
             effectController = burstEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._hit * 1.6f);
+            int _hitDamage = (int)(status._hit * 1.6f) + (int)(status._str * 0.6);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isAttack", true);
@@ -40,7 +40,7 @@ public class Siela : Player
             airSlashEffect.SetActive(true);
             effectController = airSlashEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._hit * 1.4f);
+            int _hitDamage = (int)(status._hit * 1.4f) + (int)(status._str * 0.3);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isAttack", true);
@@ -92,5 +92,19 @@ public class Siela : Player
         skillInfo.Add(("Burst Edge", 8));
         skillInfo.Add(("Air Slash", 6));
         skillInfo.Add(("Ice Ball", 6));
+    }
+    public override void LevelUp()
+    {
+        status._str += 3;
+        status._vit += 2;
+        status._int += 2;
+        status._men += 2;
+        status._hit += 5;
+        status._agi += 3;
+        status._avd += 1;
+        status._luk += 1;
+
+        status.hp += 15;
+        status.mp += 6;
     }
 }

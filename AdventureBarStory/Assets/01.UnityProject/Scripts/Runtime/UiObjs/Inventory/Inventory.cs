@@ -119,6 +119,15 @@ public class Inventory : Singleton<Inventory>
                     materialAmount.RemoveAt(itemIndex);
                 }
                 break;
+            case "equip":
+                itemIndex = equips.IndexOf(_item as Equip);
+                equipAmount[itemIndex] -= amount;
+                if (equipAmount[itemIndex] == 0)
+                {
+                    equips.RemoveAt(itemIndex);
+                    equipAmount.RemoveAt(itemIndex);
+                }
+                break;
             case "food":
                 itemIndex = foods.IndexOf(_item as Food);
                 foodAmount[itemIndex] -= amount;

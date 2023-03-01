@@ -18,7 +18,7 @@ public class Fred : Player
             chargeEffect.SetActive(true);
             effectController = chargeEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._hit * 1.5f);
+            int _hitDamage = (int)(status._hit * 1.5f) + (int)(status._str * 0.7);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isAttack", true);
@@ -38,7 +38,7 @@ public class Fred : Player
             swordEdgeEffect.SetActive(true);
             effectController = chargeEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._hit * 1.6f);
+            int _hitDamage = (int)(status._hit * 1.6f) + (int)(status._str * 0.6);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isAttack", true);
@@ -88,5 +88,19 @@ public class Fred : Player
         skillInfo.Add(("Charge Sword", 8));
         skillInfo.Add(("Sword Edge", 6));
         skillInfo.Add(("Last Blast", 6));
+    }
+    public override void LevelUp()
+    {
+        status._str += 4;
+        status._vit += 3;
+        status._int += 1;
+        status._men += 1;
+        status._hit += 4;
+        status._agi += 2;
+        status._avd += 1;
+        status._luk += 1;
+
+        status.hp += 18;
+        status.mp += 4;
     }
 }
