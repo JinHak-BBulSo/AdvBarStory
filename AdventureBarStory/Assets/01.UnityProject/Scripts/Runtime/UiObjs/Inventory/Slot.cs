@@ -17,6 +17,7 @@ public class Slot : MonoBehaviour
 
     public virtual void OnClickSlot()
     {
-        tooltipTxt.text = slotItem.toolTip;
+        if(slotItem != default)
+            tooltipTxt.text = slotItem.toolTip;
     }
 }

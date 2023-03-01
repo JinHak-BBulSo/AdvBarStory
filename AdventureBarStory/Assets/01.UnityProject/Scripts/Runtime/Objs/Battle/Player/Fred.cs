@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Fred : Player
 {
-    public GameObject airSlash = default;
     public Sprite sielaImg = default;
-    void Start()
-    {
-        skillInfo.Add(("Charge Sword", 8));
-        skillInfo.Add(("Ice Sword", 6));
-        skillInfo.Add(("Last Blast", 6));
-    }
+
+    public GameObject chargeEffect = default;
+    public GameObject swordEdgeEffect = default;
+    public GameObject blastEffect = default;
+
+    EffectController effectController = default;
     public void ChargeSword()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
-            int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
+            chargeEffect.SetActive(true);
+            effectController = chargeEffect.GetComponent<EffectController>();
+
+            int _hitDamage = (int)(status._hit * 1.5f);
+            effectController._damage = _hitDamage;
+
             animator.SetBool("isAttack", true);
 
             weapon.SetActive(true);
@@ -25,15 +28,19 @@ public class Fred : Player
 
             UseSkill(skillInfo[0].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
-    public void IceSword()
+    public void SwordEdge()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
+            swordEdgeEffect.SetActive(true);
+            effectController = chargeEffect.GetComponent<EffectController>();
+
             int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
+            effectController._damage = _hitDamage;
+
             animator.SetBool("isAttack", true);
 
             weapon.SetActive(true);
@@ -41,23 +48,24 @@ public class Fred : Player
 
             UseSkill(skillInfo[1].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
     public void LastBlast()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
-            int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
-            animator.SetBool("isAttack", true);
+            blastEffect.SetActive(true);
+            effectController = chargeEffect.GetComponent<EffectController>();
 
-            weapon.SetActive(true);
-            weaponAni.SetBool("isAttack", true);
+            int _hitDamage = (int)(status._int * 1.5f);
+            effectController._damage = _hitDamage;
+
+            animator.SetBool("isMagic", true);
 
             UseSkill(skillInfo[2].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
     public override void SkillSelect(int slotIndex)
@@ -68,12 +76,17 @@ public class Fred : Player
                 PlayerManager.instance.PlayerAction += ChargeSword;
                 break;
             case 2:
-                PlayerManager.instance.PlayerAction += IceSword;
+                PlayerManager.instance.PlayerAction += SwordEdge;
                 break;
             case 3:
                 PlayerManager.instance.PlayerAction += LastBlast;
                 break;
         }
     }
-
+    public override void InitskillSet()
+    {
+        skillInfo.Add(("Charge Sword", 8));
+        skillInfo.Add(("Sword Edge", 6));
+        skillInfo.Add(("Last Blast", 6));
+    }
 }

@@ -5,61 +5,61 @@ using UnityEngine;
 public class Alfine : Player
 {
     public Sprite sielaImg = default;
-    void Start()
-    {
-        skillInfo.Add(("Fire Ball", 8));
-        skillInfo.Add(("Flame Rage", 6));
-        skillInfo.Add(("Heal", 6));
-    }
+
+    public GameObject fireBallEffect = default;
+    public GameObject flashLightEffect = default;
+    public GameObject healEffect = default;
+
+    EffectController effectController = default;
 
     public void FireBall()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
-            int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
-            animator.SetBool("isAttack", true);
+            fireBallEffect.SetActive(true);
+            effectController = fireBallEffect.GetComponent<EffectController>();
 
-            weapon.SetActive(true);
-            weaponAni.SetBool("isAttack", true);
+            int _hitDamage = (int)(status._int * 1.7f);
+            effectController._damage = _hitDamage;
+
+            animator.SetBool("isMagic", true);
 
             UseSkill(skillInfo[0].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
-    public void FlameRage()
+    public void FlashLight()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
-            int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
-            animator.SetBool("isAttack", true);
+            flashLightEffect.SetActive(true);
+            effectController = fireBallEffect.GetComponent<EffectController>();
 
-            weapon.SetActive(true);
-            weaponAni.SetBool("isAttack", true);
+            int _hitDamage = (int)(status._int * 1.5f);
+            effectController._damage = _hitDamage;
+
+            animator.SetBool("isMagic", true);
 
             UseSkill(skillInfo[1].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
     public void Heal()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag == "Player")
         {
+            healEffect.SetActive(true);
             int _heal = (int)(status._int * 0.7f);
             Player healTarget = BattleCursor.battleTile.onTileObject.GetComponent<Character>() as Player;
 
             healTarget.Recovery(_heal, 0);
-            animator.SetBool("isAttack", true);
-
-            weapon.SetActive(true);
-            weaponAni.SetBool("isAttack", true);
+            animator.SetBool("isMagic", true);
 
             UseSkill(skillInfo[2].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
     public override void SkillSelect(int slotIndex)
@@ -70,11 +70,17 @@ public class Alfine : Player
                 PlayerManager.instance.PlayerAction += FireBall;
                 break;
             case 2:
-                PlayerManager.instance.PlayerAction += FlameRage;
+                PlayerManager.instance.PlayerAction += FlashLight;
                 break;
             case 3:
                 PlayerManager.instance.PlayerAction += Heal;
                 break;
         }
+    }
+    public override void InitskillSet()
+    {
+        skillInfo.Add(("Fire Ball", 8));
+        skillInfo.Add(("Flash Light", 6));
+        skillInfo.Add(("Heal", 6));
     }
 }

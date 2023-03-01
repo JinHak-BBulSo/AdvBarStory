@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 {
     public bool isBattleStart = false;
-    public bool isBattleAble = true;
     public GameObject currentCharIcon = default;
 
     [SerializeField]
@@ -22,7 +21,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     Sprite[] battleBgSprite = default;
 
     public List<Monster> monsters = new List<Monster>();
-    public List<Player> playerParty = new List<Player>();
     public List<GameObject> playerWeapons = new List<GameObject>();
     public List<GameObject> battleTile = new List<GameObject>();
 
@@ -49,7 +47,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             battleObjs = Instantiate(battleObjsPrefab, transform);
             battleObjs.name = "BattleObjs";
-            battleObjs.SetActive(false);
         }
 
         base.Awake();
@@ -58,12 +55,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
         battleTileObjs = battleObjs.FindChildObj("BattleTile");
         currentCharIcon = battleObjs.FindChildObj("CurrentCharIcon");
-
-        for (int i = 0; i < playerObjs.transform.childCount - 4; i++)
-        {
-            playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
-            playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
-        }
 
         for(int i = 0; i < monsterObjs.transform.childCount; i++)
         {
@@ -77,6 +68,17 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             battleTile.Add(battleTileObjs.transform.GetChild(i).gameObject);
             battleTile[i].GetComponent<Button>().enabled = false;
         }
+    }
+
+    public void Start()
+    {
+        for (int i = 0; i < playerObjs.transform.childCount - 4; i++)
+        {
+            playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
+            PlayerManager.instance.playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
+            PlayerManager.instance.playerParty[i].InitskillSet();
+        }
+        battleObjs.SetActive(false);
     }
 
     void Update()
@@ -109,7 +111,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void TurnCalculate()
     {
-        foreach(Player player in playerParty)
+        foreach(Player player in PlayerManager.instance.playerParty)
         {
             if (player.isDie) continue;
 
@@ -163,12 +165,13 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public IEnumerator TurnFinish()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         isTurnStart = false;
     }
 
     public void BattleStart()
     {
+        PlayerManager.instance.player.GetComponent<PlayerController>().enabled = false;
         currentCharIcon.GetComponent<Image>().sprite = null;
         MonsterSet();
         playerPartySet();
@@ -196,26 +199,26 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void playerPartySet()
     {
-        for (int i = 0; i < playerParty.Count; i++)
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            if (playerParty[i].isDie) playerParty[i].gameObject.SetActive(false);
+            if (PlayerManager.instance.playerParty[i].isDie) PlayerManager.instance.playerParty[i].gameObject.SetActive(false);
             else
             {
                 playerIndex++;
-                playerParty[i].turnGuage = 0;
-                playerParty[i].gameObject.SetActive(true);
+                PlayerManager.instance.playerParty[i].turnGuage = 0;
+                PlayerManager.instance.playerParty[i].gameObject.SetActive(true);
             }
         }
     }
 
     public void Win()
     {
-        for (int i = 0; i < playerParty.Count; i++)
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            playerParty[i].turnGuage = 0;
-            playerParty[i].animator.SetBool("isAttack", false);
-            playerParty[i].animator.SetBool("isWin", true);
-            playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
+            PlayerManager.instance.playerParty[i].turnGuage = 0;
+            PlayerManager.instance.playerParty[i].animator.SetBool("isAttack", false);
+            PlayerManager.instance.playerParty[i].animator.SetBool("isWin", true);
+            PlayerManager.instance.playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
         }
 
         turnReadyCharacter.Clear();
@@ -235,9 +238,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             weapon.SetActive(false);
         }
 
+        Inventory.instance.SetGold(100);
         GetComponent<AudioSource>().Stop();
         Camera.main.GetComponent<AudioSource>().Play();
-        StartCoroutine(Delay());
+        StartCoroutine(Delay());  
     }
 
     public void Defeat()
@@ -248,10 +252,11 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(1.5f);
-        for (int i = 0; i < playerParty.Count; i++)
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            playerParty[i].animator.SetBool("isWin", false);
+            PlayerManager.instance.playerParty[i].animator.SetBool("isWin", false);
         }
         battleObjs.SetActive(false);
+        PlayerManager.instance.player.GetComponent<PlayerController>().enabled = true;
     }
 }

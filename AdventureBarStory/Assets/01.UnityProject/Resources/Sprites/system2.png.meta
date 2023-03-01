@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: system2_0
+      name: 1_vit
       rect:
         serializedVersion: 2
-        x: 0
-        y: 368
-        width: 32
-        height: 32
+        x: 38
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,13 +150,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_1
+      name: 1_int
       rect:
         serializedVersion: 2
-        x: 32
-        y: 368
-        width: 32
-        height: 32
+        x: 73
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,13 +171,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_2
+      name: 1_men
       rect:
         serializedVersion: 2
-        x: 64
-        y: 368
-        width: 32
-        height: 32
+        x: 108
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,13 +192,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_3
+      name: 1_agi
       rect:
         serializedVersion: 2
-        x: 96
-        y: 368
-        width: 32
-        height: 32
+        x: 143
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,13 +213,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_4
+      name: 1_hit
       rect:
         serializedVersion: 2
-        x: 128
-        y: 368
-        width: 32
-        height: 32
+        x: 178
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,13 +255,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_6
+      name: 1_avd
       rect:
         serializedVersion: 2
-        x: 192
-        y: 368
-        width: 32
-        height: 32
+        x: 213
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,13 +276,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_7
+      name: 1_luk
       rect:
         serializedVersion: 2
-        x: 224
-        y: 368
-        width: 32
-        height: 32
+        x: 248
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1137,13 +1137,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_48
+      name: 1_str
       rect:
         serializedVersion: 2
-        x: 0
-        y: 272
-        width: 32
-        height: 32
+        x: 3
+        y: 309
+        width: 29
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4045,6 +4045,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      1_agi: -1989883959
+      1_avd: -216391453
+      1_hit: -1503118552
+      1_int: 1880867866
+      1_luk: -1606071868
+      1_men: 572813076
+      1_str: 1341811551
+      1_vit: 1134299175
       Alfine: 208267835
       EXP: -475323415
       Eat: 14371149
@@ -4064,8 +4072,6 @@ TextureImporter:
       Stock: 1386402538
       material: 1610707020
       siela: 800229748
-      system2_0: 1134299175
-      system2_1: 1880867866
       system2_10: 1246470568
       system2_100: -1955357868
       system2_101: 280015554
@@ -4151,7 +4157,6 @@ TextureImporter:
       system2_184: 252409878
       system2_185: -911494478
       system2_19: -2140958505
-      system2_2: 572813076
       system2_20: 676673724
       system2_21: -923658358
       system2_22: -997086067
@@ -4162,7 +4167,6 @@ TextureImporter:
       system2_27: -1498024567
       system2_28: -1662767962
       system2_29: -1216071507
-      system2_3: -1989883959
       system2_30: 1631886885
       system2_31: -818274453
       system2_33: -279094735
@@ -4172,7 +4176,6 @@ TextureImporter:
       system2_37: 309738467
       system2_38: -908908126
       system2_39: -1461238262
-      system2_4: -1503118552
       system2_40: 1666370863
       system2_41: -1948647970
       system2_42: 1875486377
@@ -4180,7 +4183,6 @@ TextureImporter:
       system2_44: 753708888
       system2_45: -671143427
       system2_46: -431632920
-      system2_48: 1341811551
       system2_49: -1923249975
       system2_5: 1640726944
       system2_50: 574274794
@@ -4193,7 +4195,6 @@ TextureImporter:
       system2_57: -835114001
       system2_58: -1752304154
       system2_59: 97313410
-      system2_6: -216391453
       system2_60: -1586229163
       system2_61: 976866924
       system2_62: -1288846072
@@ -4204,7 +4205,6 @@ TextureImporter:
       system2_67: 1065923021
       system2_68: -2110885726
       system2_69: -2130784252
-      system2_7: -1606071868
       system2_70: -1626270388
       system2_72: -1808041400
       system2_74: 313118577

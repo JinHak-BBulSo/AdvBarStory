@@ -9682,7 +9682,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527938536}
   m_HandleRect: {fileID: 527938535}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 1.0000001
   m_Size: 0.44898987
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -11347,6 +11347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotList: []
+  itemTooltip: {fileID: 0}
 --- !u!1 &844612100
 GameObject:
   m_ObjectHideFlags: 0
@@ -17871,6 +17872,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4849be862db06964ab9817089b511c1b, type: 2}
   - {fileID: 11400000, guid: a87f4276cc4deea4a8874be64ee31924, type: 2}
   - {fileID: 11400000, guid: 8218909d9cce34341af7593b7f8dbd57, type: 2}
+  - {fileID: 11400000, guid: 7f974a920d763a042b9c678fd3c1e21d, type: 2}
+  - {fileID: 11400000, guid: 06c3f568c1234544c80b5f4f871a65df, type: 2}
+  - {fileID: 11400000, guid: 50d1eacb6248d6c449083a9b2de0f08e, type: 2}
+  - {fileID: 11400000, guid: b5df4f8dcb1290c41b5f21f0811d72fa, type: 2}
   shopPotions:
   - {fileID: 11400000, guid: 5bdf175fed39c914b8a8cbfccc23865c, type: 2}
   - {fileID: 11400000, guid: 4b1eef8fd927074459b2f18fa6f3ccb0, type: 2}
@@ -35966,7 +35971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 589507479}
   m_HandleRect: {fileID: 589507478}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.9999998
   m_Size: 0.58402205
   m_NumberOfSteps: 0
   m_OnValueChanged:

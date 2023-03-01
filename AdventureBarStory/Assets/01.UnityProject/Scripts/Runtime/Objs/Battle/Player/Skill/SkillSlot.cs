@@ -39,6 +39,7 @@ public class SkillSlot : MonoBehaviour, IDeselectHandler
                     break;
             }
             skillObjs.SetActive(false);
+            isSelected = false;
         } 
     }
     public void OnDeselect(BaseEventData eventData)

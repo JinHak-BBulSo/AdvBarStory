@@ -6,21 +6,23 @@ using UnityEngine;
 public class Siela : Player
 {
     public Sprite sielaImg = default;
-    public GameObject airSlashEffect = default;
 
-    void Start()
-    {
-        skillInfo.Add(("Burst Edge", 8));
-        skillInfo.Add(("Air Slash", 6));
-        skillInfo.Add(("Ice Ball", 6));
-    }   
+    public GameObject airSlashEffect = default;
+    public GameObject iceBallEffect = default;
+    public GameObject burstEffect = default;
+
+    EffectController effectController = default;
 
     public void BurstEdge()
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
+            burstEffect.SetActive(true);
+            effectController = burstEffect.GetComponent<EffectController>();
+
             int _hitDamage = (int)(status._hit * 1.6f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
+            effectController._damage = _hitDamage;
+
             animator.SetBool("isAttack", true);
 
             weapon.SetActive(true);
@@ -28,7 +30,7 @@ public class Siela : Player
 
             UseSkill(skillInfo[0].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
     public void AirSlash()
@@ -36,7 +38,11 @@ public class Siela : Player
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
             airSlashEffect.SetActive(true);
-            
+            effectController = airSlashEffect.GetComponent<EffectController>();
+
+            int _hitDamage = (int)(status._hit * 1.4f);
+            effectController._damage = _hitDamage;
+
             animator.SetBool("isAttack", true);
 
             weapon.SetActive(true);
@@ -51,16 +57,17 @@ public class Siela : Player
     {
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
-            int _hitDamage = (int)(status._hit * 1.45f);
-            BattleCursor.battleTile.onTileObject.GetComponent<Character>().Hit(_hitDamage);
-            animator.SetBool("isAttack", true);
+            iceBallEffect.SetActive(true);
+            effectController = iceBallEffect.GetComponent<EffectController>();
 
-            weapon.SetActive(true);
-            weaponAni.SetBool("isAttack", true);
+            int _hitDamage = (int)(status._int * 1.4f);
+            effectController._damage = _hitDamage;
+
+            animator.SetBool("isMagic", true);
 
             UseSkill(skillInfo[2].Item2);
             charSlot.UpdateText();
-            StartCoroutine(TurnFinish(0.8f));
+            StartCoroutine(TurnFinish(1.5f));
         }
     }
 
@@ -78,5 +85,12 @@ public class Siela : Player
                 PlayerManager.instance.PlayerAction += IceBall;
                 break;
         }
+    }
+
+    public override void InitskillSet()
+    {
+        skillInfo.Add(("Burst Edge", 8));
+        skillInfo.Add(("Air Slash", 6));
+        skillInfo.Add(("Ice Ball", 6));
     }
 }

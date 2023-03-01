@@ -6,7 +6,9 @@ public class PlayerManager : Singleton<PlayerManager>
 {
     [SerializeField]
     GameObject playerPrefab = default;
-    GameObject player = default;
+    public GameObject player = default;
+
+    public List<Player> playerParty = new List<Player>();
 
     public Vector3 recallPlayerTownPos = default;
     public Vector3 recallCameraPos = default;
@@ -37,5 +39,27 @@ public class PlayerManager : Singleton<PlayerManager>
     public void ActionReset()
     {
         PlayerAction = default;
+    }
+
+    public void EquipEquipment(Equip _equip, Player _player)
+    {
+        _player.status._hit += _equip._atk;
+        _player.status._vit += _equip._def;
+        _player.status._int += _equip._int;
+
+        _player.equipWeapon = _equip;
+
+        Inventory.instance.UseItem<Equip>(_equip, 1);
+    }
+
+    public void DismountEquipment(Equip _equip, Player _player)
+    {
+        _player.status._hit -= _equip._atk;
+        _player.status._vit -= _equip._def;
+        _player.status._int -= _equip._int;
+
+        _player.equipWeapon = default;
+
+        Inventory.instance.GetItem<Equip>(_equip);
     }
 }

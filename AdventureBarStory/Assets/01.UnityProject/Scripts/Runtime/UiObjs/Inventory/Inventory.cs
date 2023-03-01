@@ -7,7 +7,10 @@ using System.Linq;
 
 public class Inventory : Singleton<Inventory>
 {
-    const int START_GOLD = 2000;
+    const int START_GOLD = 5000;
+
+    public AudioSource invenAudio = default;
+
     public int nowGold = default;
     public TMP_Text moneyTxt = default;
 

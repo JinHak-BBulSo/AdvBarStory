@@ -15,6 +15,10 @@ public class Player : Character
     protected BattleSimpleCharSlot charSlot = default;
 
     public List<(string, int)> skillInfo = new List<(string, int)>();
+    public List<string> skillTooltip = new List<string>();
+
+    public Equip equipWeapon = default;
+    public Equip equipArmor = default;
 
     private void Start()
     {
@@ -57,6 +61,7 @@ public class Player : Character
 
         weaponAni.SetBool("isAttack", false);
         animator.SetBool("isAttack", false);
+        animator.SetBool("isMagic", false);
         weapon.SetActive(false);
     }
     public override void Hit(int damage)
@@ -76,6 +81,7 @@ public class Player : Character
             Die();
         }
 
+        audioSource.Play();
         animator.SetBool("isHit", true);
         charSlot.UpdateText();
         StartCoroutine(HitMotion());
@@ -109,6 +115,10 @@ public class Player : Character
         animator.SetBool("isHit", false);
     }
     public virtual void SkillSelect(int slotIndex)
+    {
+        /* Player Character each override */
+    }
+    public virtual void InitskillSet()
     {
         /* Player Character each override */
     }

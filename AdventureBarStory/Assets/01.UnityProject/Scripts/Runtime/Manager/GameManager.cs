@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager>
 {
     public void TownRecall()
     {
-        foreach(Player player in BattleManager.instance.playerParty)
+        foreach(Player player in PlayerManager.instance.playerParty)
         {
             player.RecallRecovery();
         }

@@ -66,3 +66,19 @@ solution : Library 폴더를 삭제 후 editor 재실행, 경로에 특수문자
   PlayerManager.ActionReset()이 필요할 것으로 보임
   
   Solution : PlayerManager.ActionReset() -> PlayerAction = default로 변경을 적용하니 정상적으로 동작함을 확인.
+
+- 2023-02-28 플레이어 스킬 구현
+
+issue : 플레이어의 스킬이 연속 선택된 적에게 동작하지 않는 현상 발견
+summary : 로그 분석 결과 행동 도중 character마다 들고 있던 onTileData가 소실되는 문제를 확인
+
+마찬가지로 Tile이 들고 있는 onTileObject 역시 소실됨
+
+onTileData는 Tile과 충돌하는 오브젝트가 있을 시 등록 되므로, 몬스터와 플레이어가 배틀 필드에 세팅 시, 이들을 등록하도록 설계함
+
+solution : 확인 결과 skill을 사용 할 경우 발생하는 것이 로그로 발견됨.
+
+이유는 skill의 effect object가 타일과 충돌하며, 일정 시간 후 사라지면서 onTileData를 지워 버린 것
+
+skill의 effect object에 tag를 Effect로 전부 통일. BattleTile은 tag가 Effect일 시 충돌을 무시하도록 코드를 수정
+

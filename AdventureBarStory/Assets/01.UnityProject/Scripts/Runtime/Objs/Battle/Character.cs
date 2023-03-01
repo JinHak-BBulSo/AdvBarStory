@@ -20,7 +20,7 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     public int nowHp;
     public int nowMp;
 
-    void Awake()
+    public virtual void Awake()
     {
         nowHp = status.hp;
         nowMp = status.mp;
@@ -77,6 +77,28 @@ public class Character : MonoBehaviour, ITurnFinishHandler
         }
     }
 
+    public virtual void MagicHit(int damage)
+    {
+        int _hitDamage = damage - status._men;
+
+        if (_hitDamage <= 0)
+        {
+            nowHp -= 1;
+        }
+        else
+        {
+            nowHp -= (_hitDamage);
+        }
+        if (nowHp <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(HitEffect());
+        }
+    }
+
     public void UseSkill(int consumeMp)
     {
         nowMp -= consumeMp;
@@ -92,6 +114,7 @@ public class Character : MonoBehaviour, ITurnFinishHandler
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Effect") return;
         onTileData = collision.GetComponent<BattleTile>();
     }
 

@@ -20,9 +20,9 @@ public class SkillBtn : ActionBtn, ICancelBtnHandler, IOKBtnHandler
             BattleManager.instance.battleTile[i].GetComponent<Button>().enabled = true;
         }
 
-        battleActionObjs.SetActive(false);
         okBtn.SetActive(true);
         cancelBtn.SetActive(true);
+        battleActionObjs.SetActive(false);
     }
 
     public void OnCancelBtnClick()
