@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 {
     public bool isBattleStart = false;
-    public bool isBattleAble = true;
+    public GameObject currentCharIcon = default;
 
     [SerializeField]
     GameObject battleObjsPrefab = default;
@@ -21,7 +21,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     Sprite[] battleBgSprite = default;
 
     public List<Monster> monsters = new List<Monster>();
-    public List<Player> playerParty = new List<Player>();
     public List<GameObject> playerWeapons = new List<GameObject>();
     public List<GameObject> battleTile = new List<GameObject>();
 
@@ -32,6 +31,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public bool isTurnStart = false;
 
     public int monsterIndex = 0;
+    public int startMonsterIndex = 0;
     public int playerIndex = 0;
 
     public Character nowTurnCharacter = default;
@@ -48,7 +48,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             battleObjs = Instantiate(battleObjsPrefab, transform);
             battleObjs.name = "BattleObjs";
-            battleObjs.SetActive(false);
         }
 
         base.Awake();
@@ -56,12 +55,7 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         playerObjs = battleObjs.FindChildObj("PlayerObjs");
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
         battleTileObjs = battleObjs.FindChildObj("BattleTile");
-
-        for (int i = 0; i < playerObjs.transform.childCount - 3; i++)
-        {
-            playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
-            playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
-        }
+        currentCharIcon = battleObjs.FindChildObj("CurrentCharIcon");
 
         for(int i = 0; i < monsterObjs.transform.childCount; i++)
         {
@@ -77,15 +71,26 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         }
     }
 
+    public void Start()
+    {
+        for (int i = 0; i < playerObjs.transform.childCount - 4; i++)
+        {
+            playerWeapons.Add(playerObjs.transform.GetChild(i).gameObject);
+            PlayerManager.instance.playerParty.Add(playerObjs.transform.GetChild(i + 3).GetComponent<Player>());
+            PlayerManager.instance.playerParty[i].InitskillSet();
+        }
+        battleObjs.SetActive(false);
+    }
+
     void Update()
     {
         if (battleObjs.activeSelf)
         {
-            if (turnReadyCharacter.Count == 0 && !isTurnStart)
+            if (turnReadyCharacter.Count == 0 && !isTurnStart && monsterIndex != 0)
             {
-                turnCalculate();
+                TurnCalculate();
             }
-            else if (turnReadyCharacter.Count != 0 && !isTurnStart)
+            else if (turnReadyCharacter.Count != 0 && !isTurnStart && monsterIndex != 0)
             {
                 isTurnStart = true;
                 nowTurnCharacter = turnReadyCharacter.Dequeue();
@@ -93,27 +98,28 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             }
         }
 
-        if(isBattleStart && monsterIndex == 0)
+        if(isBattleStart && monsterIndex == 0 && !isTurnStart)
         {
             Win();
         }
 
-        if(isBattleStart && playerIndex == 0)
+        if(isBattleStart && playerIndex == 0 && !isTurnStart)
         {
             Defeat();
+            return;
         }
     }
 
-    public void turnCalculate()
+    public void TurnCalculate()
     {
-        foreach(Player player in playerParty)
+        foreach(Player player in PlayerManager.instance.playerParty)
         {
             if (player.isDie) continue;
 
             player.TurnRecovery();
-            if(player.turnGuage >= 100)
+            if(player.turnGuage >= 10)
             {
-                player.turnGuage = 100;
+                player.turnGuage = 10;
                 turnReadyCharacter.Enqueue(player);
                 turnReadyPlayer.Enqueue(player);
             }
@@ -124,9 +130,9 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             if (monster.isDie) continue;
 
             monster.TurnRecovery();
-            if (monster.turnGuage >= 100)
+            if (monster.turnGuage >= 10)
             {
-                monster.turnGuage = 100;
+                monster.turnGuage = 10;
                 turnReadyCharacter.Enqueue(monster);
                 turnReadyMonster.Enqueue(monster);
             }
@@ -135,8 +141,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     void TurnStart()
     {
+        currentCharIcon.GetComponent<Image>().sprite = nowTurnCharacter.charImgSlot.GetComponent<Image>().sprite;
+        nowTurnCharacter.GetComponent<Character>().charImgSlot.SetActive(false);
         BattleCursor.battleTile = nowTurnCharacter.onTileData;
-        BattleCursor.battleTile.OnSelect();  
+        BattleCursor.battleTile.OnSelect();
 
         if (nowTurnCharacter.gameObject.tag == "Player")
         {
@@ -158,12 +166,14 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public IEnumerator TurnFinish()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         isTurnStart = false;
     }
 
     public void BattleStart()
     {
+        PlayerManager.instance.player.GetComponent<PlayerController>().enabled = false;
+        currentCharIcon.GetComponent<Image>().sprite = null;
         MonsterSet();
         playerPartySet();
 
@@ -177,9 +187,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     {
         if(GFunc.GetActiveScene().name == "03.Stage1Scene")
         {
-            monsterIndex = Random.Range(1, 4 + 1);
+            monsterIndex = Random.Range(2, 4 + 1);
+            startMonsterIndex = monsterIndex;
 
-            for(int i = 0; i <= monsterIndex - 1; i++)
+            for (int i = 0; i <= monsterIndex - 1; i++)
             {
                 int monsterId = Random.Range(0, 2 + 1);
                 monsterSlot[i].GetComponent<MonsterSlot>().SetMonster(monsterStatuses[monsterId]);
@@ -190,26 +201,29 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
 
     public void playerPartySet()
     {
-        for (int i = 0; i < playerParty.Count; i++)
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            if (playerParty[i].isDie) playerParty[i].gameObject.SetActive(false);
+            if (PlayerManager.instance.playerParty[i].isDie) PlayerManager.instance.playerParty[i].gameObject.SetActive(false);
             else
             {
                 playerIndex++;
-                playerParty[i].turnGuage = 0;
-                playerParty[i].gameObject.SetActive(true);
+                PlayerManager.instance.playerParty[i].turnGuage = 0;
+                PlayerManager.instance.playerParty[i].gameObject.SetActive(true);
             }
         }
     }
 
     public void Win()
     {
-        for (int i = 0; i < playerParty.Count; i++)
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            playerParty[i].turnGuage = 0;
-            playerParty[i].animator.SetBool("isAttack", false);
-            playerParty[i].animator.SetBool("isWin", true);
+            PlayerManager.instance.playerParty[i].turnGuage = 0;
+            PlayerManager.instance.playerParty[i].animator.SetBool("isAttack", false);
+            PlayerManager.instance.playerParty[i].animator.SetBool("isWin", true);
+            PlayerManager.instance.playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
         }
+
+        PlayerManager.instance.PlayerGetExp(startMonsterIndex * 5);
 
         turnReadyCharacter.Clear();
         turnReadyMonster.Clear();
@@ -228,24 +242,25 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             weapon.SetActive(false);
         }
 
+        Inventory.instance.SetGold(100);
         GetComponent<AudioSource>().Stop();
         Camera.main.GetComponent<AudioSource>().Play();
-        StartCoroutine(Delay());
+        StartCoroutine(Delay());  
     }
 
     public void Defeat()
     {
-        isBattleStart = false;
-        isTurnStart = false;
+        GameManager.instance.GameOver();
     }
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2f);
-        for (int i = 0; i < playerParty.Count; i++)
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < PlayerManager.instance.playerParty.Count; i++)
         {
-            playerParty[i].animator.SetBool("isWin", false);
+            PlayerManager.instance.playerParty[i].animator.SetBool("isWin", false);
         }
         battleObjs.SetActive(false);
+        PlayerManager.instance.player.GetComponent<PlayerController>().enabled = true;
     }
 }

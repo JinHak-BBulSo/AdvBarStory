@@ -44,12 +44,14 @@ public class BattleTile : MonoBehaviour, ISelectHandler , IDeselectHandler
         fillTile.SetActive(false);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Effect") return;
         onTileObject = collision.gameObject;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.tag == "Effect") return;
         onTileObject = default;
     }
 }

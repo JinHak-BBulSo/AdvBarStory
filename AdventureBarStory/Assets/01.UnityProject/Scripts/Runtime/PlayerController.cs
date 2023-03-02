@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour
         UpdateState();
     }
 
+    private void OnDisable()
+    {
+        playerRigid.velocity = Vector3.zero;
+        playerAni.SetBool("isMove", false);
+    }
+
     void UpdateState()
     {
         if (Input.GetKey(KeyCode.UpArrow))

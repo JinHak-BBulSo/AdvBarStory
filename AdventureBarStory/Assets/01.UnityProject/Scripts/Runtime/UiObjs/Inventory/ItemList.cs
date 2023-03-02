@@ -8,6 +8,8 @@ using static UnityEditor.Progress;
 
 public class ItemList : SlotList
 {
+    [SerializeField]
+    GameObject itemTooltip = default;
     public void OnClickEquipBtn()
     {
         OnClickBtn("equip");
@@ -46,6 +48,15 @@ public class ItemList : SlotList
             case "recipe":
                 SlotSet<Recipe>(Inventory.instance.recipes, _tag);
                 break;
+        }
+    }
+
+    public void OnDisable()
+    {
+        SlotReset();
+        if(itemTooltip != default)
+        {
+            itemTooltip.GetComponent<TMP_Text>().text = "";
         }
     }
 }

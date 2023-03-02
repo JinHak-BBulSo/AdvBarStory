@@ -7,7 +7,10 @@ using System.Linq;
 
 public class Inventory : Singleton<Inventory>
 {
-    const int START_GOLD = 2000;
+    const int START_GOLD = 5000;
+
+    public AudioSource invenAudio = default;
+
     public int nowGold = default;
     public TMP_Text moneyTxt = default;
 
@@ -114,6 +117,15 @@ public class Inventory : Singleton<Inventory>
                 {
                     materials.RemoveAt(itemIndex);
                     materialAmount.RemoveAt(itemIndex);
+                }
+                break;
+            case "equip":
+                itemIndex = equips.IndexOf(_item as Equip);
+                equipAmount[itemIndex] -= amount;
+                if (equipAmount[itemIndex] == 0)
+                {
+                    equips.RemoveAt(itemIndex);
+                    equipAmount.RemoveAt(itemIndex);
                 }
                 break;
             case "food":

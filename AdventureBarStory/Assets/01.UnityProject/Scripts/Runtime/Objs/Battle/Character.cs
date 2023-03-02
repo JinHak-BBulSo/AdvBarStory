@@ -13,13 +13,14 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     public Animator animator;
 
     public BattleTile onTileData = default;
-
     public Status status = default;
+
+    public GameObject charImgSlot = default;
 
     public int nowHp;
     public int nowMp;
 
-    void Awake()
+    public virtual void Awake()
     {
         nowHp = status.hp;
         nowMp = status.mp;
@@ -45,7 +46,8 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     public void TurnRecovery()
     {
         turnRecoverySpeed = Mathf.Log10(status._agi);
-        turnGuage += turnRecoverySpeed;
+        turnGuage += turnRecoverySpeed * Time.deltaTime * 5;
+        charImgSlot.GetRect().anchoredPosition -= new Vector2(turnRecoverySpeed * Time.deltaTime * 5 * 38, 0);
     }
 
     public virtual void Attack()
@@ -53,15 +55,39 @@ public class Character : MonoBehaviour, ITurnFinishHandler
         /* override using */
     }
 
-    public void Hit(int damage)
+    public virtual void Hit(int damage)
     {
-        if (damage - status._vit <= 0)
+        int _hitDamage = damage - status._vit;
+
+        if (_hitDamage <= 0)
         {
             nowHp -= 1;
         }
         else
         {
-            nowHp -= (damage - status._vit);
+            nowHp -= (_hitDamage);
+        }
+        if (nowHp <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(HitEffect());
+        }
+    }
+
+    public virtual void MagicHit(int damage)
+    {
+        int _hitDamage = damage - status._men;
+
+        if (_hitDamage <= 0)
+        {
+            nowHp -= 1;
+        }
+        else
+        {
+            nowHp -= (_hitDamage);
         }
         if (nowHp <= 0)
         {
@@ -88,6 +114,7 @@ public class Character : MonoBehaviour, ITurnFinishHandler
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Effect") return;
         onTileData = collision.GetComponent<BattleTile>();
     }
 
@@ -101,9 +128,11 @@ public class Character : MonoBehaviour, ITurnFinishHandler
     public IEnumerator TurnFinish()
     {
         yield return new WaitForSeconds(1.5f);
+        charImgSlot.SetActive(true);
         turnGuage = 0;
         BattleCursor.battleTile.OnDeselect();
         onTileData.OnDeselect();
         BattleManager.instance.isTurnStart = false;
+        charImgSlot.GetRect().anchoredPosition = new Vector2(244, -280);
     }
 }

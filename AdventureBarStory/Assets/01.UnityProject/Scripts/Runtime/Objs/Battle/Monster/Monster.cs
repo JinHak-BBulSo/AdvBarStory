@@ -15,7 +15,7 @@ public class Monster : Character
     void Start()
     {
         playerObjs = GameObject.Find("BattleObjs").FindChildObj("PlayerObjs");
-        for(int i = 0; i < playerObjs.transform.childCount - 3; i++)
+        for(int i = 0; i < playerObjs.transform.childCount - 4; i++)
         {
             playerParty.Add(playerObjs.transform.GetChild(i + 3).gameObject);
         }
@@ -39,6 +39,8 @@ public class Monster : Character
     public override void Die()
     {
         BattleManager.instance.monsterIndex--;
+        charImgSlot.GetRect().anchoredPosition = new Vector2(244, -280);
+        charImgSlot.SetActive(false);
         base.Die();
     }
 

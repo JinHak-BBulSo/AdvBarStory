@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80535397bd81e5445949607c90726ed5, type: 3}
+  m_Name: Equip_WizardRobe
+  m_EditorClassIdentifier: 
+  itemName: WizardRobe
+  tag: equip
+  toolTip: "\uC778\uCC48\uD2B8 \uB85C\uBE0C : Vit + 5, Int + 15"
+  itemImage: {fileID: -1182574950, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 2000
+  _atk: 0
+  _def: 5
+  _int: 15
+  equipTag: armor

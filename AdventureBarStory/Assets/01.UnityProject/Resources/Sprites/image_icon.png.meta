@@ -1326,7 +1326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: image_icon_57
+      name: 2_null
       rect:
         serializedVersion: 2
         x: 144
@@ -2628,7 +2628,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: image_icon_119
+      name: 2_Shirt
       rect:
         serializedVersion: 2
         x: 208
@@ -2649,7 +2649,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: image_icon_120
+      name: 2_LeatherShirt
       rect:
         serializedVersion: 2
         x: 224
@@ -2754,7 +2754,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: image_icon_125
+      name: 2_WizardRobe
       rect:
         serializedVersion: 2
         x: 48
@@ -2775,7 +2775,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: image_icon_126
+      name: 2_WizardCloak
       rect:
         serializedVersion: 2
         x: 64
@@ -3728,6 +3728,11 @@ TextureImporter:
       0_staff2: 753459813
       0_sword1: -1499429947
       0_sword2: 1470688270
+      2_LeatherShirt: -1053620228
+      2_Shirt: 1345273474
+      2_WizardCloak: 1938162620
+      2_WizardRobe: -1182574950
+      2_null: 1056557326
       image_icon_0: 211179614
       image_icon_1: 1493954867
       image_icon_100: 1945503706
@@ -3749,14 +3754,10 @@ TextureImporter:
       image_icon_116: 155642351
       image_icon_117: -441265072
       image_icon_118: -1616501726
-      image_icon_119: 1345273474
-      image_icon_120: -1053620228
       image_icon_121: 1795385146
       image_icon_122: -751772300
       image_icon_123: -1785533189
       image_icon_124: -1555810561
-      image_icon_125: -1182574950
-      image_icon_126: 1938162620
       image_icon_127: 871736926
       image_icon_128: 1505024966
       image_icon_129: 1394010935
@@ -3837,7 +3838,6 @@ TextureImporter:
       image_icon_54: 1933328814
       image_icon_55: 207007471
       image_icon_56: 2119209652
-      image_icon_57: 1056557326
       image_icon_58: 1443452624
       image_icon_6: -1258936247
       image_icon_61: -620342592

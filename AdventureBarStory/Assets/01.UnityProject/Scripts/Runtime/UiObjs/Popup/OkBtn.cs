@@ -10,6 +10,7 @@ public class OkBtn : MonoBehaviour, IOKBtnHandler
     public void OnOkBtnClick()
     {
         if (clickOkBtn == default) return;
+
         clickOkBtn();
         clickOkBtn = default;
     }
