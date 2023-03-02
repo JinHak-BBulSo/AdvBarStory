@@ -14,6 +14,7 @@ public class DismountBtn : MonoBehaviour
     }
     public void OnClickDismountBtn()
     {
+        if (EquipSlot.nowSelectedEquipSlot.slotItem == default) return;
         if (EquipSlot.nowSelectedEquipSlot.name == "PlayerWeaponSlot")
         {
             PlayerManager.instance.DismountEquipment(EquipSlot.nowSelectedEquipSlot.player.equipWeapon, EquipSlot.nowSelectedEquipSlot.player);

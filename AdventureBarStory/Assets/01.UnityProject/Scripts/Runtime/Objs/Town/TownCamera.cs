@@ -19,7 +19,7 @@ public class TownCamera : MoveCamera
             isInBar = false;
             isInStreet = true;
             transform.position = PlayerManager.instance.recallCameraPos;
-            GameObject.Find("InitObjs").FindChildObj("WorldMapObjs").SetActive(false);
+            GameObject.Find("InitObjs").FindChildObj("WorldMap").SetActive(false);
         }
     }
 

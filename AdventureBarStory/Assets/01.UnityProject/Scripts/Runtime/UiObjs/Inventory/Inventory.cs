@@ -125,6 +125,10 @@ public class Inventory : Singleton<Inventory>
                 break;
             case "food":
                 itemIndex = foods.IndexOf(_item as Food);
+                Food food = _item as Food;
+
+                PlayerManager.instance.PlayerGetExp(food.getExpAmount);
+
                 foodAmount[itemIndex] -= amount;
                 if (foodAmount[itemIndex] == 0)
                 {

@@ -84,20 +84,13 @@ public class DataManager : Singleton<DataManager>
         {
             jsonText = File.ReadAllText(eventPath);
             eventData = JsonUtility.FromJson<EventData>(jsonText);
-        }
-        catch (FileNotFoundException)
-        {
-            isSaveDataExist = false;
-        }  
-
-        if (eventData == default)
-        {
-            isSaveDataExist = false;
-        }
-        else
-        {
             isSaveDataExist = true;
         }
+        catch (FileNotFoundException e)
+        {
+            isSaveDataExist = false;
+            //Debug.Log(e.ToString());
+        }  
     }
 
     public void OverlapData()

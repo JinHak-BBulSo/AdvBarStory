@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WorldMapBtn : MonoBehaviour, IDeselectHandler
 {
@@ -32,8 +33,11 @@ public class WorldMapBtn : MonoBehaviour, IDeselectHandler
                     GFunc.LoadScene("02.TownScene");
                     break;
                 case "Stage1":
-                    PlayerManager.instance.recallPlayerTownPos = GameObject.Find("PlayerManager").FindChildObj("Player").transform.position;
-                    PlayerManager.instance.recallCameraPos = Camera.main.transform.position;
+                    if (SceneManager.GetActiveScene().name != "03.Stage1Scene")
+                    {
+                        PlayerManager.instance.recallPlayerTownPos = GameObject.Find("PlayerManager").FindChildObj("Player").transform.position;
+                        PlayerManager.instance.recallCameraPos = Camera.main.transform.position;
+                    }
                     GFunc.LoadScene("03.Stage1Scene");
                     break;
                 case "Stage2":

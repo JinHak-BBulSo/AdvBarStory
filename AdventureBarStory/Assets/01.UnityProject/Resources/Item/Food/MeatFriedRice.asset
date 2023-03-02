@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11979ae6575f61749bf87df38576a9f9, type: 3}
   m_Name: MeatFriedRice
   m_EditorClassIdentifier: 
+  itemId: 0
   itemName: MeatFriedRice
   tag: tag
-  toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25"
+  toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25 : Exp + 20"
   itemImage: {fileID: -1333159534, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
-  getExpAmount: 0
+  price: 0
+  getExpAmount: 20
   getSatiety: 0

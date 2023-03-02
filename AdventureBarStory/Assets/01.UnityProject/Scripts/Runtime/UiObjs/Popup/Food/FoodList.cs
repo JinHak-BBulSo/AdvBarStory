@@ -4,17 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EquipList : SlotList
+public class FoodList : SlotList
 {
     void OnEnable()
     {
         SlotReset();
-        SlotSet<Equip>(Inventory.instance.equips, "equip");
+        SlotSet<Food>(Inventory.instance.foods, "food");
     }
-    void OnDisable()
-    {
-        EquipSlot.nowSelectedEquipSlot = default;
-    }
+
     public override void SlotSet<T>(List<T> inventoryList, string _tag)
     {
         foreach (T item in inventoryList)
@@ -24,7 +21,7 @@ public class EquipList : SlotList
 
             if (idx == inventoryList.Count) break;
 
-            slot.itemAmount = Inventory.instance.equipAmount[idx];
+            slot.itemAmount = Inventory.instance.foodAmount[idx];
 
             slotNameTextList[slotIdx].text = item.itemName;
             slotImageList[slotIdx].sprite = item.itemImage;
@@ -41,6 +38,6 @@ public class EquipList : SlotList
     public void UpdateSlots()
     {
         SlotReset();
-        SlotSet<Equip>(Inventory.instance.equips, "equip");
+        SlotSet<Food>(Inventory.instance.foods, "food");
     }
 }
