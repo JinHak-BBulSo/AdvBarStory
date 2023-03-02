@@ -228,8 +228,6 @@ public class BattleManager : Singleton<BattleManager>
             PlayerManager.instance.playerParty[i].charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
         }
 
-        PlayerManager.instance.PlayerGetExp(startMonsterIndex * 5);
-
         turnReadyCharacter.Clear();
         turnReadyMonster.Clear();
         turnReadyPlayer.Clear();

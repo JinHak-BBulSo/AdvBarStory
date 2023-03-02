@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 33
   itemName: MeatFriedRiceRecipe
   tag: recipe
-  toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25 : Beef x1, Chicken x1, Rice x1"
+  toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25 : Beef x1, Chicken x1, Rice x1, 700G"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 700
   materials:

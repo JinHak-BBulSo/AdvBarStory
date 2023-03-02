@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: FriedVegetablesRecipe
   tag: recipe
   toolTip: "\uC57C\uCC44\uBCF6\uC74C \uB808\uC2DC\uD53C : Carrot x1, Onion x1, Salt
-    x1"
+    x1, 700G"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 700
   materials:

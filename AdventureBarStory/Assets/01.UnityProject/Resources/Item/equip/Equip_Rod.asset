@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 25
   itemName: Rod
   tag: equip
-  toolTip: "\uB85C\uB4DC : Int + 5"
+  toolTip: "\uB85C\uB4DC : Int + 5, 500G"
   itemImage: {fileID: 753459813, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 500
   _atk: 0

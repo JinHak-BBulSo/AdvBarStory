@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 14
   itemName: HighMpPotion
   tag: potion
-  toolTip: "\uC0C1\uAE09 MP \uD3EC\uC158"
+  toolTip: "\uC0C1\uAE09 MP \uD3EC\uC158 : MP + 60, 500G"
   itemImage: {fileID: 2000111757, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 500
   recoveryHp: 0

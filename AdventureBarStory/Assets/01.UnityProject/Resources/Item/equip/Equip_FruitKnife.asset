@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 23
   itemName: FruitKnife
   tag: equip
-  toolTip: "\uACFC\uB3C4 : Hit + 5"
+  toolTip: "\uACFC\uB3C4 : Hit + 5, 500G"
   itemImage: {fileID: -1499429947, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 500
   _atk: 5

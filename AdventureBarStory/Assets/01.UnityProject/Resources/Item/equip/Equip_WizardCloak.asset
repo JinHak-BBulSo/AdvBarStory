@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 21
   itemName: WizardCloak
   tag: equip
-  toolTip: "\uB9C8\uBC95\uC0AC\uC758 \uB9DD\uD1A0 : Vit + 3, Int + 9"
+  toolTip: "\uB9C8\uBC95\uC0AC\uC758 \uB9DD\uD1A0 : Vit + 3, Int + 9, 1300G"
   itemImage: {fileID: 1938162620, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 1300
   _atk: 0

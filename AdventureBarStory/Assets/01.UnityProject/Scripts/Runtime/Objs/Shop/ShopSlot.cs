@@ -9,12 +9,11 @@ public class ShopSlot : Slot, IDeselectHandler
 {
     bool isPurchaseAble = true;
     bool isSelected = false;
-    GameObject purchaseQuestionObjs = default;
+    public GameObject purchaseQuestionObjs = default;
 
     public override void Awake()
     {
-        tooltipTxt = GameObject.Find("ShopObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
-        purchaseQuestionObjs = GameObject.Find("ShopObjs").FindChildObj("PurchaseQustionObjs");
+        /* Do nothing */
     }
 
     public void PurchaseAbleCheck()

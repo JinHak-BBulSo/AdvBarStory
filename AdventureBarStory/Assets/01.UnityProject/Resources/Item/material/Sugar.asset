@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 12
   itemName: Sugar
   tag: material
-  toolTip: "\uB2E8\uB9DB\uC774 \uB098\uB294 \uC124\uD0D5"
+  toolTip: "\uB2E8\uB9DB\uC774 \uB098\uB294 \uC124\uD0D5, 150G"
   itemImage: {fileID: 811988213, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 150

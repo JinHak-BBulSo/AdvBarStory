@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 6
   itemName: Milk
   tag: material
-  toolTip: "\uC6B0\uC720"
+  toolTip: "\uC6B0\uC720, 100G"
   itemImage: {fileID: 1605360915, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 100

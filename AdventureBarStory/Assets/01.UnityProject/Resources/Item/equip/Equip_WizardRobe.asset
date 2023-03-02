@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 22
   itemName: WizardRobe
   tag: equip
-  toolTip: "\uC778\uCC48\uD2B8 \uB85C\uBE0C : Vit + 5, Int + 15"
+  toolTip: "\uC778\uCC48\uD2B8 \uB85C\uBE0C : Vit + 5, Int + 15, 2000G"
   itemImage: {fileID: -1182574950, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 2000
   _atk: 0

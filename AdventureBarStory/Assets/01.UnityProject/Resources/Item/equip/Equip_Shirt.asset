@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 19
   itemName: Shirt
   tag: equip
-  toolTip: "\uD754\uD574 \uBE60\uC9C4 \uC154\uCE20 : Hit + 4, Vit + 6"
+  toolTip: "\uD754\uD574 \uBE60\uC9C4 \uC154\uCE20 : Hit + 4, Vit + 6, 800G"
   itemImage: {fileID: 1345273474, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 800
   _atk: 4

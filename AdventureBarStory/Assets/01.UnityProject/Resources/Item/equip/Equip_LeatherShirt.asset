@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 20
   itemName: LeatherShirt
   tag: equip
-  toolTip: "\uAC00\uC8FD\uC154\uCE20 : Hit + 10, Vit + 11"
+  toolTip: "\uAC00\uC8FD\uC154\uCE20 : Hit + 10, Vit + 11, 1500G"
   itemImage: {fileID: -1053620228, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 1500
   _atk: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 1
   itemName: Carrot
   tag: material
-  toolTip: "\uC8FC\uC6B4 \uB2F9\uADFC"
+  toolTip: "\uC8FC\uC6B4 \uB2F9\uADFC, 100G"
   itemImage: {fileID: -786549159, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 100

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 2
   itemName: Chicken
   tag: material
-  toolTip: "\uCE58\uD0A8"
+  toolTip: "\uCE58\uD0A8, 150G"
   itemImage: {fileID: -1499996817, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 150

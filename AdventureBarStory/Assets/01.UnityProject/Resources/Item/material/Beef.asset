@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: Beef
   m_EditorClassIdentifier: 
+  itemId: 0
   itemName: Beef
   tag: material
-  toolTip: "\uC18C\uACE0\uAE30"
+  toolTip: "\uC18C\uACE0\uAE30, 200G"
   itemImage: {fileID: -1499996817, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 200

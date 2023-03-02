@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 11
   itemName: Salt
   tag: material
-  toolTip: "\uC9E0\uB9DB\uC774 \uB098\uB294 \uC18C\uAE08"
+  toolTip: "\uC9E0\uB9DB\uC774 \uB098\uB294 \uC18C\uAE08, 100G"
   itemImage: {fileID: 811988213, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 100

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 9
   itemName: Potato
   tag: material
-  toolTip: "\uC2F1\uC2F1\uD55C \uAC10\uC790"
+  toolTip: "\uC2F1\uC2F1\uD55C \uAC10\uC790, 100G"
   itemImage: {fileID: 1287646341, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 100

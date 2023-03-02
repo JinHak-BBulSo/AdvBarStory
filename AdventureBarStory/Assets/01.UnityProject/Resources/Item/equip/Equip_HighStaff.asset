@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: 26
   itemName: HighStaff
   tag: equip
-  toolTip: "\uD558\uC774\uC2A4\uD0DC\uD504 : int + 12"
+  toolTip: "\uD558\uC774\uC2A4\uD0DC\uD504 : int + 12, 1000G"
   itemImage: {fileID: 753459813, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
   price: 1000
   _atk: 0
