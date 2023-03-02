@@ -10184,7 +10184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939b655fa5ab70a4188f529fe3b4ef74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shop: {fileID: 0}
+  shop: {fileID: 1221961306}
 --- !u!1001 &615940407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11427,6 +11427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotList: []
   itemTooltip: {fileID: 0}
+  shopObjs: {fileID: 1221961306}
 --- !u!1 &844612100
 GameObject:
   m_ObjectHideFlags: 0

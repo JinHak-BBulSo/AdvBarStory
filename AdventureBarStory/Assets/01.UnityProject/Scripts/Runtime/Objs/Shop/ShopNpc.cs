@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ShopNpc : MonoBehaviour
 {
-    GameObject shopObjs = default;
     [SerializeField]
-    GameObject shop = default;
+    public GameObject shop = default;
     GameObject okBtn = default;
     GameObject menu = default;
 
@@ -14,8 +13,6 @@ public class ShopNpc : MonoBehaviour
     {
         okBtn = GameObject.Find("InitObjs").FindChildObj("OkBtn");
         menu = GameObject.Find("InitObjs").FindChildObj("Menu");
-        shopObjs = GameObject.Find("ShopObjs");
-        shop = shopObjs.FindChildObj("Shop");
     }
 
     public void OnOkBtnClick()
