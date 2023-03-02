@@ -10,13 +10,12 @@ public class PurchaseQuestionBtn : MonoBehaviour
     public static Slot slot = default;
 
     GameObject emergencyObjs = default;
-    ShopList shopList = default;
+    public ShopList shopList = default;
 
     void Awake()
     {
         purchaseQuestionBtn = gameObject;
         emergencyObjs = GameObject.Find("ShopObjs").FindChildObj("EmergencyObjs");
-        shopList = GameObject.Find("ShopObjs").FindChildObj("ShopList").GetComponent<ShopList>();
     }
 
     public void OnClickYes()

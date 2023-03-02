@@ -41,7 +41,7 @@ public class TownPortal : MonoBehaviour
                     Camera.main.GetComponent<TownCamera>().isInShop = false;
                     Camera.main.GetComponent<TownCamera>().isInStreet = true;
                     destination = new Vector2(-54.5f, 1f);
-                    cameraPos = new Vector3(-50.5f, 1f, -10);
+                    cameraPos = new Vector3(-52.0f, 1f, -10);
                     break;
             }
 
