@@ -18,6 +18,7 @@ public class Back : MonoBehaviour, IBackBtnHandler
         {
             popupUi.SetActive(false);
             menu.SetActive(true);
+            PlayerMoveBtns.instance.gameObject.SetActive(true);
             gameObject.SetActive(false);
             return;
         }

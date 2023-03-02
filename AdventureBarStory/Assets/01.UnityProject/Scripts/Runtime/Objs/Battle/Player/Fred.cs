@@ -36,7 +36,7 @@ public class Fred : Player
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
             swordEdgeEffect.SetActive(true);
-            effectController = chargeEffect.GetComponent<EffectController>();
+            effectController = swordEdgeEffect.GetComponent<EffectController>();
 
             int _hitDamage = (int)(status._hit * 1.6f) + (int)(status._str * 0.6);
             effectController._damage = _hitDamage;
@@ -56,9 +56,9 @@ public class Fred : Player
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
             blastEffect.SetActive(true);
-            effectController = chargeEffect.GetComponent<EffectController>();
+            effectController = blastEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._int * 1.5f);
+            int _hitDamage = (int)(status._int * 3.1f);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isMagic", true);

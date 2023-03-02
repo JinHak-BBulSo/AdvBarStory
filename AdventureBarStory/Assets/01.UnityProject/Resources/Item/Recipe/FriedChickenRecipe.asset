@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: FriedChickenRecipe
   m_EditorClassIdentifier: 
+  itemId: 30
   itemName: FriedChickenRecipe
   tag: recipe
   toolTip: "\uD6C4\uB77C\uC774\uB4DC\uCE58\uD0A8 \uB808\uC2DC\uD53C : Chicken x2,

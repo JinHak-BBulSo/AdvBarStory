@@ -51,21 +51,25 @@ public class EffectController : MonoBehaviour
     {
         if (collision.name == target.name)
         {
-            if (ani != default || gameObject.name == "Heal")
+            if (ani == default)
+            {
+                /* Do nothing */
+            }
+            else
             {
                 ani.SetBool("isHit", true);
-                StartCoroutine(HideEffect(delay));
-                airRigid.velocity = Vector2.zero;
-                return;
             }
             StartCoroutine(HideEffect(delay));
             airRigid.velocity = Vector2.zero;
             effectAudio.Play();
 
-            if(!isMagic)
-                target.GetComponent<Character>().Hit(_damage);
-            else
-                target.GetComponent<Character>().MagicHit(_damage);
+            if (gameObject.name != "Heal")
+            {
+                if (!isMagic)
+                    target.GetComponent<Character>().Hit(_damage);
+                else
+                    target.GetComponent<Character>().MagicHit(_damage);
+            }
         }
     }
 

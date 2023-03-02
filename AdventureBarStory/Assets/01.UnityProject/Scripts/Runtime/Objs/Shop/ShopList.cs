@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class ShopList : ItemList
 {
     GameObject menu = default;
     GameObject okBtn = default;
     GameObject backBtn = default;
+    GameObject shopObjs = default;
 
     public override void Awake()
     {
         okBtn = GameObject.Find("InitObjs").FindChildObj("OkBtn");
         menu = GameObject.Find("InitObjs").FindChildObj("Menu");
         backBtn = GameObject.Find("InitObjs").FindChildObj("Back");
-
+        shopObjs = GameObject.Find("ShopObjs").FindChildObj("Shop");
+        
         base.Awake();
-        GameObject.Find("ShopObjs").FindChildObj("Shop").SetActive(false);
     }
 
     void OnEnable()
@@ -24,6 +24,11 @@ public class ShopList : ItemList
         menu.SetActive(false);
         okBtn.SetActive(false);
         backBtn.SetActive(true);
+    }
+
+    private void Start()
+    {
+        shopObjs.SetActive(false);
     }
 
     public override void OnClickBtn(string _tag)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: FriedVegetablesRecipe
   m_EditorClassIdentifier: 
+  itemId: 31
   itemName: FriedVegetablesRecipe
   tag: recipe
   toolTip: "\uC57C\uCC44\uBCF6\uC74C \uB808\uC2DC\uD53C : Carrot x1, Onion x1, Salt

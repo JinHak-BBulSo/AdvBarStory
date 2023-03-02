@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: YogurtRecipe
   m_EditorClassIdentifier: 
+  itemId: 34
   itemName: YogurtRecipe
   tag: recipe
   toolTip: "\uC694\uAC70\uD2B8 \uB808\uC2DC\uD53C : Milk x1, Sugar x2"

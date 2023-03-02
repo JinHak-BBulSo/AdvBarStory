@@ -14,9 +14,19 @@ public class DismountBtn : MonoBehaviour
     }
     public void OnClickDismountBtn()
     {
-        PlayerManager.instance.DismountEquipment(EquipSlot.nowSelectedEquipSlot.player.equipWeapon, EquipSlot.nowSelectedEquipSlot.player);
-        PlayerWeaponSlot slot = EquipSlot.nowSelectedEquipSlot as PlayerWeaponSlot;
-        slot.UpdateSlot();
+        if (EquipSlot.nowSelectedEquipSlot.name == "PlayerWeaponSlot")
+        {
+            PlayerManager.instance.DismountEquipment(EquipSlot.nowSelectedEquipSlot.player.equipWeapon, EquipSlot.nowSelectedEquipSlot.player);
+            PlayerWeaponSlot slot = EquipSlot.nowSelectedEquipSlot as PlayerWeaponSlot;
+            slot.UpdateSlot();
+        }
+        else
+        {
+            PlayerManager.instance.DismountEquipment(EquipSlot.nowSelectedEquipSlot.player.equipArmor, EquipSlot.nowSelectedEquipSlot.player);
+            PlayerArmorSlot slot = EquipSlot.nowSelectedEquipSlot as PlayerArmorSlot;
+            slot.UpdateSlot();
+        }
+        
         equipList.UpdateSlots();
         EquipSlot.nowSelectedEquipSlot.SlotReSet();
         equipListObj.SetActive(false);

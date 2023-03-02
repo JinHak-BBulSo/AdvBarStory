@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 [CreateAssetMenu(menuName = "Item", order = 0)]
 public class Item : ScriptableObject
 {
+    public int itemId;
     public string itemName;
     public string tag;
     public string toolTip;

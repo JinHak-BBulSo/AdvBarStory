@@ -9,6 +9,11 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 5f;
 
+    public bool isLeft = false;
+    public bool isRight = false;
+    public bool isUp = false;
+    public bool isDown = false;
+
     void Awake()
     {
         playerAni = GetComponent<Animator>();
@@ -28,26 +33,26 @@ public class PlayerController : MonoBehaviour
 
     void UpdateState()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || isUp)
         {
             playerAni.SetInteger("Dir", 1);
             playerAni.SetBool("isMove", true);
             playerRigid.velocity = Vector2.up * speed;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) || isDown)
         {
             playerAni.SetInteger("Dir", 2);
             playerAni.SetBool("isMove", true);
             playerRigid.velocity = Vector2.down * speed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) || isRight)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             playerAni.SetInteger("Dir", 0);
             playerAni.SetBool("isMove", true);
             playerRigid.velocity = Vector2.right * speed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) || isLeft)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             playerAni.SetInteger("Dir", 0);
@@ -57,7 +62,8 @@ public class PlayerController : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.UpArrow) ||
             Input.GetKeyUp(KeyCode.DownArrow) ||
             Input.GetKeyUp(KeyCode.RightArrow) ||
-            Input.GetKeyUp(KeyCode.LeftArrow))
+            Input.GetKeyUp(KeyCode.LeftArrow) ||
+            (!isLeft && !isRight && !isUp && !isDown))
         {
             playerAni.SetBool("isMove", false);
             playerRigid.velocity = Vector2.zero;

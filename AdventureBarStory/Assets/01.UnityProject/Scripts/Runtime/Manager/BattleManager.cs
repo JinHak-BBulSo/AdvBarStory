@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
+public class BattleManager : Singleton<BattleManager>
 {
     public bool isBattleStart = false;
     public GameObject currentCharIcon = default;
@@ -16,9 +16,6 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     GameObject monsterObjs = default;
     GameObject playerObjs = default;
     GameObject battleTileObjs = default;
-
-    [SerializeField]
-    Sprite[] battleBgSprite = default;
 
     public List<Monster> monsters = new List<Monster>();
     public List<GameObject> playerWeapons = new List<GameObject>();
@@ -42,6 +39,12 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
     public List<MonsterStatus> monsterStatuses = new List<MonsterStatus>();
     public Vector2[] monsterPos = default;
 
+    public List<Sprite> hitFonts = new List<Sprite>();
+    public List<Sprite> healFonts = new List<Sprite>();
+
+    public GameObject fontObjs = default;
+    public List<Image> fontImages = default;
+    public GameObject menu = default;
     public override void Awake()
     {
         if(instance == null)
@@ -56,8 +59,10 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         monsterObjs = battleObjs.FindChildObj("MonsterObjs");
         battleTileObjs = battleObjs.FindChildObj("BattleTile");
         currentCharIcon = battleObjs.FindChildObj("CurrentCharIcon");
+        fontObjs = battleObjs.FindChildObj("FontObjs");
+        menu = GameObject.Find("InitObjs").FindChildObj("Menu");
 
-        for(int i = 0; i < monsterObjs.transform.childCount; i++)
+        for (int i = 0; i < monsterObjs.transform.childCount; i++)
         {
             monsterSlot.Add(monsterObjs.transform.GetChild(i).gameObject);
             monsterSlot[i].transform.GetChild(0).gameObject.SetActive(false);
@@ -68,6 +73,11 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             battleTile.Add(battleTileObjs.transform.GetChild(i).gameObject);
             battleTile[i].GetComponent<Button>().enabled = false;
+        }
+
+        for(int i = 0; i < fontObjs.transform.childCount; i++)
+        {
+            fontImages.Add(fontObjs.transform.GetChild(i).GetComponent<Image>());
         }
     }
 
@@ -160,18 +170,13 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
         {
             nowTurnMonster = turnReadyMonster.Dequeue();
             nowTurnMonster.Attack();
-            StartCoroutine(TurnFinish());
         }
-    }
-
-    public IEnumerator TurnFinish()
-    {
-        yield return new WaitForSeconds(2f);
-        isTurnStart = false;
     }
 
     public void BattleStart()
     {
+        menu.SetActive(false);
+        PlayerMoveBtns.instance.gameObject.SetActive(false);
         PlayerManager.instance.player.GetComponent<PlayerController>().enabled = false;
         currentCharIcon.GetComponent<Image>().sprite = null;
         MonsterSet();
@@ -242,6 +247,8 @@ public class BattleManager : Singleton<BattleManager>, ITurnFinishHandler
             weapon.SetActive(false);
         }
 
+        menu.SetActive(true);
+        PlayerMoveBtns.instance.gameObject.SetActive(true);
         Inventory.instance.SetGold(100);
         GetComponent<AudioSource>().Stop();
         Camera.main.GetComponent<AudioSource>().Play();

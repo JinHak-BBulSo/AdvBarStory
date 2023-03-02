@@ -35,11 +35,6 @@ public class Inventory : Singleton<Inventory>
         base.Awake();
         nowGold = START_GOLD;
         moneyTxt = GameObject.Find("InitObjs").FindChildObj("MoneyTxt").GetComponent<TMP_Text>();
-
-        foreach(Item item in allItems)
-        {
-            GetItem(item);
-        }
     }
 
     public void GetItem<T>(T _item) where T : Item
@@ -147,6 +142,8 @@ public class Inventory : Singleton<Inventory>
                 }
                 break;
         }
+
+
     }
 
     public void SetGold(int _gold)

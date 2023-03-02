@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System.IO;
+using System;
+using Unity.VisualScripting.FullSerializer;
 
 public class DataManager : Singleton<DataManager>
 {
     PlayerData[] playerDatas = new PlayerData[3];
-    EventData eventData = default;
-    InventoryData inventoryData = default;
+    EventData eventData = new EventData();
+    InventoryData inventoryData = new InventoryData();
 
     string sielaPath = default;
     string fredPath = default;
@@ -16,19 +18,31 @@ public class DataManager : Singleton<DataManager>
     string eventPath = default;
     string inventoryPath = default;
 
+    public bool isSaveDataExist = false;
+    public string jsonText = default;
+
     public override void Awake()
     {
         base.Awake();
         SetPath();
+        
+        playerDatas[0] = new PlayerData();
+        playerDatas[1] = new PlayerData();
+        playerDatas[2] = new PlayerData();
+    }
+
+    void Start()
+    {
+        DataExistCheck();
     }
 
     void SetPath()
     {
-        sielaPath = Application.dataPath + "/" + "SaveData" + "/" + "SielaData";
-        fredPath = Application.dataPath + "/" + "SaveData" + "/" + "FredData";
-        alfinePath = Application.dataPath + "/" + "SaveData" + "/" + "AlfineData";
-        eventPath = Application.dataPath + "/" + "SaveData" + "/" + "EventData";
-        inventoryPath = Application.dataPath + "/" + "SaveData" + "/" + "InventoryData";
+        sielaPath = Application.persistentDataPath + "/" + "SielaData";
+        fredPath = Application.persistentDataPath + "/" + "FredData";
+        alfinePath = Application.persistentDataPath + "/" + "AlfineData";
+        eventPath = Application.persistentDataPath + "/" + "EventData";
+        inventoryPath = Application.persistentDataPath + "/" + "InventoryData";
     }
 
     public void SaveJson()
@@ -48,13 +62,139 @@ public class DataManager : Singleton<DataManager>
 
     public void LoadJson()
     {
-        playerDatas[0] = JsonUtility.FromJson<PlayerData>(sielaPath);
-        playerDatas[1] = JsonUtility.FromJson<PlayerData>(fredPath);
-        playerDatas[2] = JsonUtility.FromJson<PlayerData>(alfinePath);
-        eventData = JsonUtility.FromJson<EventData>(eventPath);
-        inventoryData = JsonUtility.FromJson<InventoryData>(inventoryPath);
+        jsonText = File.ReadAllText(sielaPath);
+        playerDatas[0] = JsonUtility.FromJson<PlayerData>(jsonText);
+
+        jsonText = File.ReadAllText(fredPath);
+        playerDatas[1] = JsonUtility.FromJson<PlayerData>(jsonText);
+
+        jsonText = File.ReadAllText(alfinePath);
+        playerDatas[2] = JsonUtility.FromJson<PlayerData>(jsonText);
+
+        jsonText = File.ReadAllText(eventPath);
+        eventData = JsonUtility.FromJson<EventData>(jsonText);
+
+        jsonText = File.ReadAllText(inventoryPath);
+        inventoryData = JsonUtility.FromJson<InventoryData>(jsonText);
     }
 
+    public void DataExistCheck()
+    {
+        try
+        {
+            jsonText = File.ReadAllText(eventPath);
+            eventData = JsonUtility.FromJson<EventData>(jsonText);
+        }
+        catch (FileNotFoundException)
+        {
+            isSaveDataExist = false;
+        }  
+
+        if (eventData == default)
+        {
+            isSaveDataExist = false;
+        }
+        else
+        {
+            isSaveDataExist = true;
+        }
+    }
+
+    public void OverlapData()
+    {
+        for (int i = 0; i < playerDatas.Length; i++)
+        {
+            Player player = PlayerManager.instance.playerParty[i];
+            player.status._str = playerDatas[i]._str;
+            player.status._vit = playerDatas[i]._vit;
+            player.status._int = playerDatas[i]._int;
+            player.status._men = playerDatas[i]._men;
+            player.status._agi = playerDatas[i]._agi;
+            player.status._hit = playerDatas[i]._hit;
+            player.status._avd = playerDatas[i]._avd;
+            player.status._luk = playerDatas[i]._luk;
+
+            player.status.hp = playerDatas[i].hp;
+            player.status.mp = playerDatas[i].mp;
+
+            if (playerDatas[i].equipWeaponId == -1)
+            {
+                player.equipWeapon = default;
+            }
+            else
+            {
+                player.equipWeapon = Inventory.instance.allItems[playerDatas[i].equipWeaponId] as Equip;
+            }
+
+            if (playerDatas[i].equipArmorId == -1)
+            {
+                player.equipArmor = default;
+            }
+            else
+            {
+                player.equipArmor = Inventory.instance.allItems[playerDatas[i].equipArmorId] as Equip;
+            }
+
+            player.exp = playerDatas[i].exp;
+            player.level = playerDatas[i].level;
+        }
+
+        EventManager.instance.gameEvents[0].isFinish = eventData.isFinish;
+
+        Inventory.instance.nowGold = inventoryData.nowGold;
+
+        Inventory.instance.materials.Clear();
+        Inventory.instance.materialAmount.Clear();
+        for (int i = 0; i < inventoryData.materialsId.Count; i++)
+        {
+            Inventory.instance.materials.Add(Inventory.instance.allItems[inventoryData.materialsId[i]]);
+            Inventory.instance.materialAmount.Add(inventoryData.materialAmount[i]);
+        }
+
+        Inventory.instance.equips.Clear();
+        Inventory.instance.equipAmount.Clear();
+        for (int i = 0; i < inventoryData.equipsId.Count; i++)
+        {
+            Inventory.instance.equips.Add(Inventory.instance.allItems[inventoryData.equipsId[i]] as Equip);
+            Inventory.instance.equipAmount.Add(inventoryData.equipAmount[i]);
+        }
+
+        Inventory.instance.foods.Clear();
+        Inventory.instance.foodAmount.Clear();
+        for(int i = 0; i < inventoryData.foodsId.Count; i++)
+        {
+            Inventory.instance.foods.Add(Inventory.instance.allItems[inventoryData.foodsId[i]] as Food);
+            Inventory.instance.foodAmount.Add(inventoryData.foodAmount[i]);
+        }
+
+        Inventory.instance.potions.Clear();
+        Inventory.instance.potionAmount.Clear();
+        for(int i = 0; i < inventoryData.potionsId.Count; i++)
+        {
+            Inventory.instance.potions.Add(Inventory.instance.allItems[inventoryData.potionsId[i]] as Potion);
+            Inventory.instance.potionAmount.Add(inventoryData.potionAmount[i]);
+        }
+
+        Inventory.instance.recipes.Clear();
+        for(int i = 0; i < inventoryData.recipesId.Count; i++)
+        {
+            Inventory.instance.recipes.Add(Inventory.instance.allItems[inventoryData.recipesId[i]] as Recipe);
+        }
+    }
+
+    public void SaveData()
+    {
+        SetPlayerData();
+        SetEventData();
+        SetInventoryData();
+        SaveJson();
+    }
+
+    public void LoadData()
+    {
+        LoadJson();
+        OverlapData();
+    }
     public void SetPlayerData()
     {
         int index = 0;
@@ -72,11 +212,20 @@ public class DataManager : Singleton<DataManager>
             playerDatas[index].hp = player.status.hp;
             playerDatas[index].mp = player.status.mp;
 
-            playerDatas[index].equipWeapon = player.equipWeapon;
-            playerDatas[index].equipArmor = player.equipArmor;
+            if(player.equipWeapon == default)
+                playerDatas[index].equipWeaponId = -1;
+            else
+                playerDatas[index].equipWeaponId = player.equipWeapon.itemId;
 
+            if (player.equipArmor == default)
+                playerDatas[index].equipArmorId = -1;
+            else
+                playerDatas[index].equipArmorId = player.equipArmor.itemId;
+            
             playerDatas[index].exp = player.exp;
             playerDatas[index].level = player.level;
+
+            index++;
         }
     }
 
@@ -88,23 +237,35 @@ public class DataManager : Singleton<DataManager>
     {
         inventoryData.nowGold = Inventory.instance.nowGold;
 
-        inventoryData.allItems = Inventory.instance.allItems;
-
-        inventoryData.materials = Inventory.instance.materials;
+        for (int i = 0; i < Inventory.instance.materials.Count; i++)
+        {
+            inventoryData.materialsId.Add(Inventory.instance.materials[i].itemId);
+        }
         inventoryData.materialAmount = Inventory.instance.materialAmount;
 
-        inventoryData.equips = Inventory.instance.equips;
+        for (int i = 0; i < Inventory.instance.equips.Count; i++)
+        {
+            inventoryData.equipsId.Add(Inventory.instance.equips[i].itemId);
+        }
         inventoryData.equipAmount = Inventory.instance.equipAmount;
 
-        inventoryData.foods = Inventory.instance.foods;
+        for (int i = 0; i < Inventory.instance.foods.Count; i++)
+        {
+            inventoryData.foodsId.Add(Inventory.instance.foods[i].itemId);
+        }
         inventoryData.foodAmount = Inventory.instance.foodAmount;
 
-        inventoryData.potions = Inventory.instance.potions;
+        for (int i = 0; i < Inventory.instance.potions.Count; i++)
+        {
+            inventoryData.potionsId.Add(Inventory.instance.potions[i].itemId);
+        }
         inventoryData.potionAmount = Inventory.instance.potionAmount;
 
-        inventoryData.recipes = Inventory.instance.recipes;
+        for(int i = 0; i < Inventory.instance.recipes.Count; i++)
+            inventoryData.recipesId.Add(Inventory.instance.recipes[i].itemId);
     }
 
+    [Serializable]
     public class PlayerData
     {
         public int _str;
@@ -119,35 +280,34 @@ public class DataManager : Singleton<DataManager>
         public int hp;
         public int mp;
 
-        public Equip equipWeapon;
-        public Equip equipArmor;
+        public int equipWeaponId;
+        public int equipArmorId;
 
         public int exp;
         public int level;
     }
+    [Serializable]
     public class EventData
     {
         public bool isFinish;
     }
-
+    [Serializable]
     public class InventoryData
     {
         public int nowGold = default;
 
-        public List<Item> allItems = new List<Item>();
-
-        public List<Item> materials = new List<Item>();
+        public List<int> materialsId = new List<int>();
         public List<int> materialAmount = new List<int>();
 
-        public List<Equip> equips = new List<Equip>();
+        public List<int> equipsId = new List<int>();
         public List<int> equipAmount = new List<int>();
 
-        public List<Food> foods = new List<Food>();
+        public List<int> foodsId = new List<int>();
         public List<int> foodAmount = new List<int>();
 
-        public List<Potion> potions = new List<Potion>();
+        public List<int> potionsId = new List<int>();
         public List<int> potionAmount = new List<int>();
 
-        public List<Recipe> recipes = new List<Recipe>();
+        public List<int> recipesId = new List<int>();
     }
 }

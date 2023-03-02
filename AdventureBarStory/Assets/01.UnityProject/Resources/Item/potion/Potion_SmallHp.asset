@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0648273b868a09c41becbe4bcee311b0, type: 3}
   m_Name: Potion_SmallHp
   m_EditorClassIdentifier: 
+  itemId: 17
   itemName: SmallPotion
   tag: potion
   toolTip: "\uD558\uAE09 \uD3EC\uC158"

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
+  itemId: 9
   itemName: Potato
   tag: material
   toolTip: "\uC2F1\uC2F1\uD55C \uAC10\uC790"

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
+  itemId: 1
   itemName: Carrot
   tag: material
   toolTip: "\uC8FC\uC6B4 \uB2F9\uADFC"

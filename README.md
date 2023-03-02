@@ -70,6 +70,7 @@ solution : Library 폴더를 삭제 후 editor 재실행, 경로에 특수문자
 - 2023-02-28 플레이어 스킬 구현
 
 issue : 플레이어의 스킬이 연속 선택된 적에게 동작하지 않는 현상 발견
+
 summary : 로그 분석 결과 행동 도중 character마다 들고 있던 onTileData가 소실되는 문제를 확인
 
 마찬가지로 Tile이 들고 있는 onTileObject 역시 소실됨
@@ -81,3 +82,23 @@ solution : 확인 결과 skill을 사용 할 경우 발생하는 것이 로그�
 이유는 skill의 effect object가 타일과 충돌하며, 일정 시간 후 사라지면서 onTileData를 지워 버린 것
 
 skill의 effect object에 tag를 Effect로 전부 통일. BattleTile은 tag가 Effect일 시 충돌을 무시하도록 코드를 수정
+
+- 2023-03-01 Popup UI 구현, 장비 장착 기능 구현
+
+issue : Equip을 장착 시 아이템의 재고가 0이 되어도 표시되는 버그, 아이템을 해제시 장비가 복사되는 버그가 발생
+
+summary : Equip의 해제 과정에서 플레이어의 현재 아이템 장착 여부를 확인하지만, 이 부분이 잘못 되었을 것으로 예상. 이로 인해 복사버그 발생
+
+재고가 0이 되어도 사라지지 않는 현상, UseItem에서 처리를 못하고 있을 것으로 예상.
+
+solution : Log 검사 결과 장비 복사 버그의 경우 플레이어의 현재 장비 슬롯이 null인가 확인하는 과정이 있음
+
+하지만 이보다 먼저 Equip 슬롯에 장착시켜 버려, 장착 과정에서 오류가 발생함
+
+왜냐하면 슬롯이 비었을 경우 EquipEquipment 함수만 호출하나, 그것이 아닐 시 EquipDismount를 하여, 그 장비의 갯수를 증가시킴
+
+원래는 null 일시 장비 재고 감소 -> 장착의 과정이나 슬롯 갱신 -> Dismount로 재고 증가 -> 장착 -> 재고 감소의 과정이 된 것
+
+이로인해 아이템 복사 버그와 내 예상과 달리 inventory에서 재고가 0이 되지 않고 있었음
+
+해당 로직의 서순을 수정해 해결함

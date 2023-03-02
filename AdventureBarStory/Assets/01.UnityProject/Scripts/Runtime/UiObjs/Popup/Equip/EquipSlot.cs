@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -43,6 +44,7 @@ public class EquipSlot : Slot, IDeselectHandler
                     PlayerWeaponSlot slot = nowSelectedEquipSlot as PlayerWeaponSlot;
                     slot.UpdateSlot();
                     equipList.UpdateSlots();
+                    tooltipTxt.text = string.Empty;
                     equipListObj.SetActive(false);
                 }
                 else
@@ -67,6 +69,7 @@ public class EquipSlot : Slot, IDeselectHandler
                     PlayerArmorSlot slot = nowSelectedEquipSlot as PlayerArmorSlot;
                     slot.UpdateSlot();
                     equipList.UpdateSlots();
+                    tooltipTxt.text = string.Empty;
                     equipListObj.SetActive(false);
                 }
                 else

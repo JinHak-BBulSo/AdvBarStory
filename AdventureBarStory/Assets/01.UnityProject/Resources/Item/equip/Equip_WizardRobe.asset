@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80535397bd81e5445949607c90726ed5, type: 3}
   m_Name: Equip_WizardRobe
   m_EditorClassIdentifier: 
+  itemId: 22
   itemName: WizardRobe
   tag: equip
   toolTip: "\uC778\uCC48\uD2B8 \uB85C\uBE0C : Vit + 5, Int + 15"

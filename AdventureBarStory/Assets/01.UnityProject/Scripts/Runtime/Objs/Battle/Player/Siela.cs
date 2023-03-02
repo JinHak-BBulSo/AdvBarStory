@@ -60,7 +60,7 @@ public class Siela : Player
             iceBallEffect.SetActive(true);
             effectController = iceBallEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._int * 1.4f);
+            int _hitDamage = (int)(status._int * 3.0f);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isMagic", true);

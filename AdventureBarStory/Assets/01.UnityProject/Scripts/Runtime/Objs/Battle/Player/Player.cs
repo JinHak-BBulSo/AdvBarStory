@@ -60,7 +60,9 @@ public class Player : Character
         BattleManager.instance.isTurnStart = false;
         charImgSlot.GetRect().anchoredPosition = new Vector2(244, -324);
 
-        weaponAni.SetBool("isAttack", false);
+        if(weapon.activeSelf)
+            weaponAni.SetBool("isAttack", false);
+
         animator.SetBool("isAttack", false);
         animator.SetBool("isMagic", false);
         weapon.SetActive(false);
@@ -68,6 +70,8 @@ public class Player : Character
     public override void Hit(int damage)
     {
         int _hitDamage = damage - status._vit;
+        HitFontSet(_hitDamage);
+        FontSet(_hitDamage);
 
         if (_hitDamage <= 0)
         {
@@ -83,13 +87,27 @@ public class Player : Character
         }
 
         audioSource.Play();
-        animator.SetBool("isHit", true);
-        charSlot.UpdateText();
-        StartCoroutine(HitMotion());
+        if (!isDie)
+        {
+            animator.SetBool("isHit", true);
+            charSlot.UpdateText();
+            StartCoroutine(HitMotion());
+        }
     }
 
     public void Recovery(int _hp, int _mp)
     {
+        if(_hp > 0)
+        {
+            HealFontSet(_hp);
+            FontSet(_hp);
+        }
+        else if(_mp > 0)
+        {
+            HealFontSet(_mp);
+            FontSet(_mp);
+        }
+
         nowHp += _hp;
         if (nowHp > status.hp)
             nowHp = status.hp;

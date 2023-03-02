@@ -19,7 +19,7 @@ public class Alfine : Player
             fireBallEffect.SetActive(true);
             effectController = fireBallEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._int * 1.7f);
+            int _hitDamage = (int)(status._int * 3.2f);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isMagic", true);
@@ -34,9 +34,9 @@ public class Alfine : Player
         if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
         {
             flashLightEffect.SetActive(true);
-            effectController = fireBallEffect.GetComponent<EffectController>();
+            effectController = flashLightEffect.GetComponent<EffectController>();
 
-            int _hitDamage = (int)(status._int * 1.5f);
+            int _hitDamage = (int)(status._int * 2.7f);
             effectController._damage = _hitDamage;
 
             animator.SetBool("isMagic", true);

@@ -23,6 +23,7 @@ public class OvenUiSetter : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
     public void OnOkBtnClick()
     {
         PlayerManager.instance.player.GetComponent<PlayerController>().enabled = false;
+        PlayerMoveBtns.instance.gameObject.SetActive(false);
 
         backBtn.SetActive(true);
         cookobjs.SetActive(true);
@@ -40,6 +41,7 @@ public class OvenUiSetter : MonoBehaviour, IOKBtnHandler, IBackBtnHandler
         okBtn.SetActive(true);
 
         PlayerManager.instance.player.GetComponent<PlayerController>().enabled = true;
+        PlayerMoveBtns.instance.gameObject.SetActive(true);
         tooltipTxt.text = string.Empty;
 
         OkBtn.clickOkBtn -= OnOkBtnClick;

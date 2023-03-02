@@ -45,22 +45,38 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public void EquipEquipment(Equip _equip, Player _player)
     {
-        _player.status._hit += _equip._atk;
-        _player.status._vit += _equip._def;
-        _player.status._int += _equip._int;
+        if (_equip != default)
+        {
+            _player.status._hit += _equip._atk;
+            _player.status._vit += _equip._def;
+            _player.status._int += _equip._int;
+        }
 
-        _player.equipWeapon = _equip;
+        if (_equip.equipTag == "weapon")
+            _player.equipWeapon = _equip;
+        else
+        {
+            _player.equipArmor = _equip;
+        }
 
         Inventory.instance.UseItem<Equip>(_equip, 1);
     }
 
     public void DismountEquipment(Equip _equip, Player _player)
     {
-        _player.status._hit -= _equip._atk;
-        _player.status._vit -= _equip._def;
-        _player.status._int -= _equip._int;
+        if (_equip != default)
+        {
+            _player.status._hit -= _equip._atk;
+            _player.status._vit -= _equip._def;
+            _player.status._int -= _equip._int;
+        }
 
-        _player.equipWeapon = default;
+        if (_equip.equipTag == "weapon")
+            _player.equipWeapon = default;
+        else
+        {
+            _player.equipArmor = default;
+        }
 
         Inventory.instance.GetItem<Equip>(_equip);
     }

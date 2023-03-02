@@ -1053,13 +1053,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_44
+      name: 3_HealFont8
       rect:
         serializedVersion: 2
-        x: 384
-        y: 304
-        width: 32
-        height: 32
+        x: 254
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1158,13 +1158,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_49
+      name: 3_HitFont7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 272
-        width: 32
-        height: 32
+        x: 99
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1179,13 +1179,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_50
+      name: 3_HitFont3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 272
-        width: 32
-        height: 32
+        x: 43
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1200,13 +1200,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_51
+      name: 3_HitFont5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 272
-        width: 32
-        height: 32
+        x: 71
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1221,13 +1221,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_52
+      name: 3_HitFont6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 272
-        width: 32
-        height: 32
+        x: 85
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1242,13 +1242,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_53
+      name: 3_HealFont1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 272
-        width: 32
-        height: 32
+        x: 156
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1263,13 +1263,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_54
+      name: 3_HealFont2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 272
-        width: 32
-        height: 32
+        x: 170
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1284,13 +1284,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_55
+      name: 3_HealFont3
       rect:
         serializedVersion: 2
-        x: 224
-        y: 272
-        width: 32
-        height: 32
+        x: 184
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1305,13 +1305,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_56
+      name: 3_HealFont4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 272
-        width: 32
-        height: 32
+        x: 198
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1329,10 +1329,10 @@ TextureImporter:
       name: system2_57
       rect:
         serializedVersion: 2
-        x: 288
-        y: 272
-        width: 32
-        height: 32
+        x: 198
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1347,13 +1347,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_58
+      name: 3_HealFont5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 272
-        width: 32
-        height: 32
+        x: 212
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1368,13 +1368,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_59
+      name: 3_HealFont6
       rect:
         serializedVersion: 2
-        x: 352
-        y: 272
-        width: 32
-        height: 32
+        x: 226
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1389,13 +1389,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_60
+      name: 3_HealFont7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 272
-        width: 32
-        height: 32
+        x: 240
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1410,13 +1410,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_61
+      name: 3_HealFont9
       rect:
         serializedVersion: 2
-        x: 416
-        y: 272
-        width: 32
-        height: 32
+        x: 268
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1452,13 +1452,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_63
+      name: 3_HealFont0
       rect:
         serializedVersion: 2
-        x: 480
-        y: 272
-        width: 32
-        height: 32
+        x: 142
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1473,13 +1473,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_64
+      name: 3_HitFont0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 240
-        width: 32
-        height: 32
+        x: 1
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1497,8 +1497,8 @@ TextureImporter:
       name: system2_65
       rect:
         serializedVersion: 2
-        x: 32
-        y: 240
+        x: 169
+        y: 171
         width: 32
         height: 32
       alignment: 0
@@ -1518,8 +1518,8 @@ TextureImporter:
       name: system2_66
       rect:
         serializedVersion: 2
-        x: 64
-        y: 240
+        x: 96
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1536,13 +1536,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_67
+      name: 3_HitFont4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 240
-        width: 32
-        height: 32
+        x: 57
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1557,13 +1557,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_68
+      name: 3_HitFont8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 240
-        width: 32
-        height: 32
+        x: 113
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1578,13 +1578,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_69
+      name: 3_HitFont9
       rect:
         serializedVersion: 2
-        x: 160
-        y: 240
-        width: 32
-        height: 32
+        x: 127
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1830,13 +1830,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_81
+      name: 3_HitFont1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 208
-        width: 32
-        height: 32
+        x: 15
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1851,13 +1851,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: system2_82
+      name: 3_HitFont2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 208
-        width: 32
-        height: 32
+        x: 29
+        y: 261
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2190,8 +2190,8 @@ TextureImporter:
       name: system2_98
       rect:
         serializedVersion: 2
-        x: 30
-        y: 246
+        x: 52
+        y: 191
         width: 32
         height: 32
       alignment: 0
@@ -4053,6 +4053,26 @@ TextureImporter:
       1_men: 572813076
       1_str: 1341811551
       1_vit: 1134299175
+      3_HealFont0: -598441330
+      3_HealFont1: 1409448997
+      3_HealFont2: -1943666854
+      3_HealFont3: -1195495443
+      3_HealFont4: -276936571
+      3_HealFont5: -1752304154
+      3_HealFont6: 97313410
+      3_HealFont7: -1586229163
+      3_HealFont8: 753708888
+      3_HealFont9: 976866924
+      3_HitFont0: 361242978
+      3_HitFont1: -746620989
+      3_HitFont2: -1058702145
+      3_HitFont3: 574274794
+      3_HitFont4: 1065923021
+      3_HitFont5: -694490358
+      3_HitFont6: 71569459
+      3_HitFont7: -1923249975
+      3_HitFont8: -2110885726
+      3_HitFont9: -2130784252
       Alfine: 208267835
       EXP: -475323415
       Eat: 14371149
@@ -4180,31 +4200,13 @@ TextureImporter:
       system2_41: -1948647970
       system2_42: 1875486377
       system2_43: 839771800
-      system2_44: 753708888
       system2_45: -671143427
       system2_46: -431632920
-      system2_49: -1923249975
       system2_5: 1640726944
-      system2_50: 574274794
-      system2_51: -694490358
-      system2_52: 71569459
-      system2_53: 1409448997
-      system2_54: -1943666854
-      system2_55: -1195495443
-      system2_56: -276936571
       system2_57: -835114001
-      system2_58: -1752304154
-      system2_59: 97313410
-      system2_60: -1586229163
-      system2_61: 976866924
       system2_62: -1288846072
-      system2_63: -598441330
-      system2_64: 361242978
       system2_65: -835859156
       system2_66: 485498983
-      system2_67: 1065923021
-      system2_68: -2110885726
-      system2_69: -2130784252
       system2_70: -1626270388
       system2_72: -1808041400
       system2_74: 313118577
@@ -4213,8 +4215,6 @@ TextureImporter:
       system2_78: -286839318
       system2_79: -1093056037
       system2_8: 1579574430
-      system2_81: -746620989
-      system2_82: -1058702145
       system2_83: -288185765
       system2_85: -1393252723
       system2_86: -1402147585

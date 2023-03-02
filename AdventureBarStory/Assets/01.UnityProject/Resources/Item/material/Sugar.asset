@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: Sugar
   m_EditorClassIdentifier: 
+  itemId: 12
   itemName: Sugar
   tag: material
   toolTip: "\uB2E8\uB9DB\uC774 \uB098\uB294 \uC124\uD0D5"

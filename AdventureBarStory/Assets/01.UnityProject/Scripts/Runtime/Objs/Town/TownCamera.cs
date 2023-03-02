@@ -13,6 +13,7 @@ public class TownCamera : MoveCamera
     {
         base.Start();
 
+        PlayerMoveBtns.instance.gameObject.SetActive(true);
         if (PlayerManager.instance.recallCameraPos != default)
         {
             isInBar = false;

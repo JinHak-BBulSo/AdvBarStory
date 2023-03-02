@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: MeatFriedRiceRecipe
   m_EditorClassIdentifier: 
+  itemId: 33
   itemName: MeatFriedRiceRecipe
   tag: recipe
   toolTip: "\uACE0\uAE30\uBCF6\uC74C\uBC25 : Beef x1, Chicken x1, Rice x1"

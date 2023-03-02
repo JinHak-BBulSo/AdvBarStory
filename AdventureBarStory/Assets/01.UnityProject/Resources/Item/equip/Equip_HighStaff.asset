@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80535397bd81e5445949607c90726ed5, type: 3}
   m_Name: Equip_HighStaff
   m_EditorClassIdentifier: 
+  itemId: 26
   itemName: HighStaff
   tag: equip
   toolTip: "\uD558\uC774\uC2A4\uD0DC\uD504 : int + 12"

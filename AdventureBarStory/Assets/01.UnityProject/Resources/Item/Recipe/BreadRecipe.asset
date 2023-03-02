@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: BreadRecipe
   m_EditorClassIdentifier: 
+  itemId: 28
   itemName: BreadRecipe
   tag: recipe
   toolTip: "\uBE75 \uB808\uC2DC\uD53C : Flour x1, Salt x1"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 0
   materials:
   - {fileID: 11400000, guid: a857a573b24f71e41acee455565a4262, type: 2}
   - {fileID: 11400000, guid: 51fc78b8499fbcb4f92a55532cd0d2e0, type: 2}

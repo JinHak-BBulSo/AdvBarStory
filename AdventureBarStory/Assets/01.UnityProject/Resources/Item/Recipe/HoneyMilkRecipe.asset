@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: HoneyMilkRecipe
   m_EditorClassIdentifier: 
+  itemId: 32
   itemName: HoneyMilkRecipe
   tag: recipe
   toolTip: "\uD5C8\uB2C8 \uBC00\uD06C \uB808\uC2DC\uD53C : Milk x1, Honey x1"

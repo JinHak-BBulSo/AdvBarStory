@@ -26,6 +26,7 @@ public class Shop : MonoBehaviour, IBackBtnHandler
     {
         backBtn.SetActive(true);
         money.SetActive(true);
+        PlayerMoveBtns.instance.gameObject.SetActive(false);
 
         Back.clickBackBtn += OnBackBtnClick;
     }
@@ -39,6 +40,7 @@ public class Shop : MonoBehaviour, IBackBtnHandler
 
     public void OnBackBtnClick()
     {
+        PlayerMoveBtns.instance.gameObject.SetActive(true);
         gameObject.SetActive(false);
         gameObject.FindChildObj("TooltipTxt").GetComponent<TMP_Text>().text = string.Empty;
         PlayerManager.instance.player.GetComponent<PlayerController>().enabled = true;

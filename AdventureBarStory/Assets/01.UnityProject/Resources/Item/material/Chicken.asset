@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722d6587abfe5b04dbd2ce4b71962e44, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: 
+  itemId: 2
   itemName: Chicken
   tag: material
   toolTip: "\uCE58\uD0A8"

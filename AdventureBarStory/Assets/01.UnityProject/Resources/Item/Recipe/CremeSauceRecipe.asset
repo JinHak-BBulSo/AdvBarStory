@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beea8d028d659bd438139dd43a519eb0, type: 3}
   m_Name: CremeSauceRecipe
   m_EditorClassIdentifier: 
+  itemId: 29
   itemName: CremeSauceRecipe
   tag: recipe
   toolTip: "\uD06C\uB9BC\uC18C\uC2A4 \uB808\uC2DC\uD53C : Flour x1, Milk x1, Honey
     x1"
   itemImage: {fileID: -1224816854, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
+  price: 0
   materials:
   - {fileID: 11400000, guid: a857a573b24f71e41acee455565a4262, type: 2}
   - {fileID: 11400000, guid: a7387b66d0077d045840c5bab146065a, type: 2}

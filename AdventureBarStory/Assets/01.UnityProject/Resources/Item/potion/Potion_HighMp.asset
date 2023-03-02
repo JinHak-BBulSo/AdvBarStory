@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0648273b868a09c41becbe4bcee311b0, type: 3}
   m_Name: Potion_HighMp
   m_EditorClassIdentifier: 
+  itemId: 14
   itemName: HighMpPotion
   tag: potion
   toolTip: "\uC0C1\uAE09 MP \uD3EC\uC158"

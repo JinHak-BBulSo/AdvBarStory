@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80535397bd81e5445949607c90726ed5, type: 3}
   m_Name: Equip_Rod
   m_EditorClassIdentifier: 
+  itemId: 25
   itemName: Rod
   tag: equip
   toolTip: "\uB85C\uB4DC : Int + 5"

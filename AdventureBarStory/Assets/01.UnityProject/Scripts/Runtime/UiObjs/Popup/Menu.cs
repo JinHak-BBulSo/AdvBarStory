@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
 
     public void OnClickMenuBtn()
     {
+        PlayerMoveBtns.instance.gameObject.SetActive(false);
         popupUI.SetActive(true);
         back.SetActive(true);
         gameObject.SetActive(false);
