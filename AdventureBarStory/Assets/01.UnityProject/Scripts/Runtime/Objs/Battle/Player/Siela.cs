@@ -15,7 +15,7 @@ public class Siela : Player
 
     public void BurstEdge()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[0].Item2)
         {
             burstEffect.SetActive(true);
             effectController = burstEffect.GetComponent<EffectController>();
@@ -32,10 +32,14 @@ public class Siela : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= BurstEdge;
+        }
     }
     public void AirSlash()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[1].Item2)
         {
             airSlashEffect.SetActive(true);
             effectController = airSlashEffect.GetComponent<EffectController>();
@@ -52,10 +56,14 @@ public class Siela : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= AirSlash;
+        }
     }
     public void IceBall()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[2].Item2)
         {
             iceBallEffect.SetActive(true);
             effectController = iceBallEffect.GetComponent<EffectController>();
@@ -69,6 +77,10 @@ public class Siela : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= IceBall;
+        }
     }
 
     public override void SkillSelect(int slotIndex)
@@ -76,12 +88,15 @@ public class Siela : Player
         switch (slotIndex)
         {
             case 1:
+                PlayerManager.instance.PlayerAction -= BurstEdge;
                 PlayerManager.instance.PlayerAction += BurstEdge;
                 break;
             case 2:
+                PlayerManager.instance.PlayerAction -= AirSlash;
                 PlayerManager.instance.PlayerAction += AirSlash;
                 break;
             case 3:
+                PlayerManager.instance.PlayerAction -= IceBall;
                 PlayerManager.instance.PlayerAction += IceBall;
                 break;
         }

@@ -108,7 +108,9 @@ public class DataManager : Singleton<DataManager>
             player.status._luk = playerDatas[i]._luk;
 
             player.status.hp = playerDatas[i].hp;
+            player.nowHp = player.status.hp;
             player.status.mp = playerDatas[i].mp;
+            player.nowMp = player.status.mp;
 
             if (playerDatas[i].equipWeaponId == -1)
             {

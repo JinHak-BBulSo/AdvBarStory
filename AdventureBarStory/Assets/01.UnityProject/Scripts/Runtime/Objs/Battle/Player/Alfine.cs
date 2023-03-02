@@ -14,7 +14,7 @@ public class Alfine : Player
 
     public void FireBall()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[0].Item2)
         {
             fireBallEffect.SetActive(true);
             effectController = fireBallEffect.GetComponent<EffectController>();
@@ -28,10 +28,14 @@ public class Alfine : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= FireBall;
+        }
     }
     public void FlashLight()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[1].Item2)
         {
             flashLightEffect.SetActive(true);
             effectController = flashLightEffect.GetComponent<EffectController>();
@@ -45,10 +49,14 @@ public class Alfine : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= FlashLight;
+        }
     }
     public void Heal()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag == "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag == "Player" && nowMp > skillInfo[2].Item2)
         {
             healEffect.SetActive(true);
             int _heal = (int)(status._int * 0.7f);
@@ -61,18 +69,25 @@ public class Alfine : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= Heal;
+        }
     }
     public override void SkillSelect(int slotIndex)
     {
         switch (slotIndex)
         {
             case 1:
+                PlayerManager.instance.PlayerAction -= FireBall;
                 PlayerManager.instance.PlayerAction += FireBall;
                 break;
             case 2:
+                PlayerManager.instance.PlayerAction -= FlashLight;
                 PlayerManager.instance.PlayerAction += FlashLight;
                 break;
             case 3:
+                PlayerManager.instance.PlayerAction -= Heal;
                 PlayerManager.instance.PlayerAction += Heal;
                 break;
         }

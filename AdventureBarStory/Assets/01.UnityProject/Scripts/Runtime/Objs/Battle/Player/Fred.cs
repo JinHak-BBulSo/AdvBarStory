@@ -13,7 +13,7 @@ public class Fred : Player
     EffectController effectController = default;
     public void ChargeSword()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[0].Item2)
         {
             chargeEffect.SetActive(true);
             effectController = chargeEffect.GetComponent<EffectController>();
@@ -30,10 +30,14 @@ public class Fred : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= ChargeSword;
+        }
     }
     public void SwordEdge()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[1].Item2)
         {
             swordEdgeEffect.SetActive(true);
             effectController = swordEdgeEffect.GetComponent<EffectController>();
@@ -50,10 +54,14 @@ public class Fred : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= SwordEdge;
+        }
     }
     public void LastBlast()
     {
-        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player")
+        if (BattleCursor.battleTile.onTileObject != default && BattleCursor.battleTile.onTileObject.tag != "Player" && nowMp > skillInfo[2].Item2)
         {
             blastEffect.SetActive(true);
             effectController = blastEffect.GetComponent<EffectController>();
@@ -67,18 +75,25 @@ public class Fred : Player
             charSlot.UpdateText();
             StartCoroutine(TurnFinish(1.5f));
         }
+        else
+        {
+            PlayerManager.instance.PlayerAction -= LastBlast;
+        }
     }
     public override void SkillSelect(int slotIndex)
     {
         switch (slotIndex)
         {
             case 1:
+                PlayerManager.instance.PlayerAction -= ChargeSword;
                 PlayerManager.instance.PlayerAction += ChargeSword;
                 break;
             case 2:
+                PlayerManager.instance.PlayerAction -= SwordEdge;
                 PlayerManager.instance.PlayerAction += SwordEdge;
                 break;
             case 3:
+                PlayerManager.instance.PlayerAction -= LastBlast;
                 PlayerManager.instance.PlayerAction += LastBlast;
                 break;
         }
