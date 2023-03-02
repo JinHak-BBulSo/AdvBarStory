@@ -19,9 +19,6 @@ public class PlayerEquipSlot : Slot, IDeselectHandler
 
     public override void Awake()
     {
-        tooltipTxt = GameObject.Find("InitObjs").FindChildObj("EquipTooltipObjs").FindChildObj("TooltipTxt").GetComponent<TMP_Text>();
-        equipList = GameObject.Find("InitObjs").FindChildObj("PopupEquipObjs").FindChildObj("EquipList");
-
         player = PlayerManager.instance.playerParty[playerIndex];
 
         equipNameTxt = transform.GetChild(0).GetComponent<TMP_Text>();

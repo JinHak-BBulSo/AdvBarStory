@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8468667983974050993, guid: 85f9ffc3668b5834f814abfc61644bf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 95
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8468667983974050993, guid: 85f9ffc3668b5834f814abfc61644bf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -107,6 +107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmorSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 8468667984577603179, guid: 85f9ffc3668b5834f814abfc61644bf8, type: 3}
+      propertyPath: m_text
+      value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468667985105986081, guid: 85f9ffc3668b5834f814abfc61644bf8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1056557326, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
     - target: {fileID: 8720512036819256414, guid: 85f9ffc3668b5834f814abfc61644bf8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -134,7 +142,9 @@ MonoBehaviour:
   itemAmount: 0
   slotItem: {fileID: 0}
   tooltipTxt: {fileID: 0}
+  equipList: {fileID: 0}
   player: {fileID: 0}
   playerIndex: 0
   equipNameTxt: {fileID: 0}
   equipImage: {fileID: 0}
+  nullImg: {fileID: 1056557326, guid: fdf8c6569e75f6644bfcfb5f2681bc49, type: 3}
