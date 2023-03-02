@@ -23,5 +23,5 @@ MonoBehaviour:
   _hit: 60
   _avd: 30
   _luk: 10
-  hp: 90
+  hp: 230
   mp: 20
